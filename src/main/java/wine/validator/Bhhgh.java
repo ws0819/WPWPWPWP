@@ -1,5 +1,5 @@
 package wine.validator;
 
-public class Hio {
+public class Bhhgh {
 
 }
