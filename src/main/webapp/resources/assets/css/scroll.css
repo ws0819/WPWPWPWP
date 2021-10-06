@@ -34,7 +34,9 @@ html, body{
 } 
 
 #subNav li a:hover{
-  text-decoration: underline;
+   border-radius: 8px;
+   background:
+  linear-gradient(to bottom, rgb(148 148 148 / 65%) 0%,rgb(113 105 105 / 65%) 100%);
   
 } 
 
