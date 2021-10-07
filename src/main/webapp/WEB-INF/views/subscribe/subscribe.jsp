@@ -17,10 +17,10 @@
 			<div class="wrap">
         <div id="subNav">
             <ul>
-                <li><a href="#intro">구독서비스</a></li>
-                <li><a href="#one">1</a></li>
-                <li><a href="#two">2</a></li>
-                <li><a href="#work">3</a></li>
+                <li><a href="#intro">일단사진</a></li>
+                <li><a href="#one">와인정기구독서비스</a></li>
+                <li><a href="#two">이지박스</a></li>
+                <li><a href="#work">이지박스 사진</a></li>
                 <li><a href="#contact">구독</a></li>
             </ul>
         </div><!-- #subNav end-->
@@ -31,10 +31,10 @@
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content">
 					<header>
-						<h2>Subscribe</h2>
+<!-- 						<h2>Subscribe</h2>
 					</header>
 					<h4>구독서비스</h4><br />
-					<h5>구독</h5>
+					<h5>구독</h5> -->
 					<footer>
 						<a href="#one" class="button style2 down">More</a>
 					</footer>
@@ -50,7 +50,11 @@
 		<!-- Two -->
 			<section id="two" class="main style2 left dark fullscreen">
 				<div class="content box style2">
-
+					<header>
+						<h2>EasyBox</h2>
+					</header>
+					<h3>소믈리에가 선택한 이달의 와인<br />
+					 다양한 가격의 와인을 50,000원 </h3>
 				</div>
 				<a href="#work" class="button style2 down anchored">Next</a>
 			</section>
@@ -59,10 +63,29 @@
 			<section id="work" class="main style3 primary">
 				<div class="content">
 					<header>
-						<h2>3</h2>
-						<h3>3333333333333333</h3>
+						<h2>EasyBox</h2>
+						<h3></h3>
 					</header>
-
+					<div class="gallery">
+							<article class="from-left">
+								<a href="images/fulls/1.jpg" class="image fit"><img src="../subscribe_bot/css/images/fulls/1.jpg" title="The Anonymous Red" alt="" /></a>
+							</article>
+							<article class="from-right">
+								<a href="images/fulls/2.jpg" class="image fit"><img src="../subscribe_bot/css/images/fulls/2.jpg" title="Airchitecture II" alt="" /></a>
+							</article>
+							<article class="from-left">
+								<a href="images/fulls/3.jpg" class="image fit"><img src="../subscribe_bot/css/images/fulls/3.jpg" title="Air Lounge" alt="" /></a>
+							</article>
+							<article class="from-right">
+								<a href="images/fulls/4.jpg" class="image fit"><img src="../subscribe_bot/css/images/fulls/4.jpg" title="Carry on" alt="" /></a>
+							</article>
+							<article class="from-left">
+								<a href="images/fulls/5.jpg" class="image fit"><img src="../subscribe_bot/css/images/fulls/5.jpg" title="The sparkling shell" alt="" /></a>
+							</article>
+							<article class="from-right">
+								<a href="images/fulls/6.jpg" class="image fit"><img src="../subscribe_bot/css/images/fulls/6.jpg" title="Bent IX" alt="" /></a>
+							</article>
+						</div>
 				</div>
 			</section>
 
@@ -70,17 +93,16 @@
 			<section id="contact" class="main style3 secondary">
 				<div class="content">
 					<header>
-						<h2>구독</h2>
+						<!-- <h2>구독</h2> -->
 					</header>
 					<div class="box">
 						<form method="post" action="#">
 							<div class="fields">
-								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
+								<!-- <div class="field half">나만의 인생술! 찾을 준비 되셨나요?</div> -->
+								<div class="field">나만의 인생술! <br /> 찾을 준비 되셨나요?</div>
 							</div>
 							<ul class="actions special">
-								<li><input type="submit" value="Send Message" /></li>
+								<li><input type="submit" value="구독" /></li>
 							</ul>
 						</form>
 					</div>
