@@ -9,7 +9,7 @@
 				<nav>
 					<ul>
 						<li><a href="${root}subscribe/subscribe">구독서비스</a></li>
-						<li><a href="${root}product/main">와인판매</a></li>
+						<li><a href="${root}product/home">와인판매</a></li>
 						<li><a href="${root}notice">공지사항</a></li>
 						<li><a href="${root}user/login">로그인/회원가입</a></li>
 					</ul>
