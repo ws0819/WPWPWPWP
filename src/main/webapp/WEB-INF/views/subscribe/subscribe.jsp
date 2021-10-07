@@ -6,9 +6,9 @@
 		<title>Subscribe</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-		<link rel="stylesheet" href="../assets/css/scroll.css" />
+		<link rel="stylesheet" href="../subscribe_bot/css/main.css" />
+		<noscript><link rel="stylesheet" href="../subscribe_bot/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="../subscribe_bot/css/scroll.css" />
 	</head>
 	<body class="is-preload">
 
@@ -43,25 +43,13 @@
 
 		<!-- One -->
 			<section id="one" class="main style2 right dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>1</h2>
-					</header>
-					<h3>11111111111111111.</h3>
-				</div>
+
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
 
 		<!-- Two -->
 			<section id="two" class="main style2 left dark fullscreen">
 				<div class="content box style2">
-					<header>
-						<h2>2</h2>
-					</header>
-					
-					<h3>
-					2222222222222222222222222
-					</h3>
 
 				</div>
 				<a href="#work" class="button style2 down anchored">Next</a>
@@ -75,28 +63,6 @@
 						<h3>3333333333333333</h3>
 					</header>
 
-	<!-- 
-						<div class="gallery">
-							<article class="from-left">
-								<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
-							</article>
-							<article class="from-left">
-								<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
-							</article>
-							<article class="from-left">
-								<a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
-							</article>
-						</div>
- -->
 				</div>
 			</section>
 
@@ -125,15 +91,15 @@
 		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.poptrox.min.js"></script>
-			<script src="../assets/js/jquery.scrolly.min.js"></script>
-			<script src="../assets/js/jquery.scrollex.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
-			<script src="../assets/js/scroll.js"></script>
+			<script src="../subscribe_bot/js/jquery.min.js"></script>
+			<script src="../subscribe_bot/js/jquery.poptrox.min.js"></script>
+			<script src="../subscribe_bot/js/jquery.scrolly.min.js"></script>
+			<script src="../subscribe_bot/js/jquery.scrollex.min.js"></script>
+			<script src="../subscribe_bot/js/browser.min.js"></script>
+			<script src="../subscribe_bot/js/breakpoints.min.js"></script>
+			<script src="../subscribe_bot/js/util.js"></script>
+			<script src="../subscribe_bot/js/main.js"></script>
+			<script src="../subscribe_bot/js/scroll.js"></script>
 			
 			
 			
