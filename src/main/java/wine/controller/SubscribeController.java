@@ -11,4 +11,8 @@ public class SubscribeController {
 	public String subscribe() {
 		return "subscribe/subscribe";
 	}
+	@GetMapping("/subscribe_product")
+	public String subscribe_product() {
+		return "subscribe/subscribe_product";
+	}
 }

@@ -102,12 +102,13 @@
 								<div class="field">나만의 인생술! <br /> 찾을 준비 되셨나요?</div>
 							</div>
 							<ul class="actions special">
-								<li><input type="submit" value="구독" /></li>
+								<li><a href="${root}subscribe_product">구독</a></li>
 							</ul>
 						</form>
 					</div>
 				</div>
 			</section>
+			<%-- <input type="submit" value="구독" onclick="location.harf='${root}subscribe_product'" /> --%>
 
 		<!-- Footer -->
 		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
@@ -122,9 +123,5 @@
 			<script src="../subscribe_bot/js/util.js"></script>
 			<script src="../subscribe_bot/js/main.js"></script>
 			<script src="../subscribe_bot/js/scroll.js"></script>
-			
-			
-			
-
 	</body>
 </html>
