@@ -50,59 +50,62 @@
     
     
    <div class="hero-section">
+		 <div class="hero-slider owl-carousel">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 1 -->
+				<a href="portfolio.html" class="hero-link">
+					<h2>Take a look at my Portfolio</h2>
+				</a>
+			</div>
+			<div class="hero-item portfolio-item set-bg" data-setbg="">
+				<a href="portfolio.html" class="hero-link">
+					<h2>Take a look at my Portfolio</h2>
+				</a>
+			</div>
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 3 -->
+				<a href="portfolio.html" class="hero-link">
+					<h2>Take a look at my Portfolio</h2>
+				</a>
+			</div>
+			<div class="hero-item portfolio-item set-bg" data-setbg="">
+				<a href="portfolio.html" class="hero-link">
+					<h2>Take a look at my Portfolio</h2>
+				</a>
+			</div>
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 5 -->
+				<a href="portfolio.html" class="hero-link">
+					<h2>Take a look at my Portfolio</h2>
+				</a>
+			</div>
+			<div class="hero-item portfolio-item set-bg" data-setbg="">
+				<a href="portfolio.html" class="hero-link">
+					<h2>Take a look at my Portfolio</h2>
+				</a>
+			</div>
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 7 -->
+				<a href="portfolio.html" class="hero-link">
+					<h2>Take a look at my Portfolio</h2>
+				</a>
+			</div>
+		
+			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 8 -->
+				<a href="portfolio.html" class="hero-link">
+					<h2>Take a look at my Portfolio</h2>
+				</a>
+			</div>
+		</div>	
+		
 		<div class="hero-slider owl-carousel">
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 9 -->
 				<a href="portfolio.html" class="hero-link">
 					<h2>Take a look at my Portfolio</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="img/portfolio/6.jpg">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-		</div>
-		<div class="hero-slider owl-carousel">
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
+			
 			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
 				<a href="portfolio.html" class="hero-link">
 					<h2>Take a look at my Portfolio</h2>
 				</a></div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 11 -->
 				<a href="portfolio.html" class="hero-link">
 					<h2>Take a look at my Portfolio</h2>
 				</a>
@@ -112,7 +115,17 @@
 					<h2>Take a look at my Portfolio</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 13 -->
+				<a href="portfolio.html" class="hero-link">
+					<h2>Take a look at my Portfolio</h2>
+				</a>
+			</div>
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+				<a href="portfolio.html" class="hero-link">
+					<h2>Take a look at my Portfolio</h2>
+				</a>
+			</div>
+			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 15 -->
 				<a href="portfolio.html" class="hero-link">
 					<h2>Take a look at my Portfolio</h2>
 				</a>
@@ -123,18 +136,8 @@
 				</a>
 			</div>
 		</div>
-		<div class="hero-slider owl-carousel">
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+		 <div class="hero-slider owl-carousel">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 17 -->
 				<a href="portfolio.html" class="hero-link">
 					<h2>Take a look at my Portfolio</h2>
 				</a>
@@ -144,7 +147,7 @@
 					<h2>Take a look at my Portfolio</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 19 -->
 				<a href="portfolio.html" class="hero-link">
 					<h2>Take a look at my Portfolio</h2>
 				</a>
@@ -154,7 +157,7 @@
 					<h2>Take a look at my Portfolio</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 21 -->
 				<a href="portfolio.html" class="hero-link">
 					<h2>Take a look at my Portfolio</h2>
 				</a>
@@ -164,7 +167,7 @@
 					<h2>Take a look at my Portfolio</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 23 -->
 				<a href="portfolio.html" class="hero-link">
 					<h2>Take a look at my Portfolio</h2>
 				</a>
@@ -187,7 +190,7 @@
     						<span class="flaticon-support"></span>
     					</div>
     					<div class="text">
-    						<h2>Online Support 24/7</h2>
+    						<h2>Online Support 24/8</h2>
     						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
     					</div>
     				</div>
