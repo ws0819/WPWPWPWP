@@ -51,7 +51,7 @@
     
    <div class="hero-section">
 		 <div class="hero-slider owl-carousel">
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 1 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png" style="background-size: contain;"> <!-- 1 -->
 				<a href="portfolio.html" class="hero-link">
 					<h2>Take a look at my Portfolio</h2>
 				</a>
@@ -190,8 +190,8 @@
     						<span class="flaticon-support"></span>
     					</div>
     					<div class="text">
-    						<h2>Online Support 24/8</h2>
-    						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+    						<h2>전문 소믈리에 상담</h2>
+    						<p>구독 중인 고객이라면 판매 와인에 대한 상담이 언제든 가능합니다!</p>
     					</div>
     				</div>
     			</div>
@@ -201,8 +201,8 @@
     						<span class="flaticon-cashback"></span>
     					</div>
     					<div class="text">
-    						<h2>Money Back Guarantee</h2>
-    						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+    						<h2>어디서도 볼 수 없는 가격</h2>
+    						<p>전문가가 엄선한 와인을 최저가에 만나보세요!</p>
     					</div>
     				</div>
     			</div>
@@ -212,8 +212,8 @@
     						<span class="flaticon-free-delivery"></span>
     					</div>
     					<div class="text">
-    						<h2>Free Shipping &amp; Return</h2>
-    						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+    						<h2>5만원 이상 구매시 무료배송</h2>
+    						<p>무료배송으로 최대 2일 도착보장</p>
     					</div>
     				</div>
     			</div>
@@ -224,42 +224,42 @@
 
 
 		<section class="ftco-section ftco-no-pb">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-2 col-md-4 ">
+			<div class="container" >
+				<div class="seyoungrow" >
+					<div class="col-lg-2 col-md-4 " >
 						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(images/kind-1.jpg);"></div>
-							<h3>Brandy</h3>
+							<div class="img" style="background-image: url(../liquorstore_master/images/레드와인로고.jpg);"
+							onclick="location.href='#'"></div>
+							<h3>RED</h3>
+							
 						</div>
 					</div>
 					<div class="col-lg-2 col-md-4 ">
 						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(images/kind-2.jpg);"></div>
-							<h3>Gin</h3>
+							<div class="img" style="background-image: url(../liquorstore_master/images/화이트와인로고.jpg);"
+							onclick="location.href='#'"></div>
+							<h3>WHITE</h3>
 						</div>
 					</div>
 					<div class="col-lg-2 col-md-4 ">
 						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(images/kind-3.jpg);"></div>
-							<h3>Rum</h3>
+							<div class="img" style="background-image: url(../liquorstore_master/images/스파클링와인로고.jpg);"
+							onclick="location.href='#'"></div>
+							<h3>SPARKLING</h3>
 						</div>
 					</div>
 					<div class="col-lg-2 col-md-4 ">
 						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(images/kind-4.jpg);"></div>
-							<h3>Tequila</h3>
+							<div class="img" style="background-image: url(../liquorstore_master/images/로제와인로고.jpg);"
+							onclick="location.href='#'"></div>
+							<h3>ROSE</h3>
 						</div>
 					</div>
 					<div class="col-lg-2 col-md-4 ">
 						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(images/kind-5.jpg);"></div>
-							<h3>Vodka</h3>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-4 ">
-						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(images/kind-6.jpg);"></div>
-							<h3>Whiskey</h3>
+							<div class="img" style="background-image: url(../liquorstore_master/images/디저트와인로고.jpg);"
+							onclick="location.href='#'"></div>
+							<h3>DESERT</h3>
 						</div>
 					</div>
 
@@ -278,7 +278,7 @@
 				<div class="row">
 					<div class="col-md-3 d-flex">
 						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-1.jpg);">
+							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/white1.jpg);">
 								<div class="desc">
 									<p class="meta-prod d-flex">
 										<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -289,9 +289,9 @@
 							</div>
 							<div class="text text-center">
 								<span class="sale">Sale</span>
-								<span class="category">Brandy</span>
-								<h2>Bacardi 151</h2>
-								<p class="mb-0"><span class="price price-sale">$69.00</span> <span class="price">$49.00</span></p>
+								<span class="category">WHITE</span>
+								<h2>Comandante Chardonnay</h2>
+								<p class="mb-0"><span class="price price-sale">890,000</span> <span class="price">790,000</span></p>
 							</div>
 						</div>
 					</div>
