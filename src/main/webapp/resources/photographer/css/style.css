@@ -24,6 +24,7 @@
 }
 
 .hero-item {
+	
 	height: 278px;
 	position: relative;
 }
@@ -66,6 +67,7 @@
 	top: 50px;
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
+	font-size: 25px;
 }
 
 .hero-social-links {
