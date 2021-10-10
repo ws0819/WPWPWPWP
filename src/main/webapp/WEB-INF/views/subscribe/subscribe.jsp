@@ -102,13 +102,13 @@
 								<div class="field">나만의 인생술! <br /> 찾을 준비 되셨나요?</div>
 							</div>
 							<ul class="actions special">
-								<li><a href="${root}subscribe_product">구독</a></li>
+								<li><input type="button" value="구독" onclick='location.href="${root}subscribe_product"'/></li>	
 							</ul>
 						</form>
 					</div>
 				</div>
 			</section>
-			<%-- <input type="submit" value="구독" onclick="location.harf='${root}subscribe_product'" /> --%>
+			<%-- <a href="${root}subscribe_product">구독</a --%>
 
 		<!-- Footer -->
 		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />

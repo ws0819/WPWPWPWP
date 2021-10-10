@@ -1,17 +1,28 @@
 package wine.config;
 
+import javax.annotation.Resource;
+
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.mapper.MapperFactoryBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import wine.beans.AdminBean;
+import wine.interceptor.CheckAdminLoginIntercepter;
+import wine.mapper.AdminMapper;
 
 
 // Spring MVC 프로젝트에 관련된 설정을 하는 클래스
@@ -21,6 +32,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 // 스캔할 패키지를 지정한다.
 @ComponentScan(basePackages = "wine.controller")
 @PropertySource("/WEB-INF/properties/db.properties")
+@ComponentScan("wine.service")
+@ComponentScan("wine.DAO")
 public class ServletAppContext implements WebMvcConfigurer{
 	
 	
@@ -36,7 +49,8 @@ public class ServletAppContext implements WebMvcConfigurer{
 	@Value("${db.password}")
 	private String db_password;
 	
-	
+	@Resource(name="loginAdminBean")
+	private AdminBean loginAdminBean;
 	
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
@@ -66,6 +80,33 @@ public class ServletAppContext implements WebMvcConfigurer{
 		factoryBean.setDataSource(source);
 		SqlSessionFactory factory = factoryBean.getObject();
 		return factory;
+	}
+	@Bean
+	public MapperFactoryBean<AdminMapper> getBoardMapper(SqlSessionFactory factory){
+		MapperFactoryBean<AdminMapper> factoryBean = new MapperFactoryBean<AdminMapper>(AdminMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}
+	//메세지(error_message) 선언과 충돌되므로 별도로 관리
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
+	
+	//유효성 검사 메세지 등록
+	@Bean
+	public ReloadableResourceBundleMessageSource messageSource() {
+		ReloadableResourceBundleMessageSource res = new ReloadableResourceBundleMessageSource();
+		res.setBasename("WEB-INF/properties/error_message");
+		return res;
+	}
+	//Interceptor
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		WebMvcConfigurer.super.addInterceptors(registry);
+		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);	
+		InterceptorRegistration reg1 = registry.addInterceptor(checkAdminLoginIntercepter);
+		reg1.addPathPatterns("/admin/admin_main", "/notice/notice_write");
 	}
 }
 
