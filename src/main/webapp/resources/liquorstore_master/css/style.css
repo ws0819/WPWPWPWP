@@ -8663,7 +8663,7 @@ h1, h2, h3, h4, h5,
       top: 0;
       left: 4px;
       font-size: 12px;
-      padding: 0 10px;
+      padding: 0 5px;
       color: #fff; }
     .product .text .sale {
       background: #b7472a; }
@@ -9304,7 +9304,7 @@ textarea.form-control {
   display: inline-block;
   margin-bottom: 0;
   color: #b7472a;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: 400;
   font-style: italic;
   position: relative; }
