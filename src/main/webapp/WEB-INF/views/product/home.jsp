@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var='root' value="${pageContext.request.contextPath }/" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -447,7 +448,7 @@
 				</div>
 				<div class="row justify-content-center">
 					<div class="col-md-4">
-						<a href="product.html" class="btn btn-primary d-block">View All Products <span class="fa fa-long-arrow-right"></span></a>
+						<a href="${root }product/product" class="btn btn-primary d-block">View All Products <span class="fa fa-long-arrow-right"></span></a>
 					</div>
 				</div>
 			</div>
