@@ -49,132 +49,132 @@
   <c:import url="/WEB-INF/views/include/top_menu.jsp" />
     
     
-   <div class="hero-section">
-		 <div class="hero-slider owl-carousel">
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png" style="background-size: contain;"> <!-- 1 -->
+    <div class="hero-section">
+		 <div class="hero-slider owl-carousel">   
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/1.jpg" style="background-size: contain;"> <!-- 1 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 3 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/2.jpg" style="background-size: contain;"> <!-- 3 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 5 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/3.jpg" style="background-size: contain;"> <!-- 5 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 7 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/4.jpg" style="background-size: contain;"> <!-- 7 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
 		
-			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 8 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;"> <!-- 8 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
 		</div>	
 		
 		<div class="hero-slider owl-carousel">
-			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 9 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;"> <!-- 9 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
 			
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/5.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a></div>
-			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 11 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;"> <!-- 11 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/6.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 13 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;"> <!-- 13 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/7.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 15 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;"> <!-- 15 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/8.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
 		</div>
 		 <div class="hero-slider owl-carousel">
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 17 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/9.jpg" style="background-size: contain;"> <!-- 17 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 19 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/10.jpg" style="background-size: contain;"> <!-- 19 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 21 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/11.jpg" style="background-size: contain;"> <!-- 21 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 23 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/12.jpg" style="background-size: contain;"> <!-- 23 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
 			
