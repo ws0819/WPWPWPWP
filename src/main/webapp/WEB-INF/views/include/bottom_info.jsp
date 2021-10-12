@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="root" value="${pageContext.request.contextPath }/"/>
 	<!-- Footer -->
 			<footer id="footer">
 
@@ -15,7 +16,7 @@
 
 				<!-- Menu -->
 					<ul class="menu">
-					<h3>귤조 솔데스크 510호 112-1111</h3>
+					<h3><a href="${root }admin/admin_login">귤조</a> 솔데스크 510호 112-1111</h3>
 					</ul>
 
 			</footer>

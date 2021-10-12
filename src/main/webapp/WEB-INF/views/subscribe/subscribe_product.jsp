@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-   pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
@@ -10,9 +9,9 @@
 <meta name="author"
    content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.88.1">
-<title>Pricing example ¡¤ Bootstrap v5.1</title>
+<title>Pricing example Â· Bootstrap v5.1</title>
 
-<!-- ³»²¨ ºÎÆ®½ºÆ®·¦ ¸µÅ© -->
+<!-- ë‚´êº¼ ë¶€íŠ¸ìŠ¤íŠ¸ëž© ë§í¬ -->
 <link
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
    rel="stylesheet"
@@ -22,14 +21,15 @@
 <link rel="canonical"
    href="https://getbootstrap.com/docs/5.1/examples/pricing/">
 
-<!-- Å¾¸Þ´º -->
+<!-- íƒ‘ë©”ë‰´ -->
 <link rel="stylesheet" href="../assets/css/main.css" />
 <link rel="stylesheet" href="../assets/css/noscript.css" />
 <link rel="stylesheet" href="../assets/css/scroll.css" />
 
+<c:import url="/WEB-INF/views/include/top_menu.jsp" />
 </head>
 
-<!-- ³»²¨ ºÎÆ®½ºÆ®·¦ ¸µÅ© -->
+<!-- ë‚´êº¼ ë¶€íŠ¸ìŠ¤íŠ¸ëž© ë§í¬ -->
 <link rel="stylesheet" href="../subscribe_product_bot/css/mystyle.css"/>
    
    
@@ -50,16 +50,16 @@
       <header>
 
          <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal">»óÇ°À» ¼±ÅÃÇØÁÖ¼¼¿ä</h1>
+            <h1 class="display-4 fw-normal">ìƒí’ˆì„ ì„ íƒí•´ì£¼ì„¸ìš”</h1>
             <h2></h2>
-            <p class="fs-5 text-muted">ORANGE, VLOLET, BLACK ¼­ºñ½º¿¡´Â ¼Ò¹É¸®¿¡ ·¹½¼ÀÌ Æ÷ÇÔµÇ¾î
-               ÀÖ½À´Ï´Ù.</p>
+            <p class="fs-5 text-muted">ORANGE, VLOLET, BLACK ì„œë¹„ìŠ¤ì—ëŠ” ì†Œë¯ˆë¦¬ì— ë ˆìŠ¨ì´ í¬í•¨ë˜ì–´
+               ìžˆìŠµë‹ˆë‹¤.</p>
             
          </div>
       </header>
 
       <main>
-
+<div class="container mx-auto">
          <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                <h2 class="accordion-header" id="headingOne">
@@ -74,9 +74,9 @@
                   <div class="text-center">
                      <div class=" mt-3 mb-5">
                         <img
-                           src="../bootstrap-5.0.2-dist/css/images/fulls/random.jpg"
+                           src="../subscribe_product_bot/images/fulls/random.jpg"
                            class="mx-auto" style="width: 400px;">
-                           £Ü 50,000¿ø
+                           ï¿¦ 50,000ì›
                      </div>
 <body onload="init();">
 <script language="JavaScript">
@@ -122,22 +122,23 @@ function change () {
 <div class="text-muted">
 <form name="form" method="get">
 
-¼ö·® : <input type=hidden name="sell_price" value="50000">
+ìˆ˜ëŸ‰ : <input type=hidden name="sell_price" value="50000">
 <input type="text" name="amount" value="1" size="3" onchange="change();">
-<input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();"><br>
+<input class="btn btn-default" type="button" value=" + " onclick="add();">
+<input class="btn btn-default" type="button" value=" - " onclick="del();"><br>
 
-±Ý¾× : <input type="text" name="sum" size="11" readonly>
+ê¸ˆì•¡ : <input type="text" name="sum" size="11" readonly>
 </form>
 </div>
 </body>
 
-                     <button type="button" class="btn btn-outline-success mb-2">±¸¸ÅÇÏ±â</button>
+                     <button type="button" class="btn btn-outline-success mb-2">êµ¬ë§¤í•˜ê¸°</button>
                   </div>
                </div>
             </div>
             <p class="mb-5">
          </div>
-
+</div>
          <div class="row row-cols-1 row-cols-md-3 mb-3 mt-5 text-center">
             <div class="col">
                <div class="card mb-4 rounded-3 shadow-sm">
@@ -146,10 +147,10 @@ function change () {
                   </div>
                   <div class="card-body">
                      <h1 class="card-title pricing-card-title">
-                        £Ü 49,000¿ø<small class="text-muted fw-light"></small>
+                        ï¿¦ 49,000ì›<small class="text-muted fw-light"></small>
                      </h1>
                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>¿ÍÀÎ 1º´+¼Ò¹É¸®¿¡ ·¹½¼</li>
+                        <li>ì™€ì¸ 1ë³‘+ì†Œë¯ˆë¦¬ì— ë ˆìŠ¨</li>
                         <p>
                         <p>
 
@@ -157,9 +158,9 @@ function change () {
                               class="w-100 btn btn-lg btn-outline-warning">Get
                               started</button>
                         <h1 class="card-title pricing-card-title">
-                           £Ü 89,000¿ø<small class="text-muted fw-light"></small>
+                           ï¿¦ 89,000ì›<small class="text-muted fw-light"></small>
                         </h1>
-                        <li>¿ÍÀÎ 2º´+¼Ò¹É¸®¿¡ ·¹½¼</li>
+                        <li>ì™€ì¸ 2ë³‘+ì†Œë¯ˆë¦¬ì— ë ˆìŠ¨</li>
 
                      </ul>
                      <button type="button"
@@ -176,10 +177,10 @@ function change () {
                   </div>
                   <div class="card-body">
                      <h1 class="card-title pricing-card-title">
-                        £Ü 98,000¿ø<small class="text-muted fw-light"></small>
+                        ï¿¦ 98,000ì›<small class="text-muted fw-light"></small>
                      </h1>
                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>¿ÍÀÎ 1º´+¼Ò¹É¸®¿¡ ·¹½¼</li>
+                        <li>ì™€ì¸ 1ë³‘+ì†Œë¯ˆë¦¬ì— ë ˆìŠ¨</li>
 
                      </ul>
                      <button type="button" class="w-100 btn btn-lg btn-outline-purple">Get
@@ -195,10 +196,10 @@ function change () {
                   </div>
                   <div class="card-body">
                      <h1 class="card-title pricing-card-title">
-                        £Ü 800,000¿ø<small class="text-muted fw-light"></small>
+                        ï¿¦ 800,000ì›<small class="text-muted fw-light"></small>
                      </h1>
                      <ul class="list-unstyled mt-3 mb-4">
-                        <li>¼Ò¹É¸®¿¡ »ó´ãÈÄ °³¼ö °áÁ¤</li>
+                        <li>ì†Œë¯ˆë¦¬ì— ìƒë‹´í›„ ê°œìˆ˜ ê²°ì •</li>
 
                      </ul>
                      <button type="button" class="w-100 btn btn-lg btn-outline-dark">Get
@@ -210,8 +211,8 @@ function change () {
 
 <!--          <div class="text-center">
             <h2>
-               ÃÑ °áÁ¦¾× : ¿ø
-               <button type="button" class="btn btn-outline-success mb-2 w-30">°áÁ¦ÇÏ±â</button>
+               ì´ ê²°ì œì•¡ : ì›
+               <button type="button" class="btn btn-outline-success mb-2 w-30">ê²°ì œí•˜ê¸°</button>
             </h2>
             <div> -->
       </main>
@@ -231,7 +232,7 @@ function change () {
          <script src="../subscribe_bot/js/main.js"></script>
          <script src="../subscribe_bot/js/scroll.js"></script>
 
-   <!-- ³»²¨ ºÎÆ®½ºÆ®·¦ js -->
+   <!-- ë‚´êº¼ ë¶€íŠ¸ìŠ¤íŠ¸ëž© js -->
    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
