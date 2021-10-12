@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var='root' value="${pageContext.request.contextPath }/"/>
@@ -6,14 +6,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>notice_write</title>
+<title>notice_modify</title>
 </head>
 <body>
-<h3>notice_write</h3>
+<h3>notice_modify</h3>
+<body>
 	<div>
-		<form:form action="${root }notice/notice_write_pro" modelAttribute="noticeContentBean" method="post">
+		<form:form action="${root }notice/notice_modify_pro" modelAttribute="noticeContentBean" method="post">
 		<form:hidden path="notice_number"/>
 			<div>
+			<div>
+				<form:label path="notice_date">작성날짜</form:label>
+				<form:input path="notice_date" readmonly="disabled"/>
+			</div>
 				<form:label path="notice_title">제목</form:label>
 				<form:input path="notice_title"/>
 			</div>
@@ -22,9 +27,10 @@
 				<form:textarea path="notice_content" row="10" sytle="resize:none"/>
 			</div>
 			<div>
-				<form:button>작성하기</form:button>
+				<form:button>수정하기</form:button><br />
+				<a href="${root }admin/admin_main"></a>
 			</div>
 		</form:form>
 	</div>
 </body>
-</html>
+</html> --%>

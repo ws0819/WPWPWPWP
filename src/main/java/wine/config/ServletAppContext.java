@@ -23,6 +23,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import wine.beans.AdminBean;
 import wine.interceptor.CheckAdminLoginIntercepter;
 import wine.mapper.AdminMapper;
+import wine.mapper.NoticeMapper;
 
 
 // Spring MVC 프로젝트에 관련된 설정을 하는 클래스
@@ -82,8 +83,14 @@ public class ServletAppContext implements WebMvcConfigurer{
 		return factory;
 	}
 	@Bean
-	public MapperFactoryBean<AdminMapper> getBoardMapper(SqlSessionFactory factory){
+	public MapperFactoryBean<AdminMapper> getAdminMapper(SqlSessionFactory factory){
 		MapperFactoryBean<AdminMapper> factoryBean = new MapperFactoryBean<AdminMapper>(AdminMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}
+	@Bean
+	public MapperFactoryBean<NoticeMapper> getNoticeMapper(SqlSessionFactory factory){
+		MapperFactoryBean<NoticeMapper> factoryBean = new MapperFactoryBean<NoticeMapper>(NoticeMapper.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
@@ -104,9 +111,11 @@ public class ServletAppContext implements WebMvcConfigurer{
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		WebMvcConfigurer.super.addInterceptors(registry);
+		
 		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);	
 		InterceptorRegistration reg1 = registry.addInterceptor(checkAdminLoginIntercepter);
 		reg1.addPathPatterns("/admin/admin_main", "/notice/notice_write");
+		
 	}
 }
 

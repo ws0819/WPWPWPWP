@@ -16,4 +16,8 @@ public class SubscribeController {
 	public String subscribe_product() {
 		return "subscribe/subscribe_product";
 	}
+	@GetMapping("/subscribe_review")
+	public String subscribe_review() {
+		return "subscribe/subscribe_review";
+	}
 }

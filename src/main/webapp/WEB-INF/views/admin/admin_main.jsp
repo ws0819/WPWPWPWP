@@ -9,6 +9,9 @@
 </head>
 <body>
 <h3>admin_main</h3>
-<a href="${root }notice/notice_write">공지사항 글쓰기</a>
+<a href="${root }notice/notice_write">공지사항 글쓰기</a><br />
+<a href="${root }notice/notice_modify">공지사항 글수정</a><br />
+<a href="${root }notice/notice_delete">공지사항 글삭제</a>
+
 </body>
 </html>
