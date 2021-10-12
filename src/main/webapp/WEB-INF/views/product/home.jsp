@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var='root' value="${pageContext.request.contextPath }/" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,135 +50,116 @@
   <c:import url="/WEB-INF/views/include/top_menu.jsp" />
     
     
-   <div class="hero-section">
-		 <div class="hero-slider owl-carousel">
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png" style="background-size: contain;"> <!-- 1 -->
+    <div class="hero-section">
+		 <div class="hero-slider owl-carousel">   
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.jpg" style="background-size: contain;"> <!-- 1 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine2.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 3 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine3.jpg" style="background-size: contain;"> <!-- 3 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine4.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 5 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine5.jpg" style="background-size: contain;"> <!-- 5 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine6.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 7 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine7.jpg" style="background-size: contain;"> <!-- 7 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-		
-			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 8 -->
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-		</div>	
-		
+			</div>	
 		<div class="hero-slider owl-carousel">
-			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 9 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine8.jpg" style="background-size: contain;"> <!-- 8 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
+				</a>
+			</div>
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine9.jpg" style="background-size: contain;"> <!-- 9 -->
+				<a href="portfolio.html" class="hero-link">
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
 			
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine10.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a></div>
-			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 11 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine11.jpg" style="background-size: contain;"> <!-- 11 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine12.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 13 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine13.jpg" style="background-size: contain;"> <!-- 13 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine14.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg=""> <!-- 15 -->
+			</div>
+			<div class="hero-slider owl-carousel">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine15.jpg" style="background-size: contain;"> <!-- 15 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine16.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-		</div>
-		 <div class="hero-slider owl-carousel">
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 17 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine17.jpg" style="background-size: contain;"> <!-- 17 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine18.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 19 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine19.jpg" style="background-size: contain;"> <!-- 19 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine20.jpg" style="background-size: contain;">
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
 			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 21 -->
+			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine21.jpg" style="background-size: contain;"> <!-- 21 -->
 				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
+					<h2>Wine Easy</h2>
 				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="../photographer/img/wine1.png"> <!-- 23 -->
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			<div class="hero-item portfolio-item set-bg" data-setbg="">
-				<a href="portfolio.html" class="hero-link">
-					<h2>Take a look at my Portfolio</h2>
-				</a>
-			</div>
-			
 		</div>
 	</div>
 
@@ -220,9 +202,16 @@
     		</div>
     	</div>
     </section>
-
-
-
+	
+	<section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+          	<span class="subheading">What is your Choice?</span>
+            <h2>Choose one category</h2>
+          </div>
+        </div>
+	
 		<section class="ftco-section ftco-no-pb">
 			<div class="container" >
 				<div class="seyoungrow" >
@@ -266,13 +255,26 @@
 				</div>
 			</div>
 		</section>
+		</div>
+	</section>
 
-		<section class="ftco-section">
+	<section class="ftco-section testimony-section img"
+		style="background-image: url(../liquorstore_master/images/product_home_body.jpg);">
+		<div class="overlay"></div>
+		<div class="seyoungcontainer">
+			<div class="row justify-content-center mb-5"></div>
+
+		</div>
+
+	</section>
+
+
+	<section class="ftco-section">
 			<div class="container">
 				<div class="row justify-content-center pb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Our Delightful offerings</span>
-            <h2>Tastefully Yours</h2>
+          	<span class="subheading">This Week Special</span>
+            <h2>Sommelier Selected Wine</h2>
           </div>
         </div>
 				<div class="row">
@@ -297,7 +299,7 @@
 					</div>
 					<div class="col-md-3 d-flex">
 						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-2.jpg);">
+							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/desert1.jpg);">
 								<div class="desc">
 									<p class="meta-prod d-flex">
 										<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -308,15 +310,15 @@
 							</div>
 							<div class="text text-center">
 								<span class="seller">Best Seller</span>
-								<span class="category">Gin</span>
-								<h2>Jim Beam Kentucky Straight</h2>
-								<span class="price">$69.00</span>
+								<span class="category">DESERT</span>
+								<h2>Toro Albala, Don PX Convento Seleccion</h2>
+								<span class="price">935,000</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 d-flex">
 						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-3.jpg);">
+							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/sparkling1.jpg);">
 								<div class="desc">
 									<p class="meta-prod d-flex">
 										<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -326,16 +328,16 @@
 								</div>
 							</div>
 							<div class="text text-center">
-								<span class="new">New Arrival</span>
-								<span class="category">Rum</span>
-								<h2>Citadelle</h2>
-								<span class="price">$69.00</span>
+								<span class="new">New</span>
+								<span class="category">SPARKLING</span>
+								<h2>Besserat de Bellefon, Cuvee BB 1843</h2>
+								<span class="price">128,000</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 d-flex">
 						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-4.jpg);">
+							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/red1.jpg);">
 								<div class="desc">
 									<p class="meta-prod d-flex">
 										<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -345,16 +347,16 @@
 								</div>
 							</div>
 							<div class="text text-center">
-								<span class="category">Rum</span>
-								<h2>The Glenlivet</h2>
-								<span class="price">$69.00</span>
+								<span class="category">RED</span>
+								<h2>La Spinetta, Barolo Campe</h2>
+								<span class="price">790,000</span>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-md-3 d-flex">
 						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-5.jpg);">
+							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/white2.png);">
 								<div class="desc">
 									<p class="meta-prod d-flex">
 										<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -364,15 +366,15 @@
 								</div>
 							</div>
 							<div class="text text-center">
-								<span class="category">Whiskey</span>
-								<h2>Black Label</h2>
-								<span class="price">$69.00</span>
+								<span class="category">WHITE</span>
+								<h2>Egon Muller, Scharzhofberger Spatlese</h2>
+								<span class="price">670,000</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 d-flex">
 						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-6.jpg);">
+							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/desert3.jpg);">
 								<div class="desc">
 									<p class="meta-prod d-flex">
 										<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -382,15 +384,15 @@
 								</div>
 							</div>
 							<div class="text text-center">
-								<span class="category">Tequila</span>
-								<h2>Macallan</h2>
-								<span class="price">$69.00</span>
+								<span class="category">DESERT</span>
+								<h2>Dow's, 40 Year Old Tawny Port</h2>
+								<span class="price">298,000</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 d-flex">
 						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-7.jpg);">
+							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/desert2.png);">
 								<div class="desc">
 									<p class="meta-prod d-flex">
 										<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -400,15 +402,15 @@
 								</div>
 							</div>
 							<div class="text text-center">
-								<span class="category">Vodka</span>
-								<h2>Old Monk</h2>
-								<span class="price">$69.00</span>
+								<span class="category">DESERT</span>
+								<h2>Graham's Port, 30 Years Tawny Port</h2>
+								<span class="price">890,000</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 d-flex">
 						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-8.jpg);">
+							<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/red2.jpg);">
 								<div class="desc">
 									<p class="meta-prod d-flex">
 										<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -418,263 +420,23 @@
 								</div>
 							</div>
 							<div class="text text-center">
-								<span class="category">Whiskey</span>
-								<h2>Jameson Irish Whiskey</h2>
-								<span class="price">$69.00</span>
+								<span class="category">RED</span>
+								<h2>Jean Louis Chave, Hermitage </h2>
+								<span class="price">698,000</span>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row justify-content-center">
 					<div class="col-md-4">
-						<a href="product.html" class="btn btn-primary d-block">View All Products <span class="fa fa-long-arrow-right"></span></a>
+						<a href="${root }product/product" class="btn btn-primary d-block">View All Products <span class="fa fa-long-arrow-right"></span></a>
 					</div>
 				</div>
 			</div>
 		</section>
   
-    <section class="ftco-section testimony-section img" style="background-image: url(images/bg_4.jpg);">
-    	<div class="overlay"></div>
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-          	<span class="subheading">Testimonial</span>
-            <h2 class="mb-3">Happy Clients</h2>
-          </div>
-        </div>
-        <div class="row ftco-animate">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel ftco-owl">
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-
-		
-    <section class="ftco-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Blog</span>
-            <h2>Recent Blog</h2>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-lg-6 d-flex align-items-stretch ftco-animate">
-          	<div class="blog-entry d-flex">
-          		<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text p-4 bg-light">
-              	<div class="meta">
-              		<p><span class="fa fa-calendar"></span> 23 April 2020</p>
-              	</div>
-                <h3 class="heading mb-3"><a href="#">The Recipe from a Winemaker’s Restaurent</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <a href="#" class="btn-custom">Continue <span class="fa fa-long-arrow-right"></span></a>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 d-flex align-items-stretch ftco-animate">
-          	<div class="blog-entry d-flex">
-          		<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text p-4 bg-light">
-              	<div class="meta">
-              		<p><span class="fa fa-calendar"></span> 23 April 2020</p>
-              	</div>
-                <h3 class="heading mb-3"><a href="#">The Recipe from a Winemaker’s Restaurent</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <a href="#" class="btn-custom">Continue <span class="fa fa-long-arrow-right"></span></a>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 d-flex align-items-stretch ftco-animate">
-          	<div class="blog-entry d-flex">
-          		<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text p-4 bg-light">
-              	<div class="meta">
-              		<p><span class="fa fa-calendar"></span> 23 April 2020</p>
-              	</div>
-                <h3 class="heading mb-3"><a href="#">The Recipe from a Winemaker’s Restaurent</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <a href="#" class="btn-custom">Continue <span class="fa fa-long-arrow-right"></span></a>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 d-flex align-items-stretch ftco-animate">
-          	<div class="blog-entry d-flex">
-          		<a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_4.jpg');">
-              </a>
-              <div class="text p-4 bg-light">
-              	<div class="meta">
-              		<p><span class="fa fa-calendar"></span> 23 April 2020</p>
-              	</div>
-                <h3 class="heading mb-3"><a href="#">The Recipe from a Winemaker’s Restaurent</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <a href="#" class="btn-custom">Continue <span class="fa fa-long-arrow-right"></span></a>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>	
-
-    <footer class="ftco-footer">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-sm-12 col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2 logo"><a href="#">Liquor <span>Store</span></a></h2>
-              <p>Far far away, behind the word mountains, far from the countries.</p>
-              <ul class="ftco-footer-social list-unstyled mt-2">
-                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">My Accounts</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Register</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Log In</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Information</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Quick Link</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New User</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid px-0 py-5 bg-black">
-      	<div class="container">
-      		<div class="row">
-	          <div class="col-md-12">
-		
-	            <p class="mb-0" style="color: rgba(255,255,255,.5);"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-	          </div>
-	        </div>
-      	</div>
-      </div>
-    </footer>
+    <c:import url="/WEB-INF/views/include/bottom_info.jsp" />
     
   
 

@@ -9,8 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProductController {
 	
 	@GetMapping("/home")
-	public String main() {
+	public String home() {
 		return "product/home";
+	}
+	
+	@GetMapping("/product")
+	public String product() {
+		return "product/product";
 	}
 	
 }
