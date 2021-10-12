@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var='root' value="${pageContext.request.contextPath }/" />
 
     <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Liquor Store - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Product Product</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -16,40 +18,26 @@
     <link rel="stylesheet" href="../liquorstore_master/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../liquorstore_master/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="../liquorstore_master/css/magnific-popup.css">
+   
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
     
     <link rel="stylesheet" href="../liquorstore_master/css/flaticon.css">
     <link rel="stylesheet" href="../liquorstore_master/css/style.css">
+    <link rel="stylesheet" href="../liquorstore_master/css/topmenu.css">
+    <!-- <link rel="stylesheet" href="../assets/css/main.css" /> -->
+     
+     
+     <link rel="stylesheet" href="../liquorstore_master/css/searchBar.css">
+    <!-- <link rel="stylesheet" href="https://www.naracellar.com:443/css/default.css?ver=0520">  -->   
+   
+    
   </head>
   <body>
 
-  	<div class="wrap">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 d-flex align-items-center">
-						<p class="mb-0 phone pl-md-2">
-							<a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +00 1234 567</a> 
-							<a href="#"><span class="fa fa-paper-plane mr-1"></span> youremail@email.com</a>
-						</p>
-					</div>
-					<div class="col-md-6 d-flex justify-content-md-end">
-						<div class="social-media mr-4">
-			    		<p class="mb-0 d-flex">
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
-			    		</p>
-		        </div>
-		        <div class="reg">
-		        	<p class="mb-0"><a href="#" class="mr-2">Sign Up</a> <a href="#">Log In</a></p>
-		        </div>
-					</div>
-				</div>
-			</div>
-		</div>
+  	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
     
+    	
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="index.html">Liquor <span>store</span></a>
@@ -86,7 +74,7 @@
 				    </a>
 				  </div>
         </div>
-
+	
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -112,6 +100,8 @@
 	  </nav>
     <!-- END nav -->
     
+    
+    
     <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
@@ -123,7 +113,83 @@
         </div>
       </div>
     </section>
+	
+	<p/>
 
+<div class="search_form_wrap">
+    <form method="get" name="frm_wine" action="${root }product/product" class="sy_form">
+    <div class="select_wrap">
+        <select id="sch" class="winery_select" name="sch" >
+            <option value="">국가</option>
+                        <option value="american" >미국</option>
+                        <option value="france" >프랑스</option>
+                        <option value="itary" >이태리</option>
+                        <option value="spain" >스페인</option>
+                        <option value="prt" >포르투갈</option>
+                    </select>
+
+
+        <!-- <select name="winetype" id="winetype" class="winery_select"> -->
+        <select name="winetype" id="winetype" class="winery_select" >
+
+            <option value="">타입</option>
+            <option value="red" >레드</option>
+            <option value="white" >화이트</option>
+            <option value="rose" >로제</option>
+            <option value="desert" >디저트</option>
+            <option value="sparkling" >스파클링</option>
+        </select>
+
+
+		<select name="sugar1" id="sugar1" class="winery_select short" >
+			<option value="">당도</option>
+			<option value="1" >1</option>
+			<option value="2" >2</option>
+			<option value="3" >3</option>
+			<option value="4" >4</option>
+			<option value="5" >5</option>
+		</select>
+
+
+
+
+		<select name="sugar2" id="sugar2" class="winery_select short" >
+		
+			<option value="">산도</option>
+			<option value="1" >1</option>
+			<option value="2" >2</option>
+			<option value="3" >3</option>
+			<option value="4" >4</option>
+			<option value="5" >5</option>
+		</select>
+
+		<select name="sugar3" id="sugar3" class="winery_select short" >
+			<option value="">바디</option>
+			<option value="1" >1</option>
+			<option value="2" >2</option>
+			<option value="3" >3</option>
+			<option value="4" >4</option>
+			<option value="5" >5</option>
+		</select>
+		
+		<select name="price" id="sugar3" class="winery_select short" >
+			<option value="">가격대</option>
+			<option value="1" >~100000</option>
+			<option value="2" >100000~200000</option>
+			<option value="3" >200000~300000</option>
+			<option value="4" >300000~500000</option>
+			<option value="5" >500000~</option>
+		</select>
+
+
+    </div>
+    <div class="keyword_tab">
+        <input type="text" name="wnames" placeholder="와인 이름" value="" />
+        <input type="submit" class="btn_search_large" value="검색" style="background-image: url('../liquorstore_master/images/searchLogo.png');">
+    </div>
+    </form>
+</div>
+	
     <section class="ftco-section">
 			<div class="container">
 				<div class="row">
@@ -131,20 +197,13 @@
 						<div class="row mb-4">
 							<div class="col-md-12 d-flex justify-content-between align-items-center">
 								<h4 class="product-select">Select Types of Products</h4>
-								<select class="selectpicker" multiple>
-				          <option>Brandy</option>
-				          <option>Gin</option>
-				          <option>Rum</option>
-				          <option>Tequila</option>
-				          <option>Vodka</option>
-				          <option>Whiskey</option>
-				        </select>
+								
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-4 d-flex">
 								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-1.jpg);">
+									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/desert2.png);">
 										<div class="desc">
 											<p class="meta-prod d-flex">
 												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -155,15 +214,15 @@
 									</div>
 									<div class="text text-center">
 										<span class="sale">Sale</span>
-										<span class="category">Brandy</span>
-										<h2>Bacardi 151</h2>
-										<p class="mb-0"><span class="price price-sale">$69.00</span> <span class="price">$49.00</span></p>
+										<span class="category">DESERT</span>
+										<h2>DESERT2</h2>
+										<p class="mb-0"><span class="price price-sale">900,000</span> <span class="price">780,000</span></p>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-4 d-flex">
 								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-2.jpg);">
+									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/desert3.jpg);">
 										<div class="desc">
 											<p class="meta-prod d-flex">
 												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -182,7 +241,7 @@
 							</div>
 							<div class="col-md-4 d-flex">
 								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-3.jpg);">
+									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/white2.png);">
 										<div class="desc">
 											<p class="meta-prod d-flex">
 												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -201,7 +260,7 @@
 							</div>
 							<div class="col-md-4 d-flex">
 								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-4.jpg);">
+									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/white1.jpg);">
 										<div class="desc">
 											<p class="meta-prod d-flex">
 												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -220,7 +279,7 @@
 
 							<div class="col-md-4 d-flex">
 								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-5.jpg);">
+									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/red1.jpg);">
 										<div class="desc">
 											<p class="meta-prod d-flex">
 												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -238,7 +297,7 @@
 							</div>
 							<div class="col-md-4 d-flex">
 								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-6.jpg);">
+									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/red2.jpg);">
 										<div class="desc">
 											<p class="meta-prod d-flex">
 												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -254,116 +313,10 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-4 d-flex">
-								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-7.jpg);">
-										<div class="desc">
-											<p class="meta-prod d-flex">
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-											</p>
-										</div>
-									</div>
-									<div class="text text-center">
-										<span class="category">Vodka</span>
-										<h2>Old Monk</h2>
-										<span class="price">$69.00</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 d-flex">
-								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-8.jpg);">
-										<div class="desc">
-											<p class="meta-prod d-flex">
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-											</p>
-										</div>
-									</div>
-									<div class="text text-center">
-										<span class="category">Whiskey</span>
-										<h2>Jameson Irish Whiskey</h2>
-										<span class="price">$69.00</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 d-flex">
-								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-9.jpg);">
-										<div class="desc">
-											<p class="meta-prod d-flex">
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-											</p>
-										</div>
-									</div>
-									<div class="text text-center">
-										<span class="category">Whiskey</span>
-										<h2>Screwball</h2>
-										<span class="price">$69.00</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 d-flex">
-								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-10.jpg);">
-										<div class="desc">
-											<p class="meta-prod d-flex">
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-											</p>
-										</div>
-									</div>
-									<div class="text text-center">
-										<span class="category">Whiskey</span>
-										<h2>Screwball</h2>
-										<span class="price">$69.00</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 d-flex">
-								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-11.jpg);">
-										<div class="desc">
-											<p class="meta-prod d-flex">
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-											</p>
-										</div>
-									</div>
-									<div class="text text-center">
-										<span class="category">Whiskey</span>
-										<h2>McClelland's</h2>
-										<span class="price">$69.00</span>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 d-flex">
-								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/prod-12.jpg);">
-										<div class="desc">
-											<p class="meta-prod d-flex">
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-											</p>
-										</div>
-									</div>
-									<div class="text text-center">
-										<span class="category">Whiskey</span>
-										<h2>Plantation</h2>
-										<span class="price">$69.00</span>
-									</div>
-								</div>
-							</div>
+							
 						</div>
 						<div class="row mt-5">
+		          <!-- 페이징 처리해야할 부분 -->
 		          <div class="col text-center">
 		            <div class="block-27">
 		              <ul>
@@ -382,17 +335,6 @@
 
 					<div class="col-md-3">
 						<div class="sidebar-box ftco-animate">
-              <div class="categories">
-                <h3>Product Types</h3>
-                <ul class="p-0">
-                	<li><a href="#">Brandy <span class="fa fa-chevron-right"></span></a></li>
-	                <li><a href="#">Gin <span class="fa fa-chevron-right"></span></a></li>
-	                <li><a href="#">Rum <span class="fa fa-chevron-right"></span></a></li>
-	                <li><a href="#">Tequila <span class="fa fa-chevron-right"></span></a></li>
-	                <li><a href="#">Vodka <span class="fa fa-chevron-right"></span></a></li>
-	                <li><a href="#">Whiskey <span class="fa fa-chevron-right"></span></a></li>
-                </ul>
-              </div>
             </div>
 
             <div class="sidebar-box ftco-animate">
@@ -432,7 +374,8 @@
 				</div>
 			</div>
 		</section>
-
+	
+	<!-- 하단은 main css 수정하고나서 바꿔야함 -->
     <footer class="ftco-footer">
       <div class="container">
         <div class="row mb-5">
@@ -529,6 +472,9 @@
   <script src="../liquorstore_master/js/google-map.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
   <script src="../liquorstore_master/js/main.js"></script>
-    
+  <script src="https://www.naracellar.com:443/js/jquery-1.8.3.min.js"></script>
+	<script src="https://www.naracellar.com:443/js/jquery.menu.js?ver=0315"></script>
+<script src="https://www.naracellar.com:443/js/common.js?ver=0315"></script>
+<script src="https://www.naracellar.com:443/js/wrest.js?ver=0315"></script>
   </body>
 </html>
