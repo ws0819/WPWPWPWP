@@ -26,4 +26,7 @@ public class NoticeDAO {
 	public void modifyContentInfo(NoticeBean writeNoticeBean) {
 		noticeMapper.modifyContentInfo(writeNoticeBean);
 	}
+	public void deleteContentInfo(String notice_title) {
+		noticeMapper.deleteContentInfo(notice_title);
+	}
 }

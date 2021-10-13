@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import wine.beans.AdminBean;
 import wine.beans.NoticeBean;
 import wine.service.NoticeService;
 
@@ -25,9 +26,14 @@ public class NoticeController {
 	@GetMapping("/notice_board_read")
 	public String notice_board_read(Model model) {
 		List<NoticeBean> noticeList = noticeService.getNoticeList();
-		List<NoticeBean> noticeList2 = noticeService.getNoticeList();
 		model.addAttribute("noticeList", noticeList);
 		return "notice/notice_board_read";
+	}
+	@GetMapping("/notice_read")
+	public String notice_read(@RequestParam("notice_title") String notice_title, Model model) {
+		NoticeBean noticeInfo = noticeService.getNoticeInfo(notice_title);
+		model.addAttribute("noticeInfo", noticeInfo);
+		return "notice/notice_read";
 	}
 	@GetMapping("/notice_write")
 	public String notice_write(@ModelAttribute("noticeContentBean") NoticeBean writeNoticeBean) {
@@ -50,7 +56,8 @@ public class NoticeController {
 		return "notice/notice_modify";
 	}
 	@GetMapping("/notice_delete")
-	public String notice_delete() {
+	public String notice_delete(@RequestParam("notice_title") String notice_title) {
+		noticeService.deleteContentInfo(notice_title);
 		return "notice/notice_delete";
 	}
 }

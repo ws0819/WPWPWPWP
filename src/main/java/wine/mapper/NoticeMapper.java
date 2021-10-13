@@ -2,6 +2,7 @@ package wine.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -21,4 +22,7 @@ public interface NoticeMapper {
 	
 	@Update("update notice set notice_title = #{notice_title}, notice_content = #{notice_content}, notice_date = sysdate where notice_number = #{notice_number}")
 	void modifyContentInfo(NoticeBean modifyNoticeBean);
+	
+	@Delete("delete from notice where notice_title= #{notice_title}")
+	void deleteContentInfo(String notice_title);
 }

@@ -118,61 +118,14 @@ h3 {
   <tbody>
     <tr>
       <th scope="row">${obj.notice_number }</th>
-      <!-- <td>Mark</td> -->
+ 
       <td>
-		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal">${obj.notice_title }</button>
-	</td>
+		<a href='${root}notice/notice_read?notice_title=${obj.notice_title }'>${obj.notice_title }</a>
+	 </td>
 	
-<!-- Modal -->
-<c:forEach var="modal" items="${noticeList2 }">
-<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">${modal.notice_title}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>     
-		
-			<div class="modal-body">
-	        <!-- 내용 -->
-	         <form id="form1" name="form1" method="post" action="${path}/board/insert.do">
-				<div class="input-group mb-3">
-				  <span class="input-group-text">작성자</span>
-				  <input type="text" class="form-control" placeholder="관리자" aria-label="Username">
-				  <span class="input-group-text">시간</span>
-				  <input type="text" class="form-control" placeholder="${modal.notice_date }" aria-label="Time">
-				</div>
-				 
-	        		  <div >
-					  <textarea>${modal.notice_content }</textarea>
-					 </div>
-
-	       <div style="text-align:right;" >
-	       	<button type = "button" id = "btnDelete" class="btn btn-default">삭제</button> 
-	        <button type = "submit" id = "btnUpdate" class="btn btn-default">답장</button>
-	   		 </div>	
-	   		</form>	 	  
-	      </div>
-	      <div class="modal-footer">
-	      </div>
-	    </div>
-	  </div>
-	</div>  
- </c:forEach>
       <td>${obj.notice_date }</td>
     </tr>
-    <!-- <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr> -->
+
   </tbody>
   </c:forEach>
 </table>

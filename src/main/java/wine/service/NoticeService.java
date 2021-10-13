@@ -26,6 +26,9 @@ public class NoticeService {
 	public void modifyContentInfo(NoticeBean writeNoticeBean) {
 		noticeDAO.modifyContentInfo(writeNoticeBean);
 	}
+	public void deleteContentInfo(String notice_title) {
+		noticeDAO.deleteContentInfo(notice_title);
+	}
 }
 /*
  * @Resource(name="loginAdminBean") private AdminBean loginAdminBean;
