@@ -313,60 +313,34 @@
 					<div class="sidebar-box ftco-animate"></div>
 
 					<div class="sidebar-box ftco-animate">
-						<h3>Recent Blog</h3>
-						<div class="block-21 mb-4 d-flex">
-							<a class="blog-img mr-4"
-								style="background-image: url(../liquorstore_master/images/blog.jpg);"></a>
-							<div class="text">
-								<h3 class="heading">
-									<a href="https://blog.naver.com/e101gram/222499252993">음식에
-										맞는 와인 고르기</a>
-								</h3>
-								<div class="meta">
-									<div>
-										<a href="#"><span class="fa fa-calendar"></span> Apr. 18,
-											2020</a>
-									</div>
-									<div>
-										<a href="#"><span class="fa fa-comment"></span> 19</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="block-21 mb-4 d-flex">
-							<a class="blog-img mr-4"
-								style="background-image: url(../liquorstore_master/images/inst.jpg);"></a>
-							<div class="text">
-								<h3 class="heading">
-									<a href="#">Even the all-powerful Pointing has no control
-										about the blind texts</a>
-								</h3>
-								<div class="meta">
-									<div>
-										<a href="#"><span class="fa fa-calendar"></span> Apr. 18,
-											2020</a>
-									</div>
-									<div>
-										<a href="#"><span class="fa fa-comment"></span> 19</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="block-21 mb-4 d-flex">
-							<a class="blog-img mr-4"
-								style="background-image: url(../liquorstore_master/images/youtube.jpg);"></a>
-							<div class="text">
-								<h3 class="heading">
-									<a href="#">Even the all-powerful Pointing has no control
-										about the blind texts</a>
-								</h3>
-								<div class="meta">
-									<div>
-										<a href="#"><span class="fa fa-calendar"></span> Apr. 18,
-											2020</a>
-									</div>
-									<div>
-										<a href="#"><span class="fa fa-comment"></span> 19</a>
+						 <h3>Recent Blog</h3>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(../liquorstore_master/images/blog.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="https://blog.naver.com/e101gram/222499252993" target="blank">음식에 맞는<br/>와인 고르기</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="fa fa-calendar"></span> Oct. 28, 2021</a></div>
+                    <div><a href="#"><span class="fa fa-comment"></span> 20</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(../liquorstore_master/images/inst.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="https://www.instagram.com/wine.asy/" target="blank">WINE EASY's pick</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="fa fa-calendar"></span> Nov. 01, 2021</a></div>
+                    <div><a href="#"><span class="fa fa-comment"></span> 100</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(../liquorstore_master/images/youtube.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="https://www.youtube.com/watch?v=MhDTMn7hbD0" target="blank">와인선물은 WINEEASY </a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="fa fa-calendar"></span> Apr. 18, 2021</a></div>
+                    <div><a href="#"><span class="fa fa-comment"></span> 19</a></div>
 									</div>
 								</div>
 							</div>
