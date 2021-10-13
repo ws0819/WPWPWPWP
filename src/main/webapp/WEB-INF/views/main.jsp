@@ -33,8 +33,6 @@
         </div>
       
        
-    
-
 		<!-- Intro -->
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content">

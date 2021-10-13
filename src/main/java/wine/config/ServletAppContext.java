@@ -24,6 +24,7 @@ import wine.beans.AdminBean;
 import wine.interceptor.CheckAdminLoginIntercepter;
 import wine.mapper.AdminMapper;
 import wine.mapper.NoticeMapper;
+import wine.mapper.UserMapper;
 
 
 // Spring MVC 프로젝트에 관련된 설정을 하는 클래스
@@ -31,7 +32,7 @@ import wine.mapper.NoticeMapper;
 // Controller 어노테이션이 셋팅되어 있는 클래스를 Controller로 등록한다.
 @EnableWebMvc
 // 스캔할 패키지를 지정한다.
-@ComponentScan(basePackages = "wine.controller")
+@ComponentScan("wine.controller")
 @PropertySource("/WEB-INF/properties/db.properties")
 @ComponentScan("wine.service")
 @ComponentScan("wine.DAO")
@@ -94,6 +95,13 @@ public class ServletAppContext implements WebMvcConfigurer{
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
+	
+	@Bean
+	public MapperFactoryBean<UserMapper> getUserMapper(SqlSessionFactory factory){
+		MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<UserMapper>(UserMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}
 	//메세지(error_message) 선언과 충돌되므로 별도로 관리
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
@@ -104,7 +112,7 @@ public class ServletAppContext implements WebMvcConfigurer{
 	@Bean
 	public ReloadableResourceBundleMessageSource messageSource() {
 		ReloadableResourceBundleMessageSource res = new ReloadableResourceBundleMessageSource();
-		res.setBasename("WEB-INF/properties/error_message");
+		res.setBasename("WEB-INF/properties/error");
 		return res;
 	}
 	//Interceptor
