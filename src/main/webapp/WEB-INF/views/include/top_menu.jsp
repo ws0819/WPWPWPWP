@@ -4,8 +4,9 @@
 
 
 <!-- Header -->
-				<header id="header">
-				<a href="${root}main"><h1>WINE EASY</h1></a>
+
+			<header id="header">
+					<a href="${root}main"><h1>WINE EASY</h1></a>
 				<nav>
 					<ul>
 						<li><a href="${root}subscribe/subscribe">구독서비스</a></li>

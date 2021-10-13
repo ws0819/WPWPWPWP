@@ -16,7 +16,7 @@ u, i, center, dl, dt, dd, ol, ul, li, fieldset,
 form, label, legend, table, caption, tbody,
 tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
-footer, header, hgroup, menu, nav, output, ruby,
+footer,header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -27,7 +27,7 @@ section, summary, time, mark, audio, video {
 	vertical-align: baseline;}
 
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header,hgroup, menu, nav, section {
 	display: block;}
 
 body {
@@ -1181,15 +1181,7 @@ input, select, textarea {
 
 /* Sections/Article */
 
-	header {
-		margin-bottom: 1em;
-	}
-
-		header p {
-			display: block;
-			margin: 1em 0 0 0;
-			padding: 0 0 0.5em 0;
-		}
+	
 
 	footer {
 		margin-top: 2em;

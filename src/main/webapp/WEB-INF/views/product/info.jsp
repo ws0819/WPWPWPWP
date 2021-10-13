@@ -49,7 +49,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../liquorstore_master/css/animate.css">
+    
+    <link rel="stylesheet" href="../liquorstore_master/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../liquorstore_master/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../liquorstore_master/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+    
+    <link rel="stylesheet" href="../liquorstore_master/css/flaticon.css">
+    <link rel="stylesheet" href="../liquorstore_master/css/style.css">
 
 
 
@@ -112,7 +125,7 @@ var g5_cookie_domain = "";
 
 </head>
 <body>
-<c:import url="/WEB-INF/views/include/top_menu.jsp" />
+<c:import url="/WEB-INF/views/product/top_menu.jsp" />
 <!-- Google Tag Manager (noscript) -->
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXCZ8KD"
@@ -424,48 +437,10 @@ if ( mg_swp_child >= 2 ) {
 
 
 
-<div class="tail_wrap">
-
-	<div class="btm_menu">
-		<ul>
-			<li><a href="https://www.naracellar.com:443/nara/about_01.php">회사소개</a></li>
-			<li><a href="https://www.naracellar.com:443/nara/about_04.php">오시는길</a></li>
-			<li><a href="https://www.naracellar.com:443/nara/privacy.php">개인정보처리방침</a></li>
-		</ul>
-	</div>
-
-	<div class="btm_com_info">
-
-		<div class="logo_b">
-			<!-- img src="https://www.naracellar.com:443/img/logo_b.png" alt="" -->
-			<img src="https://www.naracellar.com:443/img/logo_b.svg" alt="">
-		</div>
-
-		<div class="com_info">
-
-			서울특별시 송파구 법원로 11길 25 H비즈니스파크 A동 7층(송파구 문정동 645)<br>
-			A-7F, H Business Park, 25, Beobwon-ro 11-gil, Songpa-gu, Seoul, Republic of Korea<br>
-			TEL : 02-405-4300   FAX : 02-405-4302
-
-			<div class="copy">COPYRIGHTⓒ NARA CELLAR 2021 ALL RIGHTS RESERVED.</div>
-
-		</div>
-
-		<div class="tail_family">
-			<div class="list_pop_down">
-				<span class="title">FAMILY SITE</span>
-				<ul>
-					<li><a href="http://winetime.co.kr/" target="_blank">와인타임</a></li>
-				</ul>
-			</div>
-		</div>
+<c:import url="/WEB-INF/views/product/bottom_info.jsp" />
+    
 
 
-	</div><!-- .btm_com_info -->
-
-
-
-</div>
 
 
 
@@ -536,4 +511,23 @@ $(function() {
 <![endif]-->
 
 </body>
+
+<script src="../liquorstore_master/js/jquery.min.js"></script>
+  <script src="../liquorstore_master/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../liquorstore_master/js/popper.min.js"></script>
+  <script src="../liquorstore_master/js/bootstrap.min.js"></script>
+  <script src="../liquorstore_master/js/jquery.easing.1.3.js"></script>
+  <script src="../liquorstore_master/js/jquery.waypoints.min.js"></script>
+  <script src="../liquorstore_master/js/jquery.stellar.min.js"></script>
+  <script src="../liquorstore_master/js/owl.carousel.min.js"></script>
+  <script src="../liquorstore_master/js/jquery.magnific-popup.min.js"></script>
+  <script src="../liquorstore_master/js/jquery.animateNumber.min.js"></script>
+  <script src="../liquorstore_master/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="../liquorstore_master/js/google-map.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+  <script src="../liquorstore_master/js/main.js"></script>
+
 </html>
+
+
