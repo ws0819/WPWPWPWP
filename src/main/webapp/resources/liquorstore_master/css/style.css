@@ -8037,15 +8037,16 @@ body {
     position: fixed;
     height: 100%;
     width: 100%; }
-
+    
+ /* cart모양 */
 a {
-  -webkit-transition: .3s all ease;
-  -o-transition: .3s all ease;
-  transition: .3s all ease;
-  color: #b7472a; }
+  -webkit-transition: .2s all ease;
+  -o-transition: .2s all ease;
+  transition: .2s all ease;
+  color: #ffffff; }
   a:hover, a:focus {
     text-decoration: none;
-    color: #b7472a;
+    color: #cd3232;
     outline: none !important; }
 
 h1, h2, h3, h4, h5,
@@ -8124,8 +8125,8 @@ h1, h2, h3, h4, h5,
   .ftco-navbar-light .btn-cart {
     display: inline-block;
     position: relative; }
-    .ftco-navbar-light .btn-cart span {
-      font-size: 20px; }
+    .ftco-navbar-light .btn-cart span { /* cart모양사이즈 */
+      font-size: 30px; }
     .ftco-navbar-light .btn-cart div {
       position: absolute;
       top: 0;
@@ -8598,19 +8599,19 @@ h1, h2, h3, h4, h5,
         color: #fff !important; }
 
 .ftco-intro {
-  background: #b7472a; }
+  background: #732019; }
   .ftco-intro .intro {
     z-index: 0;
     position: relative; }
 
 .intro {
   width: 100%;
-  background: #b7472a;
+  background: #732019;
   padding: 30px; }
   .intro.color-1 {
-    background: #ab4227; }
+    background: #732019; }
   .intro.color-2 {
-    background: #a23f25; }
+    background: #732019; }
   .intro .icon {
     margin-right: 20px; }
     .intro .icon span {
