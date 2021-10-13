@@ -23,4 +23,9 @@ public class ProductController {
 		return "product/cart";
 	}
 	
+	@GetMapping("/info")
+	public String info() {
+		return "product/info";
+	}
+	
 }
