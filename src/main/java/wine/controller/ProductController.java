@@ -18,4 +18,9 @@ public class ProductController {
 		return "product/product";
 	}
 	
+	@GetMapping("/cart")
+	public String cart() {
+		return "product/cart";
+	}
+	
 }

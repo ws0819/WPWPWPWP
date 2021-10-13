@@ -43,7 +43,7 @@
 	      <a class="navbar-brand" href="index.html">Liquor <span>store</span></a>
 	      <div class="order-lg-last btn-group">
           <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          	<span class="flaticon-shopping-bag"></span>
+          	<span class="flaticon-shopping-bag" ></span>
           	<div class="d-flex justify-content-center align-items-center"><small>3</small></div>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
@@ -68,11 +68,12 @@
 				    		<p class="mb-0"><a href="#" class="price">$22.50</a><span class="quantity ml-3">Quantity: 01</span></p>
 				    	</div>
 				    </div>
-				    <a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
+				    <a href="${root}product/cart" class="dropdown-item text-center btn-link d-block w-100" >
 				    	View All
 				    	<span class="ion-ios-arrow-round-forward"></span>
 				    </a>
 				  </div>
+				  
         </div>
 	
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
