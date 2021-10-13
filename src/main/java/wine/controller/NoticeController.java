@@ -1,7 +1,10 @@
 package wine.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import wine.beans.AdminBean;
 import wine.beans.NoticeBean;
 import wine.service.NoticeService;
 
@@ -20,8 +24,16 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	@GetMapping("/notice_board_read")
-	public String notice_board_read() {
+	public String notice_board_read(Model model) {
+		List<NoticeBean> noticeList = noticeService.getNoticeList();
+		model.addAttribute("noticeList", noticeList);
 		return "notice/notice_board_read";
+	}
+	@GetMapping("/notice_read")
+	public String notice_read(@RequestParam("notice_title") String notice_title, Model model) {
+		NoticeBean noticeInfo = noticeService.getNoticeInfo(notice_title);
+		model.addAttribute("noticeInfo", noticeInfo);
+		return "notice/notice_read";
 	}
 	@GetMapping("/notice_write")
 	public String notice_write(@ModelAttribute("noticeContentBean") NoticeBean writeNoticeBean) {
@@ -36,11 +48,16 @@ public class NoticeController {
 		return "notice/notice_success";
 	}
 	@GetMapping("/notice_modify")
-	public String notice_modify() {
+	public String notice_modify(@ModelAttribute("noticeContentBean") NoticeBean writeNoticeBean) {
+		return "notice/notice_modify";
+	}
+	@PostMapping("/notice_modify_pro")
+	public String notice_modify_pro(@ModelAttribute("noticeContentBean") NoticeBean writeNoticeBean, BindingResult result) {
 		return "notice/notice_modify";
 	}
 	@GetMapping("/notice_delete")
-	public String notice_delete() {
+	public String notice_delete(@RequestParam("notice_title") String notice_title) {
+		noticeService.deleteContentInfo(notice_title);
 		return "notice/notice_delete";
 	}
 }

@@ -1,5 +1,7 @@
 package wine.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,18 @@ public class NoticeService {
 
 	public void addNoticeInfo(NoticeBean writeNoticeBean) {
 		noticeDAO.addNoticeInfo(writeNoticeBean);
+	}
+	public List<NoticeBean> getNoticeList(){
+		return noticeDAO.getNoticeList();
+	}
+	public NoticeBean getNoticeInfo(String notice_title){
+		return noticeDAO.getNoticeInfo(notice_title);
+	}
+	public void modifyContentInfo(NoticeBean writeNoticeBean) {
+		noticeDAO.modifyContentInfo(writeNoticeBean);
+	}
+	public void deleteContentInfo(String notice_title) {
+		noticeDAO.deleteContentInfo(notice_title);
 	}
 }
 /*
