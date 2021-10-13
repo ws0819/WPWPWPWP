@@ -1,0 +1,185 @@
+@charset "UTF-8";
+.wrap {/* 배경인가바 */
+    height: 100%;
+    width: 100%;
+    background-image: url(image/w7.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.signUp {
+ background-color: rgba( 0, 0, 0, 0.5 ); /* 네모창 투명도 */
+   position: relative;
+   margin: 50px auto;
+   width: 280px;
+   padding: 33px 25px 29px;
+   
+   border-radius: 10px;
+   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.signUp:before,
+.signUp:after {
+   content: '';
+   position: absolute;
+   bottom: 1px;
+   left: 0;
+   right: 0;
+   height: 10px;
+   border-radius: 10px;
+}
+
+.signUp:after {
+   bottom: 3px;
+   border-color: #DCDCDC;
+}
+
+.signUpTitle {
+   margin: -25px -25px 25px;
+   padding: 15px 25px;
+   line-height: 35px;
+   font-size: 20px;
+   font-weight: 300;
+   color: white;
+   text-align: center;
+   text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+      }
+.h1{
+ border:0 solid white; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;
+}
+
+.signUpTitle:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 8px;
+   border-radius: 5px 5px 0 0;
+}
+
+.social-icons {
+    margin: 30px auto;
+    text-align: center;
+}
+.social-icons img {
+    width: 30px ;
+    cursor: pointer;
+}
+
+
+
+.signUpInput {
+   width: 100%;
+   height: 40px;/*칸크기*/
+   margin-bottom: 10px;
+   
+   font-size: 13px;
+   background: white;
+   border: 2px solid #EBEBEB;
+   border-radius: 4px;
+   -webkit-box-shadow: inset, 0, 0, #EBEBEB;
+   box-shadow: inset, 0, 0, #EBEBEB; /* //네모입력칸아래색상 */
+}
+
+ .signUpInput:focus {
+   border-color: #FFC846;
+    outline: none;
+   -webkit-box-shadow: inset 0 -2px #FFC846;
+   box-shadow: inset 0 -2px #FFC846;
+} 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white !important;
+    opacity: 1; /* Firefox */
+    font-size:18px!important;
+}
+
+.lt-ie9 .signUpInput {
+   line-height: 48px;
+}
+
+.loginButton {
+   position: relative;
+   vertical-align: top;
+   width: 100%;
+   height: 48px;
+   padding: 0;
+   font-size: 15px;
+   color: white;
+   text-align: center;
+   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+   background: #FFC94B; 
+   border: 0;
+   margin: 3px;
+   /* border-radius: 5px; */
+   cursor: pointer;
+  
+}
+.loginButton:hover,
+loginButton:hover {
+  background-color:#FBDE82;
+  
+}
+
+.loginButton:active {
+   top: 1px;
+   outline: none;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+}
+
+.signUpButton {
+   position: relative;
+   vertical-align: top;
+   width: 100%;
+   height: 54px;
+   padding: 0;
+   font-size: 18px;
+   color: white;
+   text-align: center;
+   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+   background: #F0776C;
+   border: 0;
+   border-bottom: 2px solid #D76B60;
+   border-radius: 5px;
+   cursor: pointer;
+   -webkit-box-shadow: inset 0 -2px #D76B60;
+   box-shadow: inset 0 -2px #D76B60;
+}
+
+.signUpButton:active {
+   top: 1px;
+   outline: none;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+}
+
+:-moz-placeholder {
+   color: #AAAAAA;
+   font-weight: 300;
+}
+
+::-moz-placeholder {
+   color: #AAAAAA;
+   opacity: 1;
+   font-weight: 300;
+}
+
+::-webkit-input-placeholder {
+   color: #AAAAAA;
+   font-weight: 300;
+}
+
+:-ms-input-placeholder {
+   color: #AAAAAA;
+   font-weight: 300;
+}
+
+::-moz-focus-inner {
+   border: 0;
+   padding: 0;
+}
