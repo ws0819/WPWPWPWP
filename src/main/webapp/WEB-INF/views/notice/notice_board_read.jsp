@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var='root' value="${pageContext.request.contextPath }/" />
 <!doctype html>
 <html lang="en">
@@ -89,12 +90,11 @@ h3 {
 
 
 <c:import url="/WEB-INF/views/include/top_menu.jsp" />
-</head>
-
+<head>
 <!-- 내꺼 부트스트랩 링크 -->
 <link rel="stylesheet" href="../subscribe_product_bot/css/mystyle.css"/>
-   
 </head>
+
 <body>
 
 <!-- 타이틀 -->
@@ -109,47 +109,48 @@ h3 {
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">작성자</th>
-      <th scope="col">내용</th>
+      <!-- <th scope="col">작성자</th> -->
+      <th scope="col">제목</th>
       <th scope="col">시간</th>
     </tr>
   </thead>
+  <c:forEach var="obj" items="${noticeList }">
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>질문있어여
+      <th scope="row">${obj.notice_number }</th>
+      <!-- <td>Mark</td> -->
+      <td>
 		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
-		  ..더보기
-		</button> 
+		<button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal">${obj.notice_title }</button>
 	</td>
 	
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<c:forEach var="modal" items="${noticeList2 }">
+<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">제목따라오기</h5>
+        <h5 class="modal-title" id="exampleModalLabel">${modal.notice_title}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>     
-
+		
 			<div class="modal-body">
 	        <!-- 내용 -->
 	         <form id="form1" name="form1" method="post" action="${path}/board/insert.do">
 				<div class="input-group mb-3">
 				  <span class="input-group-text">작성자</span>
-				  <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+				  <input type="text" class="form-control" placeholder="관리자" aria-label="Username">
 				  <span class="input-group-text">시간</span>
-				  <input type="text" class="form-control" placeholder="Time" aria-label="Time">
+				  <input type="text" class="form-control" placeholder="${modal.notice_date }" aria-label="Time">
 				</div>
 				 
 	        		  <div >
-					  <textarea>질문있는사람 오른손 들어</textarea>
+					  <textarea>${modal.notice_content }</textarea>
 					 </div>
 
-		   <div>
 	       <div style="text-align:right;" >
+	       	<button type = "button" id = "btnDelete" class="btn btn-default">삭제</button> 
+	        <button type = "submit" id = "btnUpdate" class="btn btn-default">답장</button>
 	   		 </div>	
 	   		</form>	 	  
 	      </div>
@@ -157,13 +158,11 @@ h3 {
 	      </div>
 	    </div>
 	  </div>
-	</div>      
-  </div>    
-	     
-      
-      <td>2021:10:11</td>
+	</div>  
+ </c:forEach>
+      <td>${obj.notice_date }</td>
     </tr>
-    <tr>
+    <!-- <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>Thornton</td>
@@ -173,8 +172,9 @@ h3 {
       <th scope="row">3</th>
       <td colspan="2">Larry the Bird</td>
       <td>@twitter</td>
-    </tr>
+    </tr> -->
   </tbody>
+  </c:forEach>
 </table>
 </div>
     

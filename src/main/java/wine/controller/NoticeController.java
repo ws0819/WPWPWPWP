@@ -1,7 +1,10 @@
 package wine.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,7 +23,10 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	@GetMapping("/notice_board_read")
-	public String notice_board_read() {
+	public String notice_board_read(Model model) {
+		List<NoticeBean> noticeList = noticeService.getNoticeList();
+		List<NoticeBean> noticeList2 = noticeService.getNoticeList();
+		model.addAttribute("noticeList", noticeList);
 		return "notice/notice_board_read";
 	}
 	@GetMapping("/notice_write")
@@ -36,7 +42,11 @@ public class NoticeController {
 		return "notice/notice_success";
 	}
 	@GetMapping("/notice_modify")
-	public String notice_modify() {
+	public String notice_modify(@ModelAttribute("noticeContentBean") NoticeBean writeNoticeBean) {
+		return "notice/notice_modify";
+	}
+	@PostMapping("/notice_modify_pro")
+	public String notice_modify_pro(@ModelAttribute("noticeContentBean") NoticeBean writeNoticeBean, BindingResult result) {
 		return "notice/notice_modify";
 	}
 	@GetMapping("/notice_delete")

@@ -1,5 +1,7 @@
 package wine.DAO;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +16,14 @@ public class NoticeDAO {
 	
 	public void addNoticeInfo(NoticeBean writeNoticeBean) {
 		noticeMapper.addNoticeInfo(writeNoticeBean);
+	}
+	public List<NoticeBean> getNoticeList(){
+		return noticeMapper.getNoticeList();
+	}
+	public NoticeBean getNoticeInfo(String notice_title){
+		return noticeMapper.getNoticeInfo(notice_title);
+	}
+	public void modifyContentInfo(NoticeBean writeNoticeBean) {
+		noticeMapper.modifyContentInfo(writeNoticeBean);
 	}
 }
