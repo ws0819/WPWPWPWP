@@ -21,6 +21,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import wine.beans.AdminBean;
+import wine.beans.UserBean;
 import wine.interceptor.CheckAdminLoginIntercepter;
 import wine.mapper.AdminMapper;
 import wine.mapper.NoticeMapper;
@@ -50,6 +51,9 @@ public class ServletAppContext implements WebMvcConfigurer{
 	
 	@Value("${db.password}")
 	private String db_password;
+	
+	@Resource(name="loginUser")
+	private UserBean loginUser;
 	
 	@Resource(name="loginAdminBean")
 	private AdminBean loginAdminBean;
