@@ -50,7 +50,7 @@
   <div class="wrap wd668">
       <div class="container">
        <div class="form_txtInput">
-      <form:form action="${root }user/join_pro" method="get" modelAttribute="joinUserBean">
+      <form:form action="${root }user/join_pro" method="post" modelAttribute="joinUserBean">
       <form:hidden path="userIdExist"/>
        
           <h2 class="sub_tit_txt">WINE EASY 회원가입</h2>
