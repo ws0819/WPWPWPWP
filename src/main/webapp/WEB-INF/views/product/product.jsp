@@ -54,7 +54,7 @@
 				class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate mb-5 text-center">
 					<p class="breadcrumbs mb-0">
-						<span class="mr-2"><a href="index.html">Home <i
+						<span class="mr-2"><a href="">Home <i
 								class="fa fa-chevron-right"></i></a></span> <span>Products <i
 							class="fa fa-chevron-right"></i></span>
 					</p>
@@ -125,7 +125,7 @@
 			<div class="keyword_tab">
 				<input type="text" name="wnames" placeholder="와인 이름" value="" /> <input
 					type="submit" class="btn_search_large" value="검색"
-					style="background-image: url('../liquorstore_master/images/searchLogo.png');">
+					style="background-image: url('../liquorstore_master/images/searchLogo.jpg');">
 			</div>
 		</form>
 	</div>

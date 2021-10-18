@@ -10,7 +10,9 @@
 <body>
 <h3>admin_main</h3>
 <a href="${root }notice/notice_write">공지사항 글쓰기</a><br />
-<a href="${root }notice/notice_board_read">공지사항</a>
+<a href="${root }notice/notice_board_read">공지사항</a><br />
+<a href="${root }faq/faq_write">FAQ 글쓰기</a><br />
+<a href="${root }faq/faq_board">FAQ 글목록</a><br />
 
 </body>
 </html>
