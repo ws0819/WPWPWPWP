@@ -111,21 +111,20 @@ public class ServletAppContext implements WebMvcConfigurer{
 	}
 	
 	@Bean
-<<<<<<< HEAD
 	public MapperFactoryBean<ProductMapper> getProductMapper(SqlSessionFactory factory){
 		MapperFactoryBean<ProductMapper> factoryBean = new MapperFactoryBean<ProductMapper>(ProductMapper.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
-=======
+	
+	@Bean
 	public MapperFactoryBean<FaqMapper> getFaqMapper(SqlSessionFactory factory){
 		MapperFactoryBean<FaqMapper> factoryBean = new MapperFactoryBean<FaqMapper>(FaqMapper.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}	
 	
-	
->>>>>>> refs/remotes/origin/develop
+
 	//메세지(error_message) 선언과 충돌되므로 별도로 관리
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
