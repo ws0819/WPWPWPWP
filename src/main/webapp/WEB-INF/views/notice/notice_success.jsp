@@ -4,5 +4,5 @@
 
 <script>
 	alert('공지사항이 성공적으로 올라갔습니다')
-	location.href="${root}faq/faq_board"
+	location.href="${root}notice/notice_board_read"
 </script>
