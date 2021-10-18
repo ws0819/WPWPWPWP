@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import wine.beans.AdminBean;
 import wine.beans.NoticeBean;
+import wine.beans.PageBean;
 import wine.service.NoticeService;
 
 @RequestMapping("/notice")
@@ -27,9 +28,12 @@ public class NoticeController {
 	private AdminBean loginAdminBean;
 	
 	@GetMapping("/notice_board_read")
-	public String notice_board_read(Model model) {
-		List<NoticeBean> noticeList = noticeService.getNoticeList();
+	public String notice_board_read(@RequestParam(value="page", defaultValue = "1") int page , Model model) {
+		List<NoticeBean> noticeList = noticeService.getNoticeList(page);
 		model.addAttribute("noticeList", noticeList);
+		PageBean pageBean = noticeService.getNoticeCnt(page);
+		model.addAttribute("pageBean", pageBean);
+		model.addAttribute("page", page);
 		return "notice/notice_board_read";
 	}
 	@GetMapping("/notice_read")

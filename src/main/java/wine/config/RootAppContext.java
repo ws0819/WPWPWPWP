@@ -21,7 +21,7 @@ public class RootAppContext {
 	
 	//이름으로 구분해서 등록
 	@Bean("loginAdminBean")
-	@SessionScope
+	@ApplicationScope
 	public AdminBean loginAdminBean() {
 		return new AdminBean();
 	}
