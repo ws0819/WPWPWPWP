@@ -3,6 +3,6 @@
 <c:set var="root" value="${pageContext.request.contextPath }/"/>
 
 <script>
-	alert('공지사항이 성공적으로 올라갔습니다')
-	location.href="${root}faq/faq_board"
+	alert('공지사항이 성공적으로 수정됬습니다')
+	location.href="${root}notice/notice_board_read"
 </script>

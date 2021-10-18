@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+<c:set var="root" value="${pageContext.request.contextPath }/"/>
+
 
 <!DOCTYPE HTML>
 <!--
@@ -122,22 +126,31 @@
 					<header>
 						<h2>무엇이든물어보세요</h2>
 						<!-- 관리자한테 질문 관리자는 관리자페이지에서 그거에 대한 답변 주기 -->
-					</header>
-					<div class="box">
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-							</div>
-							<ul class="actions special">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</form>
-					</div>
-				</div>
-			</section>
+					</header>				
+ 		<form:form action="${root }faq/faq_write_pro" modelAttribute="faqContentBean" method="post" >
+ 		<form:hidden path="faq_number"/>
+                     <div class="fields">
+                        <div class="field half">
+                           <form:input path="faq_username" placeholder="Name" />
+                        </div>
+                        <div class="field half">
+                           <form:input path="faq_email" placeholder="Email" />
+                        </div>
+                        <div class="field">
+                           <form:textarea path="faq_message" placeholder="Message" rows="6"></form:textarea>
+                        </div>
+                     </div>
+                     <ul class="actions special">
+                        <li><form:button>send</form:button></li>
+                        
+                     </ul>
+                  </form:form>  
+                  
+          
+            </div>
+         </section>
 
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
 		<!-- Footer -->
 		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
 

@@ -23,8 +23,8 @@ public class NoticeService {
 	public NoticeBean getNoticeInfo(String notice_title){
 		return noticeDAO.getNoticeInfo(notice_title);
 	}
-	public void modifyContentInfo(NoticeBean writeNoticeBean) {
-		noticeDAO.modifyContentInfo(writeNoticeBean);
+	public void modifyNoticeInfo(NoticeBean modifyNoticeBean) {
+		noticeDAO.modifyNoticeInfo(modifyNoticeBean);
 	}
 	public void deleteContentInfo(String notice_title) {
 		noticeDAO.deleteContentInfo(notice_title);

@@ -23,7 +23,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import wine.beans.AdminBean;
 import wine.beans.UserBean;
 import wine.interceptor.CheckAdminLoginIntercepter;
+import wine.interceptor.CheckLoginInterceptor;
 import wine.mapper.AdminMapper;
+import wine.mapper.FaqMapper;
 import wine.mapper.NoticeMapper;
 import wine.mapper.ProductMapper;
 import wine.mapper.UserMapper;
@@ -109,11 +111,21 @@ public class ServletAppContext implements WebMvcConfigurer{
 	}
 	
 	@Bean
+<<<<<<< HEAD
 	public MapperFactoryBean<ProductMapper> getProductMapper(SqlSessionFactory factory){
 		MapperFactoryBean<ProductMapper> factoryBean = new MapperFactoryBean<ProductMapper>(ProductMapper.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
+=======
+	public MapperFactoryBean<FaqMapper> getFaqMapper(SqlSessionFactory factory){
+		MapperFactoryBean<FaqMapper> factoryBean = new MapperFactoryBean<FaqMapper>(FaqMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}	
+	
+	
+>>>>>>> refs/remotes/origin/develop
 	//메세지(error_message) 선언과 충돌되므로 별도로 관리
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
@@ -134,7 +146,11 @@ public class ServletAppContext implements WebMvcConfigurer{
 		
 		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);	
 		InterceptorRegistration reg1 = registry.addInterceptor(checkAdminLoginIntercepter);
-		reg1.addPathPatterns("/admin/admin_main", "/notice/notice_write");
+		reg1.addPathPatterns("/admin/admin_main", "/notice/notice_write", "/notice/notice_modify");
+		
+		CheckLoginInterceptor checkLoginInterceptor = new CheckLoginInterceptor(loginUser);
+		InterceptorRegistration reg2 = registry.addInterceptor(checkLoginInterceptor);
+		reg2.addPathPatterns("/subscribe/subscribe_product");
 		
 	}
 }

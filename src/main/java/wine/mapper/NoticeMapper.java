@@ -21,7 +21,7 @@ public interface NoticeMapper {
 	NoticeBean getNoticeInfo(String notice_title);
 	
 	@Update("update notice set notice_title = #{notice_title}, notice_content = #{notice_content}, notice_date = sysdate where notice_number = #{notice_number}")
-	void modifyContentInfo(NoticeBean modifyNoticeBean);
+	void modifyNoticeInfo(NoticeBean modifyNoticeBean);
 	
 	@Delete("delete from notice where notice_title= #{notice_title}")
 	void deleteContentInfo(String notice_title);

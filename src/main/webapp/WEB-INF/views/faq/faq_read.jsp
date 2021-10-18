@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var='root' value="${pageContext.request.contextPath }/" />
 <!doctype html>
 <html lang="en">
@@ -38,28 +37,29 @@
  <!-- 내용 -->
 	         <div class="container" >
 				<div class="input-group mb-3" style="margin-top:100px;">
-				  <form:hidden path="notice_number"/>
-				  <span class="input-group-text">제목</span>
-				  <input type="text" class="form-control" placeholder="${noticeInfo.notice_title }" readonly="readonly" aria-label="Username">
+									
+				  <span class="input-group-text">이름</span>
+				  <input type="text" class="form-control" placeholder="${faqInfo.faq_username }" aria-label="Username">
+				  <span class="input-group-text">이메일</span>
+				  <input type="text" class="form-control" placeholder="${faqInfo.faq_email }" aria-label="email">			  
 				  <span class="input-group-text">시간</span>
-				  <input type="text" class="form-control" placeholder="${noticeInfo.notice_date }" readonly="readonly" aria-label="Time">
+				  <input type="text" class="form-control" placeholder="${faqInfo.faq_date }" aria-label="Time">
+
 				</div>
 				 
 			       <div class="input-group">
 			 	
-		 	 <textarea class="form-control text-center" aria-label="With textarea" readonly="readonly" placeholder="${noticeInfo.notice_content }"></textarea>
+		 	 <textarea class="form-control text-center" aria-label="With textarea" placeholder="${faqInfo.faq_message }"></textarea>
 				</div>
-					 
-			 <c:if test="${adminLogin==true }">
+				
+		 <div>
 		        <div style="text-align:right; margin-top:30px" >
-
-		        <a href="${root}notice/notice_delete?noticeDelete_title=${noticeInfo.notice_title}">삭제</a>
-		        <a href="${root}notice/notice_modify?noticeModify_title=${noticeInfo.notice_title}&notice_number=${notice_number}">수정</a>
-		        </div>
-			</c:if>
-		
-
-
+		        <a href="${root}faq/faq_answer">답장</a>
+		      
+		       
+		       </div>
+			</div> 
+				
 
 
    <!-- 내꺼 부트스트랩 js -->

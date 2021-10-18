@@ -1,8 +1,11 @@
 package wine.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import wine.beans.FaqBean;
 
 
 
@@ -16,7 +19,7 @@ public class HomeController {
 	public String home() {
 		
 		//System.out.println(loginUserBean);
-		return "redirect:/main";
+		return "redirect:main";
 	}
 	
 }
