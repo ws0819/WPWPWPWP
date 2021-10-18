@@ -25,7 +25,6 @@ public class FaqService {
 	public FaqBean getFaqInfo(int faq_number) {
 		return faqDAO.getFaqInfo(faq_number);				
 	}
-	
 
 
 }

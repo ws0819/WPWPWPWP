@@ -23,6 +23,7 @@ h1 {
 	text-align: right;
 	right: 0;
 	top: 0;
+	
 }
 
 .search_form_wrap .keyword_tab input[type="text"] {
@@ -35,9 +36,9 @@ h1 {
 	background: transparent;
 	border: none;
 	border-bottom: 1px solid #9a253c;
-	font-size: 20px;
+	font-size: 15px;
 	outline: none;
-	
+	opacity: .7;
 }
 
 .search_form_wrap .keyword_tab .btn_search_large {

@@ -263,7 +263,7 @@
 
    </section>
 
-
+	
    <section class="ftco-section">
          <div class="container">
             <div class="row justify-content-center pb-5">
@@ -273,9 +273,10 @@
           </div>
         </div>
             <div class="row">
-               <div class="col-md-3 d-flex">
+            	<c:forEach var="obj" items="${wineProductBean }">
+                <div class="col-md-3 d-flex">
                   <div class="product ftco-animate">
-                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/white1.jpg);">
+                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/${obj.wine_img});">
                         <div class="desc">
                            <p class="meta-prod d-flex">
                               <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -285,142 +286,14 @@
                         </div>
                      </div>
                      <div class="text text-center">
-                        <span class="sale">Sale</span>
-                        <span class="category">WHITE</span>
-                        <h2>Comandante Chardonnay</h2>
-                        <p class="mb-0"><span class="price price-sale">890,000</span> <span class="price">790,000</span></p>
+                        <span class="category">${obj.wine_type }</span>
+                        <h2>${obj.wine_name }</h2>
+                        <p class="mb-0"><span class="price">${obj.wine_price }</span></p>
                      </div>
                   </div>
                </div>
-               <div class="col-md-3 d-flex">
-                  <div class="product ftco-animate">
-                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/desert1.jpg);">
-                        <div class="desc">
-                           <p class="meta-prod d-flex">
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                           </p>
-                        </div>
-                     </div>
-                     <div class="text text-center">
-                        <span class="seller">Best Seller</span>
-                        <span class="category">DESERT</span>
-                        <h2>Toro Albala, Don PX Convento Seleccion</h2>
-                        <span class="price">935,000</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-3 d-flex">
-                  <div class="product ftco-animate">
-                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/sparkling1.jpg);">
-                        <div class="desc">
-                           <p class="meta-prod d-flex">
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                           </p>
-                        </div>
-                     </div>
-                     <div class="text text-center">
-                        <span class="new">New</span>
-                        <span class="category">SPARKLING</span>
-                        <h2>Besserat de Bellefon, Cuvee BB 1843</h2>
-                        <span class="price">128,000</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-3 d-flex">
-                  <div class="product ftco-animate">
-                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/red1.jpg);">
-                        <div class="desc">
-                           <p class="meta-prod d-flex">
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                           </p>
-                        </div>
-                     </div>
-                     <div class="text text-center">
-                        <span class="category">RED</span>
-                        <h2>La Spinetta, Barolo Campe</h2>
-                        <span class="price">790,000</span>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="col-md-3 d-flex">
-                  <div class="product ftco-animate">
-                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/white2.png);">
-                        <div class="desc">
-                           <p class="meta-prod d-flex">
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                           </p>
-                        </div>
-                     </div>
-                     <div class="text text-center">
-                        <span class="category">WHITE</span>
-                        <h2>Egon Muller, Scharzhofberger Spatlese</h2>
-                        <span class="price">670,000</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-3 d-flex">
-                  <div class="product ftco-animate">
-                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/desert3.jpg);">
-                        <div class="desc">
-                           <p class="meta-prod d-flex">
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                           </p>
-                        </div>
-                     </div>
-                     <div class="text text-center">
-                        <span class="category">DESERT</span>
-                        <h2>Dow's, 40 Year Old Tawny Port</h2>
-                        <span class="price">298,000</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-3 d-flex">
-                  <div class="product ftco-animate">
-                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/desert2.png);">
-                        <div class="desc">
-                           <p class="meta-prod d-flex">
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                           </p>
-                        </div>
-                     </div>
-                     <div class="text text-center">
-                        <span class="category">DESERT</span>
-                        <h2>Graham's Port, 30 Years Tawny Port</h2>
-                        <span class="price">890,000</span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-3 d-flex">
-                  <div class="product ftco-animate">
-                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/red2.jpg);">
-                        <div class="desc">
-                           <p class="meta-prod d-flex">
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                           </p>
-                        </div>
-                     </div>
-                     <div class="text text-center">
-                        <span class="category">RED</span>
-                        <h2>Jean Louis Chave, Hermitage </h2>
-                        <span class="price">698,000</span>
-                     </div>
-                  </div>
-               </div>
+               </c:forEach>
+              
             </div>
             <div class="row justify-content-center">
                <div class="col-md-4">
