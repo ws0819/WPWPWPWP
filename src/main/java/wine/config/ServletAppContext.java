@@ -24,6 +24,7 @@ import wine.beans.AdminBean;
 import wine.beans.UserBean;
 import wine.interceptor.CheckAdminLoginIntercepter;
 import wine.mapper.AdminMapper;
+import wine.mapper.FaqMapper;
 import wine.mapper.NoticeMapper;
 import wine.mapper.UserMapper;
 
@@ -106,6 +107,15 @@ public class ServletAppContext implements WebMvcConfigurer{
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
+	
+	@Bean
+	public MapperFactoryBean<FaqMapper> getFaqMapper(SqlSessionFactory factory){
+		MapperFactoryBean<FaqMapper> factoryBean = new MapperFactoryBean<FaqMapper>(FaqMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}	
+	
+	
 	//메세지(error_message) 선언과 충돌되므로 별도로 관리
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {

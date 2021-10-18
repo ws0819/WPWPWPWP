@@ -37,25 +37,29 @@
  <!-- 내용 -->
 	         <div class="container" >
 				<div class="input-group mb-3" style="margin-top:100px;">
-					
-				  <span class="input-group-text">제목</span>
-				  <input type="text" class="form-control" placeholder="${noticeInfo.notice_title }" aria-label="Username">
+									
+				  <span class="input-group-text">이름</span>
+				  <input type="text" class="form-control" placeholder="${faqInfo.faq_username }" aria-label="Username">
+				  <span class="input-group-text">이메일</span>
+				  <input type="text" class="form-control" placeholder="${faqInfo.faq_email }" aria-label="email">			  
 				  <span class="input-group-text">시간</span>
-				  <input type="text" class="form-control" placeholder="${noticeInfo.notice_date }" aria-label="Time">
+				  <input type="text" class="form-control" placeholder="${faqInfo.faq_date }" aria-label="Time">
+
 				</div>
 				 
 			       <div class="input-group">
 			 	
-		 	 <textarea class="form-control text-center" aria-label="With textarea" placeholder="${noticeInfo.notice_content }"></textarea>
+		 	 <textarea class="form-control text-center" aria-label="With textarea" placeholder="${faqInfo.faq_message }"></textarea>
 				</div>
-					 
-			 <div>
+				
+		 <div>
 		        <div style="text-align:right; margin-top:30px" >
-<%-- 		        <a href="${root}notice/notice_delete?notice_title=${noticeInfo.notice_title}">삭제</a>
-		        <a href="${root}notice/notice_modify?notice_title=${noticeInfo.notice_title}">수정</a> --%>
+		        <a href="${root}faq/faq_answer">답장</a>
+		      
+		       
 		       </div>
-			</div>
-
+			</div> 
+				
 
 
    <!-- 내꺼 부트스트랩 js -->

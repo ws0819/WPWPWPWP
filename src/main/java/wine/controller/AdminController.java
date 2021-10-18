@@ -52,4 +52,5 @@ public class AdminController {
 	public String admin_not() {
 		return "admin/admin_not";
 	}
+ 
 }

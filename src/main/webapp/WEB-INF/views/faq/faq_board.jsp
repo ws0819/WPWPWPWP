@@ -11,7 +11,7 @@
 <meta name="author"
    content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.88.1">
-<title>Pricing example · Bootstrap v5.1</title>
+<title>faq_board</title>
 
 
 <style>
@@ -99,7 +99,7 @@ h3 {
 
 <!-- 타이틀 -->
 <div style="margin-top:100px; margin-bottom:100px;">
-<H3><font color="#555555"  >NOTICE BOARD</font></H3>
+<H3><font color="#555555"  >FAQ</font></H3>
 </div>
 <p/>
 
@@ -108,23 +108,29 @@ h3 {
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <!-- <th scope="col">작성자</th> -->
-      <th scope="col">작성자</th>
-      <th scope="col">공지사항 제목</th>
-      <th scope="col">시간</th>
+      <td scope="col">#</td>
+      <td scope="col">이름</td>
+      <td scope="col">이메일</td>
+      <td scope="col">메세지</td>
+      <td scope="col">시간</td>
+   
     </tr>
   </thead>
-  <c:forEach var="obj" items="${noticeList }">
+  
+  <c:forEach var="obj" items="${faqList }">
   <tbody>
     <tr>
-      <th scope="row">${obj.notice_number }</th>
- 	  <td>관리자</td>
-      <td>
-		<a href='${root}notice/notice_read?notice_title=${obj.notice_title }'>${obj.notice_title }</a>
-	 </td>
-	
-      <td>${obj.notice_date }</td>
+      <th scope="row">
+		<a href='${root}faq/faq_read?faq_number=${obj.faq_number }'>${obj.faq_number }</a>
+		</th>
+
+      <td> ${obj.faq_username}</td>
+      
+ 	 <td> ${obj.faq_email }</td>
+
+      <td>${obj.faq_message}</td>
+
+       <td>${obj.faq_date }</td>
     </tr>
 
   </tbody>
