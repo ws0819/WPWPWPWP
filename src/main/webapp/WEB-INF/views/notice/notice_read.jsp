@@ -52,17 +52,13 @@
 					 
 			 <c:if test="${adminLogin==true }">
 		        <div style="text-align:right; margin-top:30px" >
-<<<<<<< HEAD
+
 		        <a href="${root}notice/notice_delete?noticeDelete_title=${noticeInfo.notice_title}">삭제</a>
 		        <a href="${root}notice/notice_modify?noticeModify_title=${noticeInfo.notice_title}&notice_number=${notice_number}">수정</a>
 		        </div>
 			</c:if>
-=======
-<%-- 		        <a href="${root}notice/notice_delete?notice_title=${noticeInfo.notice_title}">삭제</a>
-		        <a href="${root}notice/notice_modify?notice_title=${noticeInfo.notice_title}">수정</a> --%>
-		       </div>
-			</div>
->>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
+		
+
 
 
 

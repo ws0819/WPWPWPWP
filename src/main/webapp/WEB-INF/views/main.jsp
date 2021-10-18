@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<<<<<<< HEAD
-=======
+
 <c:set var="root" value="${pageContext.request.contextPath }/"/>
->>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
+
 
 <!DOCTYPE HTML>
 <!--
@@ -120,38 +119,14 @@
 
 				</div>
 			</section>
-<%-- 
+
 		<!-- Contact -->
 			<section id="contact" class="main style3 secondary">
 				<div class="content">
 					<header>
 						<h2>무엇이든물어보세요</h2>
 						<!-- 관리자한테 질문 관리자는 관리자페이지에서 그거에 대한 답변 주기 -->
-					</header>
-<<<<<<< HEAD
-					<div class="box">
-						<form:form action="${root }faq/faq_read" modelAttribute="faq_modal" method="post" >
-							<div class="fields">
-								<div class="field half">
-									<form:input path="faq_name" placeholder="Name" />
-								</div>
-								<div class="field half">
-									<form:input path="faq_email" placeholder="Email" />
-								</div>
-								<div class="field">
-									<form:textarea path="faq_message" placeholder="Message" rows="6"></form:textarea>
-								</div>
-							</div>
-							<ul class="actions special">
-								<li>form:<button>send</button></li>
-							</ul>
-						</form:form>
-					</div>
-				</div>
-			</section>
- --%>
-=======
-					
+					</header>				
  		<form:form action="${root }faq/faq_write_pro" modelAttribute="faqContentBean" method="post" >
  		<form:hidden path="faq_number"/>
                      <div class="fields">
