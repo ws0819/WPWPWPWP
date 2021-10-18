@@ -25,6 +25,7 @@ import wine.beans.UserBean;
 import wine.interceptor.CheckAdminLoginIntercepter;
 import wine.mapper.AdminMapper;
 import wine.mapper.NoticeMapper;
+import wine.mapper.ProductMapper;
 import wine.mapper.UserMapper;
 
 
@@ -103,6 +104,13 @@ public class ServletAppContext implements WebMvcConfigurer{
 	@Bean
 	public MapperFactoryBean<UserMapper> getUserMapper(SqlSessionFactory factory){
 		MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<UserMapper>(UserMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}
+	
+	@Bean
+	public MapperFactoryBean<ProductMapper> getProductMapper(SqlSessionFactory factory){
+		MapperFactoryBean<ProductMapper> factoryBean = new MapperFactoryBean<ProductMapper>(ProductMapper.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
