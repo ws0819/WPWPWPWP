@@ -126,7 +126,8 @@
 					<header>
 						<h2>무엇이든물어보세요</h2>
 						<!-- 관리자한테 질문 관리자는 관리자페이지에서 그거에 대한 답변 주기 -->
-					</header>				
+					</header>	
+					<div class="box">			
  		<form:form action="${root }faq/faq_write_pro" modelAttribute="faqContentBean" method="post" >
  		<form:hidden path="faq_number"/>
                      <div class="fields">
@@ -145,12 +146,13 @@
                         
                      </ul>
                   </form:form>  
+                  </div>
                   
           
             </div>
          </section>
 
->>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
+
 		<!-- Footer -->
 		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
 
