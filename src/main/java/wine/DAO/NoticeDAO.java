@@ -23,8 +23,8 @@ public class NoticeDAO {
 	public NoticeBean getNoticeInfo(String notice_title){
 		return noticeMapper.getNoticeInfo(notice_title);
 	}
-	public void modifyContentInfo(NoticeBean writeNoticeBean) {
-		noticeMapper.modifyContentInfo(writeNoticeBean);
+	public void modifyNoticeInfo(NoticeBean modifyNoticeBean) {
+		noticeMapper.modifyNoticeInfo(modifyNoticeBean);
 	}
 	public void deleteContentInfo(String notice_title) {
 		noticeMapper.deleteContentInfo(notice_title);

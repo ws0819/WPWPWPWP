@@ -23,6 +23,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import wine.beans.AdminBean;
 import wine.beans.UserBean;
 import wine.interceptor.CheckAdminLoginIntercepter;
+import wine.interceptor.CheckLoginInterceptor;
 import wine.mapper.AdminMapper;
 import wine.mapper.NoticeMapper;
 import wine.mapper.UserMapper;
@@ -126,7 +127,11 @@ public class ServletAppContext implements WebMvcConfigurer{
 		
 		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);	
 		InterceptorRegistration reg1 = registry.addInterceptor(checkAdminLoginIntercepter);
-		reg1.addPathPatterns("/admin/admin_main", "/notice/notice_write");
+		reg1.addPathPatterns("/admin/admin_main", "/notice/notice_write", "/notice/notice_modify");
+		
+		CheckLoginInterceptor checkLoginInterceptor = new CheckLoginInterceptor(loginUser);
+		InterceptorRegistration reg2 = registry.addInterceptor(checkLoginInterceptor);
+		reg2.addPathPatterns("/subscribe/subscribe_product");
 		
 	}
 }

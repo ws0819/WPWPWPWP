@@ -120,7 +120,7 @@ h3 {
       <th scope="row">${obj.notice_number }</th>
  
       <td>
-		<a href='${root}notice/notice_read?notice_title=${obj.notice_title }'>${obj.notice_title }</a>
+		<a href='${root}notice/notice_read?notice_title=${obj.notice_title }&notice_number=${obj.notice_number}'>${obj.notice_title }</a>
 	 </td>
 	
       <td>${obj.notice_date }</td>

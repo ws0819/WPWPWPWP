@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE HTML>
 <!--
@@ -115,7 +116,7 @@
 
 				</div>
 			</section>
-
+<%-- 
 		<!-- Contact -->
 			<section id="contact" class="main style3 secondary">
 				<div class="content">
@@ -124,20 +125,26 @@
 						<!-- 관리자한테 질문 관리자는 관리자페이지에서 그거에 대한 답변 주기 -->
 					</header>
 					<div class="box">
-						<form method="post" action="#">
+						<form:form action="${root }faq/faq_read" modelAttribute="faq_modal" method="post" >
 							<div class="fields">
-								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
+								<div class="field half">
+									<form:input path="faq_name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<form:input path="faq_email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<form:textarea path="faq_message" placeholder="Message" rows="6"></form:textarea>
+								</div>
 							</div>
 							<ul class="actions special">
-								<li><input type="submit" value="Send Message" /></li>
+								<li>form:<button>send</button></li>
 							</ul>
-						</form>
+						</form:form>
 					</div>
 				</div>
 			</section>
-
+ --%>
 		<!-- Footer -->
 		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
 
