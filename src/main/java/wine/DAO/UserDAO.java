@@ -23,5 +23,17 @@ public class UserDAO {
 	public UserBean getLoginUserInfo(UserBean tempLoginUserBean) {
 		return userMapper.getLoginUserInfo(tempLoginUserBean);
 	}
+	public UserBean getModifyUserInfo(int user_number) {
+		return userMapper.getModifyUserInfo(user_number);
+	}
+	public void modifyUserInfo(UserBean userMyPage) {
+		userMapper.modifyUserInfo(userMyPage);
+	}
 	
+	public UserBean userMyPage(int user_number) {
+		return userMapper.userMyPage(user_number);
+	}
+	public UserBean userModify(int user_number) {
+		return userMapper.userModify(user_number);
+	}
 }

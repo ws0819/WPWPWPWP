@@ -21,7 +21,7 @@ public class UserValidator implements Validator{
 		   String BeanName = errors.getObjectName();
 		      System.out.println(BeanName);
 
-		      if (BeanName.equals("joinUserBean")) {
+		      if (BeanName.equals("joinUserBean")||BeanName.equals("userModify")) {
 		         if (userBean.getUser_pw().equals(userBean.getUser_pw2()) == false) {
 		            errors.rejectValue("user_pw", "NotEquals");  
 		            errors.rejectValue("user_pw2", "NotEquals");
@@ -29,7 +29,7 @@ public class UserValidator implements Validator{
 
 		         
 		         if (BeanName.equals("joinUserBean")) {
-		            if (userBean.isUserIdExist() == false) { //
+		            if (userBean.isUserIdExist() == false) {
 		               errors.rejectValue("user_id", "CheckMissing");
 		            }
 		         }

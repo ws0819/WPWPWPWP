@@ -8,7 +8,8 @@ import wine.beans.FaqBean;
 
 @Controller
 public class MainController {
-
+	
+	
 	@GetMapping("/main")
 	public String main(@ModelAttribute("faqContentBean") FaqBean writeFaqeBean) {
 		return "main";

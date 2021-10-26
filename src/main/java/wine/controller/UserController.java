@@ -12,9 +12,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import wine.DAO.UserDAO;
 import wine.beans.UserBean;
 import wine.service.UserService;
 import wine.validator.UserValidator;
@@ -25,6 +29,7 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
 	
 	@Resource(name="loginUser")
 	private UserBean loginUser;
@@ -74,6 +79,7 @@ public class UserController {
 		}
 		
 		userService.addUserInfo(joinUserBean);
+		
 		return "user/join_suc";
 		
 	}
@@ -85,10 +91,40 @@ public class UserController {
 	      binder.addValidators(validator1);
 	   }
 	   
-	   @GetMapping("/logout")
+	  @GetMapping("/logout")
 	   public String logout() {
 	      loginUser.setUserLogin(false);
 	      return "user/logout";
 	   }
+	  
+	  @GetMapping("/mypage")
+	  public String mypage(@ModelAttribute("userMyPage") UserBean userMyPage) {
+		  
+		 userService.userMyPage(userMyPage);
+		  return "user/mypage";
+	  } 
+	  
+	  @GetMapping("/modify")
+	  public String modify(@ModelAttribute("userModify") UserBean userModify) {
+
+		  userService.userModify(userModify);
+		  System.out.println(userModify.getUser_number());
+		  return "user/modify";
+	  }
+	  
+	  @PostMapping("/modify_pro")
+		public String modify_pro(@Valid @ModelAttribute("userMyPage") UserBean userMyPage, BindingResult result) {
+		  
+			if(result.hasErrors()) {
+				
+				return "user/modify_fail";
+			}
+			
+			userService.modifyUserInfo(userMyPage);
+			
+			return "user/modify_suc";
+			
+		}
+
 	}
 	

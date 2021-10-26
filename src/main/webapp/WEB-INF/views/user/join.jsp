@@ -1,20 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var='root' value="${pageContext.request.contextPath }/" />
 
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>회원가입</title>
+<link rel="shortcut icon" href="#">
   <meta charset="UTF-8">
   
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../user_boot/css/join.css" />
-  
+  <title>회원가입</title>
 </head>
-<script>
+
+<script type="text/javascript">
    function checkUserIdExist() { 
       //변수선언 : 사용자가 입력한 아이디
 
@@ -44,14 +44,16 @@
       $("#userIdExist").val('false')
    }
 </script>
-<body>
 
+<body>
    <c:import url="/WEB-INF/views/include/top_menu.jsp" />
   <div class="wrap wd668">
       <div class="container">
+        <form:form action="${root }user/join_pro" method="post" modelAttribute="joinUserBean">
+     	<form:hidden path="userIdExist"/>
        <div class="form_txtInput">
-      <form:form action="${root }user/join_pro" method="post" modelAttribute="joinUserBean">
-      <form:hidden path="userIdExist"/>
+      
+
        
           <h2 class="sub_tit_txt">WINE EASY 회원가입</h2>
           <p class="exTxt">회원가입시 휴대폰 본인인증이 필요합니다</p>
@@ -65,7 +67,6 @@
               
               <tbody>
                 <tr>
-               
                   <th><span><form:label path="user_id">아이디</form:label></span></th>
                   <td><form:input path="user_id" onkeypress="resetUserIdExist()"/>
                     <a href="javascript:void(0)"  class="btn_confirm" onclick="checkUserIdExist(); return false;">중복확인</a>  
@@ -136,19 +137,23 @@
           </div>
         <form:button class="btn_register" >회원가입</form:button> 
          
-          </form:form>
+          
         </div> <!-- form_txtInput E -->
-     
+       </form:form>
       </div><!-- content E-->
+    
    <c:import url="/WEB-INF/views/include/bottom_info.jsp" />
     </div> <!-- container E -->
        
+
+
+
  <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </body>
 
-
-
+   <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
 </html>
