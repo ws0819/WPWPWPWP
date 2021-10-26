@@ -3,7 +3,7 @@
 <c:set var='root' value="${pageContext.request.contextPath }/" />
  <div class="wrap">
          <div class="container">
-            <div class="row">
+            <div class="seyoungrow">
                <div class="col-md-6 d-flex" >
                   <p class="mb-0 d-flex"></p>
                    <a class="navbar-brand" href="${root }main" style="color:#98C593;">WINE EASY</a>

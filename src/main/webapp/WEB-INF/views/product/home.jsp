@@ -209,11 +209,11 @@
    
       <section class="ftco-section ftco-no-pb">
          <div class="container" >
-            <div class="seyoungrow" >
+            <div class="row" style="width: 1270px;">
                <div class="col-lg-2 col-md-4 " >
                   <div class="sort w-100 text-center ftco-animate">
                      <div class="img" style="background-image: url(../liquorstore_master/images/레드와인로고.jpg);"
-                     onclick="location.href='#'"></div>
+                     onclick="location.href='${root}product/product?wine_type=Red'"></div>
                      <h3>RED</h3>
                      
                   </div>
@@ -221,28 +221,28 @@
                <div class="col-lg-2 col-md-4 ">
                   <div class="sort w-100 text-center ftco-animate">
                      <div class="img" style="background-image: url(../liquorstore_master/images/화이트와인로고.jpg);"
-                     onclick="location.href='#'"></div>
+                     onclick="location.href='${root}product/product?wine_type=White'"></div>
                      <h3>WHITE</h3>
                   </div>
                </div>
                <div class="col-lg-2 col-md-4 ">
                   <div class="sort w-100 text-center ftco-animate">
                      <div class="img" style="background-image: url(../liquorstore_master/images/스파클링와인로고.jpg);"
-                     onclick="location.href='#'"></div>
+                     onclick="location.href='${root}product/product?wine_type=Sparkling'"></div>
                      <h3>SPARKLING</h3>
                   </div>
                </div>
                <div class="col-lg-2 col-md-4 ">
                   <div class="sort w-100 text-center ftco-animate">
                      <div class="img" style="background-image: url(../liquorstore_master/images/로제와인로고.jpg);"
-                     onclick="location.href='#'"></div>
+                     onclick="location.href='${root}product/product?wine_type=Rose'"></div>
                      <h3>ROSE</h3>
                   </div>
                </div>
                <div class="col-lg-2 col-md-4 ">
                   <div class="sort w-100 text-center ftco-animate">
                      <div class="img" style="background-image: url(../liquorstore_master/images/디저트와인로고.jpg);"
-                     onclick="location.href='#'"></div>
+                     onclick="location.href='${root}product/product?wine_type=Fortified'"></div>
                      <h3>DESERT</h3>
                   </div>
                </div>
@@ -279,9 +279,12 @@
                      <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/${obj.wine_img});">
                         <div class="desc">
                            <p class="meta-prod d-flex">
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                              <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                             <a href="${root }product/cart_pro?wine_number=${obj.wine_number}" class="d-flex align-items-center justify-content-center">
+											<span class="flaticon-shopping-bag"></span></a> 
+											<a href="${root }product/cart" class="d-flex align-items-center justify-content-center">
+											<span class="flaticon-shopping-bag"></span></a> 
+											<a href="${root }product/info" class="d-flex align-items-center justify-content-center">
+											<span class="flaticon-visibility"></span></a>
                            </p>
                         </div>
                      </div>

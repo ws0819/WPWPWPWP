@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var='root' value="${pageContext.request.contextPath }/" />
@@ -130,7 +131,7 @@
 				<form:input path="wine_name" placeholder="와인 이름" /> 
 				<form:button type="submit" class="btn_search_large" value="검색"
 					style="background-image: url('../liquorstore_master/images/searchLogo.jpg');">
-				</form:button>	
+				</form:button>
 			</div>
 		</form:form>
 	</div>
@@ -175,6 +176,7 @@
 						</div>
 						</c:forEach>
 					</div>
+					
 					<div class="row mt-5">
 						<!-- 페이징 처리해야할 부분 -->
 						<div class="col text-center">

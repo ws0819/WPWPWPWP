@@ -5,8 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class WineProductBean {
-	
+public class CartBean {
+
 	private int wine_number;
 	private String wine_name;
 	private int wine_stock;
@@ -24,11 +24,15 @@ public class WineProductBean {
 	private String wine_body;
 	private String wine_tannin;
 	private int wine_idx;
+	private int cart_number;
+	private int product_number;
+	private String cart_date;
+	private int cart_amount;
 	
-	public WineProductBean() {
+	public CartBean() {
 		wine_img="dddd.jpg";
+		cart_amount=1;
 	}
-	
 	
 	
 }

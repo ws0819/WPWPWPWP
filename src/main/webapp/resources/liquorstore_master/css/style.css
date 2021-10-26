@@ -501,8 +501,7 @@ pre {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: calc(120%);
-  margin-right: -15px;
+  margin-right: -1500px;
   margin-left: -15px; }  
   
 .no-gutters {
@@ -9145,7 +9144,8 @@ h1, h2, h3, h4, h5,
   font-size: 18px;
   border-radius: 5px;
   -webkit-box-shadow: none !important;
-  box-shadow: none !important; }
+  box-shadow: none !important;
+  text-align: center; }
   .form-control:focus, .form-control:active {
     border-color: #000000; }
 

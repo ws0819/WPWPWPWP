@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var='root' value="${pageContext.request.contextPath }/" />
 <!DOCTYPE html>
 
@@ -23,54 +24,12 @@
     
     <link rel="stylesheet" href="../liquorstore_master/css/flaticon.css">
     <link rel="stylesheet" href="../liquorstore_master/css/style.css">
-    <link rel="stylesheet" href="../liquorstore_master/css/topmenu.css">
   </head>
   <body>
 
-  	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
-    
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	       <a class="navbar-brand" href="">WINE<span>EASY</span></a> 
-	      <div class="order-lg-last btn-group">
-          <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          	<span class="flaticon-shopping-bag"></span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right">
-				    <div class="dropdown-item d-flex align-items-start" href="#">
-				    	<div class="img" style="background-image: url(images/prod-1.jpg);"></div>
-				    	<div class="text pl-3">
-				    		<h4>Bacardi 151</h4>
-				    		<p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>
-				    	</div>
-				    </div>
-				    <div class="dropdown-item d-flex align-items-start" href="#">
-				    	<div class="img" style="background-image: url(images/prod-2.jpg);"></div>
-				    	<div class="text pl-3">
-				    		<h4>Jim Beam Kentucky Straight</h4>
-				    		<p class="mb-0"><a href="#" class="price">$30.89</a><span class="quantity ml-3">Quantity: 02</span></p>
-				    	</div>
-				    </div>
-				    <div class="dropdown-item d-flex align-items-start" href="#">
-				    	<div class="img" style="background-image: url(images/prod-3.jpg);"></div>
-				    	<div class="text pl-3">
-				    		<h4>Citadelle</h4>
-				    		<p class="mb-0"><a href="#" class="price">$22.50</a><span class="quantity ml-3">Quantity: 01</span></p>
-				    	</div>
-				    </div>
-				    <a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
-				    	View All
-				    	<span class="ion-ios-arrow-round-forward"></span>
-				    </a>
-				  </div>
-        </div>
-
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	  </nav>
-    <!-- END nav -->
+  	<c:import url="/WEB-INF/views/product/top_menu.jsp" />
+	  
+   
     
     <section class="hero-wrap hero-wrap-2" style="background-image: url('../liquorstore_master/images/top_bg.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
@@ -91,7 +50,7 @@
 						<table class="table">
 						  <thead class="thead-primary">
 						    <tr>
-						    	<th>&nbsp;</th>
+						    	<th>no&nbsp;</th>
 						    	<th>&nbsp;</th>
 						    	<th>Product</th>
 						      <th>Price</th>
@@ -101,155 +60,53 @@
 						    </tr>
 						  </thead>
 						  <tbody>
+						    
+						    <c:forEach var="obj" items="${cartBean }" >
 						    <tr class="alert" role="alert">
+						    	<!-- 와인 idx or number 넣을것 -->
 						    	<td>
 						    		<label class="checkbox-wrap checkbox-primary">
-										  <input type="checkbox" checked>
-										  <span class="checkmark"></span>
-										</label>
+										 ${obj.cart_number }
+									</label>
 						    	</td>
+						    	<!-- 와인 이미지 -->
 						    	<td>
-						    		<div class="img" style="background-image: url(images/prod-1.jpg);"></div>
+						    		<div class="img" style="background-image: url(../liquorstore_master/images/${obj.wine_img});"></div>
 						    	</td>
+						      <!-- 와인 이름과 생산지 -->
 						      <td>
 						      	<div class="email">
-						      		<span>Jim Beam Kentucky Straight</span>
-						      		<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
+						      		<span>${obj.wine_name }</span>
+						      		<span>${obj.wine_producer }</span>
 						      	</div>
 						      </td>
-						      <td>$44.99</td>
+						      <!-- 와인 개별가격 -->
+						      <td>${obj.wine_price }</td>
+						      <!-- 와인 수량 -->
 						      <td class="quantity">
 					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="2" min="1" max="100">
-				          	</div>
-				          </td>
-				          <td>$89.98</td>
-						      <td>
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				             	<form:form action="cartBean_pro" method="get" modelAttribute="updateCartBean">
+				             	<form:hidden path="product_number" value="${obj.product_number }"/>
+				             	<form:input path="cart_amount" class="quantity form-control input-number" value="${obj.cart_amount }" />
+				             	<form:button type="submit" 
+				             	style="height:30px; width:78.75px; font-size:10px; margin: 0; padding: 0.5rem 1rem;
+				             	font-weight:400; text-decoration:none; display:inline-block; border:none; border-radius: 4px;  ">변경
+				             	</form:button>
+				             	</form:form>
+				          		</div>
+				          	  </td>
+				          <!-- 와인 토탈가격 -->
+				          <td>${obj.wine_price * obj.cart_amount }</td>
+						    <!-- 삭제 버튼 -->
+						    <td>
+						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="location.href='cart_delete?product_number=${obj.product_number}'" >
 				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
+				          		</button>
 				        	</td>
 						    </tr>
-
-						    <tr class="alert" role="alert">
-						    	<td>
-						    		<label class="checkbox-wrap checkbox-primary">
-										  <input type="checkbox">
-										  <span class="checkmark"></span>
-										</label>
-						    	</td>
-						    	<td>
-						    		<div class="img" style="background-image: url(images/prod-2.jpg);"></div>
-						    	</td>
-						      <td>
-						      	<div class="email">
-						      		<span>Jim Beam Kentucky Straight</span>
-						      		<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-						      	</div>
-						      </td>
-						      <td>$30.99</td>
-						      <td class="quantity">
-					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-				          	</div>
-				          </td>
-				          <td>$30.99</td>
-						      <td>
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
-				        	</td>
-						    </tr>
-
-						    <tr class="alert" role="alert">
-						    	<td>
-						    		<label class="checkbox-wrap checkbox-primary">
-										  <input type="checkbox">
-										  <span class="checkmark"></span>
-										</label>
-						    	</td>
-						    	<td>
-						    		<div class="img" style="background-image: url(images/prod-3.jpg);"></div>
-						    	</td>
-						      <td>
-						      	<div class="email">
-						      		<span>Jim Beam Kentucky Straight</span>
-						      		<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-						      	</div>
-						      </td>
-						      <td>$35.50</td>
-						      <td class="quantity">
-					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-				          	</div>
-				          </td>
-				          <td>$35.50</td>
-						      <td>
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
-				        	</td>
-						    </tr>
-
-						    <tr class="alert" role="alert">
-						    	<td>
-						    		<label class="checkbox-wrap checkbox-primary">
-										  <input type="checkbox">
-										  <span class="checkmark"></span>
-										</label>
-						    	</td>
-						    	<td>
-						    		<div class="img" style="background-image: url(images/prod-4.jpg);"></div>
-						    	</td>
-						      <td>
-						      	<div class="email">
-						      		<span>Jim Beam Kentucky Straight</span>
-						      		<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-						      	</div>
-						      </td>
-						      <td>$76.99</td>
-						      <td class="quantity">
-					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-				          	</div>
-				          </td>
-				          <td>$76.99</td>
-						      <td>
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
-				        	</td>
-						    </tr>
-
-						    <tr class="alert" role="alert">
-						    	<td class="border-bottom-0">
-						    		<label class="checkbox-wrap checkbox-primary">
-										  <input type="checkbox">
-										  <span class="checkmark"></span>
-										</label>
-						    	</td>
-						    	<td class="border-bottom-0">
-						    		<div class="img" style="background-image: url(images/prod-5.jpg);"></div>
-						    	</td>
-						      <td class="border-bottom-0">
-						      	<div class="email">
-						      		<span>Jim Beam Kentucky Straight</span>
-						      		<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-						      	</div>
-						      </td>
-						      <td class="border-bottom-0">$40.00</td>
-						      <td class="quantity border-bottom-0">
-					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-				          	</div>
-				          </td>
-				          <td class="border-bottom-0">$40.00</td>
-						      <td class="border-bottom-0">
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
-				        	</td>
-						    </tr>
+							</c:forEach>
+							
+						    
 						  </tbody>
 						</table>
 					</div>
@@ -282,80 +139,7 @@
     	</div>
     </section>
 
-    <footer class="ftco-footer">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-sm-12 col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2 logo"><a href="#">Liquor <span>Store</span></a></h2>
-              <p>Far far away, behind the word mountains, far from the countries.</p>
-              <ul class="ftco-footer-social list-unstyled mt-2">
-                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">My Accounts</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Register</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Log In</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Information</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Quick Link</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New User</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>
-                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid px-0 py-5 bg-black">
-      	<div class="container">
-      		<div class="row">
-	          <div class="col-md-12">
-		
-	            <p class="mb-0" style="color: rgba(255,255,255,.5);"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-	          </div>
-	        </div>
-      	</div>
-      </div>
-    </footer>
+    <c:import url="/WEB-INF/views/product/bottom_info.jsp" />
     
   
 
