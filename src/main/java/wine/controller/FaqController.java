@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import wine.beans.FaqBean;
 import wine.beans.NoticeBean;
+import wine.beans.PageBean;
 import wine.service.FaqService;
 
 
@@ -26,9 +27,12 @@ public class FaqController {
 	private FaqService faqService;
 	
 	@GetMapping("/faq_board")
-	public String faq_board(Model model) {
+	public String faq_board(@RequestParam(value="page", defaultValue = "1") int page , Model model) {
 		List<FaqBean> faqList = faqService.getFaqList();
 		model.addAttribute("faqList",faqList);
+		PageBean pageBean = faqService.getFaqCnt(page);
+		model.addAttribute("pageBean", pageBean);
+		model.addAttribute("page", page);
 		return "faq/faq_board";
 	}
 	

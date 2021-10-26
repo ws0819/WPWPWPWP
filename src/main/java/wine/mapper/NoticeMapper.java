@@ -15,7 +15,7 @@ public interface NoticeMapper {
 	@Insert("insert into notice(notice_number, notice_title, notice_content, notice_date) values(NOTICE_SEQ.nextval, #{notice_title}, #{notice_content}, sysdate)")
 	void addNoticeInfo(NoticeBean writeNoticeBean);
 	
-	@Select("select notice_number, notice_title, notice_content, notice_date from notice")
+	@Select("select notice_number, notice_title, notice_content, notice_date from notice order by notice_number desc")
 	List<NoticeBean> getNoticeList(RowBounds rowbounds);
 	
 	@Select("select notice_title, notice_content, notice_date from notice where notice_title = #{notice_title}")

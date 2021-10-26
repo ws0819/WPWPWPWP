@@ -17,6 +17,7 @@ public class FaqDAO {
 	private FaqMapper faqMapper;
 	
 	public void addFaqInfo(FaqBean writeFaqBean) {
+		//for(int i=0; i<400; i++)
 		faqMapper.addFaqInfo(writeFaqBean);
 	}
 	public List<FaqBean> getFaqList(){
@@ -25,8 +26,7 @@ public class FaqDAO {
 	public FaqBean getFaqInfo(int faq_number){
 		return faqMapper.getFaqInfo(faq_number);
 	}
-	
-
-
-	
+	public int getFaqCnt() {
+		return faqMapper.getFaqCnt();
+	}
 }

@@ -24,6 +24,7 @@ import wine.beans.AdminBean;
 import wine.beans.UserBean;
 import wine.interceptor.CheckAdminLoginIntercepter;
 import wine.interceptor.CheckLoginInterceptor;
+import wine.interceptor.TopMenuInterceptor;
 import wine.mapper.AdminMapper;
 import wine.mapper.FaqMapper;
 import wine.mapper.NoticeMapper;
@@ -37,9 +38,10 @@ import wine.mapper.UserMapper;
 @EnableWebMvc
 // 스캔할 패키지를 지정한다.
 @ComponentScan("wine.controller")
-@PropertySource("/WEB-INF/properties/db.properties")
 @ComponentScan("wine.service")
 @ComponentScan("wine.DAO")
+
+@PropertySource("/WEB-INF/properties/db.properties")
 public class ServletAppContext implements WebMvcConfigurer{
 	
 	
@@ -91,20 +93,20 @@ public class ServletAppContext implements WebMvcConfigurer{
 		return factory;
 	}
 	@Bean
-	public MapperFactoryBean<AdminMapper> getAdminMapper(SqlSessionFactory factory){
+	public MapperFactoryBean<AdminMapper> getAdminMapper(SqlSessionFactory factory) throws Exception{
 		MapperFactoryBean<AdminMapper> factoryBean = new MapperFactoryBean<AdminMapper>(AdminMapper.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
 	@Bean
-	public MapperFactoryBean<NoticeMapper> getNoticeMapper(SqlSessionFactory factory){
+	public MapperFactoryBean<NoticeMapper> getNoticeMapper(SqlSessionFactory factory) throws Exception{
 		MapperFactoryBean<NoticeMapper> factoryBean = new MapperFactoryBean<NoticeMapper>(NoticeMapper.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
 	
 	@Bean
-	public MapperFactoryBean<UserMapper> getUserMapper(SqlSessionFactory factory){
+	public MapperFactoryBean<UserMapper> getUserMapper(SqlSessionFactory factory) throws Exception{
 		MapperFactoryBean<UserMapper> factoryBean = new MapperFactoryBean<UserMapper>(UserMapper.class);
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
@@ -138,19 +140,23 @@ public class ServletAppContext implements WebMvcConfigurer{
 		res.setBasename("WEB-INF/properties/error");
 		return res;
 	}
-	//Interceptor
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		WebMvcConfigurer.super.addInterceptors(registry);
 		
-		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);	
-		InterceptorRegistration reg1 = registry.addInterceptor(checkAdminLoginIntercepter);
-		reg1.addPathPatterns("/admin/admin_main", "/notice/notice_write", "/notice/notice_modify");
+		TopMenuInterceptor topmenu= new TopMenuInterceptor(loginUser);
+		InterceptorRegistration reg1= registry.addInterceptor(topmenu);
+		reg1.addPathPatterns("/**");
 		
-		CheckLoginInterceptor checkLoginInterceptor = new CheckLoginInterceptor(loginUser);
-		InterceptorRegistration reg2 = registry.addInterceptor(checkLoginInterceptor);
-		reg2.addPathPatterns("/subscribe/subscribe_product");
-		
+        CheckLoginInterceptor checkLoginInterceptor = new CheckLoginInterceptor(loginUser);
+        InterceptorRegistration reg2 = registry.addInterceptor(checkLoginInterceptor);
+		reg2.addPathPatterns("/user/modify", "/user/logout", "/user/mypage","/subscribe/subscribe_product");
+		//로그인 안해도 쓸수 있는 곳 => excludepathpettern
+
+		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);
+		InterceptorRegistration reg3 = registry.addInterceptor(checkAdminLoginIntercepter);
+		reg3.addPathPatterns("/admin/admin_main", "/notice/notice_write","/faq/faq_board");	
+
 	}
 }
 

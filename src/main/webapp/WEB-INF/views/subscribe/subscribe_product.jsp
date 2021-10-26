@@ -119,7 +119,7 @@ function change () {
 }  
 //-->
 </script>
-<div class="text-muted">
+<!-- <div class="text-muted">
 <form name="form" method="get">
 
 수량 : <input type=hidden name="sell_price" value="50000">
@@ -129,7 +129,7 @@ function change () {
 
 금액 : <input type="text" name="sum" size="11" readonly>
 </form>
-</div>
+</div> -->
 </body>
 
                      <button type="button" class="btn btn-outline-success mb-2">구매하기</button>
