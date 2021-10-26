@@ -75,6 +75,12 @@ public class ProductController {
 		productService.addCartWine(wineProductBean);
 		return "product/cart_pro";
 	}
+	@GetMapping("/cart_pro_2")
+	public String cart_pro_2(@RequestParam("wine_idx") int wine_idx , Model model) {
+		WineProductBean wineProductBean=productService.getOneWineInfo(wine_idx);
+		productService.addCartWine(wineProductBean);
+		return "product/cart_pro_2";
+	}
 	
 	
 	@GetMapping("/info")
