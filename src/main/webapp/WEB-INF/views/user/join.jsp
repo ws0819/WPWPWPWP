@@ -1,26 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var='root' value="${pageContext.request.contextPath }/" />
 
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>회원가입</title>
+<link rel="shortcut icon" href="#">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../user_boot/css/join.css" />
-  
+  <title>회원가입</title>
 </head>
-<body>
+<script type="text/javascript">
 
+function checkUserIdExist() {
+		/* 변수선언 : 사용자가 입력한 아이디값 가져오기 */
+		var user_id=$("#user_id").val()
+		if(user_id.length==0){
+			alert('아이디를 입력하세요')
+			return
+		}
+	
+	$.ajax({
+		 url:'${root}user/checkUserIdExist/' + user_id, /* 요청할 페이지 주소 */
+		 type:'get', /* 요청메서그 */
+		 dataType:'text',/*  문자열 */
+		 /* 성공시 호출할 함수 */
+		 success : function(result) {
+			 if(result.trim()=='true'){
+				 alert('사용가능한 아이디 입니다')
+				 $("#userIdExist").val('true')
+			 }else{
+				alert('사용할 수 없는 아이디 입니다')
+				$("#userIdExist").val('false')
+			 }
+	  } 
+	   })	
+}
+	
+	function resetUserIdExist() {
+	$("#userIdExist").val('false')
+}
+</script>
+<body>
    <c:import url="/WEB-INF/views/include/top_menu.jsp" />
   <div class="wrap wd668">
       <div class="container">
+        <form:form action="${root }user/join_pro" method="post" modelAttribute="joinUserBean">
+     	<form:hidden path="userIdExist"/>
        <div class="form_txtInput">
-      <form:form action="${root }user/join_pro" method="post" modelAttribute="joinUserBean">
-      <form:hidden path="userIdExist"/>
+      
+
        
           <h2 class="sub_tit_txt">WINE EASY 회원가입</h2>
           <p class="exTxt">회원가입시 휴대폰 본인인증이 필요합니다</p>
@@ -34,7 +65,6 @@
               
               <tbody>
                 <tr>
-               
                   <th><span><form:label path="user_id">아이디</form:label></span></th>
                   <td><form:input path="user_id" onkeypress="resetUserIdExist()"/>
                     <a href="#"  class="btn_confirm" onclick="checkUserIdExist()">중복확인</a>  
@@ -105,46 +135,16 @@
           </div>
         <form:button class="btn_register" >회원가입</form:button> 
          
-          </form:form>
+          
         </div> <!-- form_txtInput E -->
-     
+       </form:form>
       </div><!-- content E-->
+    
    <c:import url="/WEB-INF/views/include/bottom_info.jsp" />
     </div> <!-- container E -->
        
-    
+
 </body>
-
-
-<script>
-   function checkUserIdExist() {
-      //변수선언 : 사용자가 입력한 아이디
-      var u6ser_id=$("#user_id").val()
-      if(user_id.length==0) {
-         alert('아이디를 입력해주세요')
-         return 
-      }
-   $.ajax({
-      url:'${root}user/checkUserIdExist/'+user_id, 
-      type: 'get',
-      dataType:'text', 
-     
-      
-      success: function (result) {
-         if(result.trim()=='true') {
-            alert('사용가능한 아이디입니다')
-            $("#userIdExist").val('true')
-         }else {alert('이미 사용중인 아이디입니다')
-            $("#userIdExist").val('false')
-         }
-      }
-   })
-   }
-   
-   function resetUserIdExist() {
-      $("#userIdExist").val('false')
-   }
-</script>
-<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </html>
