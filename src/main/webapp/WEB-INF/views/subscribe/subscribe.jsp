@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="root" value="${pageContext.request.contextPath }/"/>   
 <!DOCTYPE html>
 <html>
 	<head>
@@ -102,7 +103,7 @@
 								<div class="field">나만의 인생술! <br /> 찾을 준비 되셨나요?</div>
 							</div>
 							<ul class="actions special">
-								<li><input type="button" value="구독" onclick='location.href="${root}subscribe_product"'/></li>	
+								<li><input type="button" value="구독" onclick='location.href="${root}/subscribe/subscribe_product"'/></li>	
 							</ul>
 						</form>
 					</div>

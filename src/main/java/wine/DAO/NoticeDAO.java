@@ -16,6 +16,7 @@ public class NoticeDAO {
 	private NoticeMapper noticeMapper;
 	
 	public void addNoticeInfo(NoticeBean writeNoticeBean) {
+		//for(int i=0; i<400; i++)
 		noticeMapper.addNoticeInfo(writeNoticeBean);
 	}
 	public List<NoticeBean> getNoticeList(RowBounds rowbounds){

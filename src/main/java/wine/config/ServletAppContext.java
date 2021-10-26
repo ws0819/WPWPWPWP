@@ -24,6 +24,7 @@ import wine.beans.AdminBean;
 import wine.beans.UserBean;
 import wine.interceptor.CheckAdminLoginIntercepter;
 import wine.interceptor.CheckLoginInterceptor;
+import wine.interceptor.TopMenuInterceptor;
 import wine.mapper.AdminMapper;
 import wine.mapper.FaqMapper;
 import wine.mapper.NoticeMapper;
@@ -138,19 +139,23 @@ public class ServletAppContext implements WebMvcConfigurer{
 		res.setBasename("WEB-INF/properties/error");
 		return res;
 	}
-	//Interceptor
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		WebMvcConfigurer.super.addInterceptors(registry);
-		
-		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);	
-		InterceptorRegistration reg1 = registry.addInterceptor(checkAdminLoginIntercepter);
-		reg1.addPathPatterns("/admin/admin_main", "/notice/notice_write", "/notice/notice_modify");
-		
+
+		TopMenuInterceptor topmenu = new TopMenuInterceptor(loginUser);
+		InterceptorRegistration reg1 = registry.addInterceptor(topmenu);
+		reg1.addPathPatterns("/**");
+
+		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);
+		InterceptorRegistration reg2 = registry.addInterceptor(checkAdminLoginIntercepter);
+		reg2.addPathPatterns("/admin/admin_main", "/notice/notice_write", "/faq/faq_board");
+
 		CheckLoginInterceptor checkLoginInterceptor = new CheckLoginInterceptor(loginUser);
-		InterceptorRegistration reg2 = registry.addInterceptor(checkLoginInterceptor);
-		reg2.addPathPatterns("/subscribe/subscribe_product");
+		InterceptorRegistration reg3 = registry.addInterceptor(checkLoginInterceptor);
+		reg3.addPathPatterns("/user/modify", "/user/logout", "user/mypage", "/subscribe/subscribe_product");
 		
+		// 로그인 안해도 쓸수 있는 곳 => excludepathpettern
 	}
 }
 
