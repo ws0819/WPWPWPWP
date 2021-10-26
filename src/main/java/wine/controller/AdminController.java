@@ -27,6 +27,10 @@ public class AdminController {
 	
 	@GetMapping("/admin_login")
 	public String admin_login(@ModelAttribute("temploginAdminBean") AdminBean temploginAdminBean, @RequestParam(value = "fail", defaultValue = "false") boolean fail, Model model) {
+		if(loginAdminBean.isAdminLogin()==true) {
+			return "admin/admin_main";
+		}
+		
 		model.addAttribute("fail", fail);
 		return "admin/admin_login";
 	}
@@ -52,4 +56,5 @@ public class AdminController {
 	public String admin_not() {
 		return "admin/admin_not";
 	}
+ 
 }

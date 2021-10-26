@@ -8,41 +8,43 @@
 <head>
 <link rel="shortcut icon" href="#">
   <meta charset="UTF-8">
+  
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../user_boot/css/join.css" />
   <title>회원가입</title>
 </head>
-<script type="text/javascript">
 
-function checkUserIdExist() {
-		/* 변수선언 : 사용자가 입력한 아이디값 가져오기 */
-		var user_id=$("#user_id").val()
-		if(user_id.length==0){
-			alert('아이디를 입력하세요')
-			return
-		}
-	
-	$.ajax({
-		 url:'${root}user/checkUserIdExist/' + user_id, /* 요청할 페이지 주소 */
-		 type:'get', /* 요청메서그 */
-		 dataType:'text',/*  문자열 */
-		 /* 성공시 호출할 함수 */
-		 success : function(result) {
-			 if(result.trim()=='true'){
-				 alert('사용가능한 아이디 입니다')
-				 $("#userIdExist").val('true')
-			 }else{
-				alert('사용할 수 없는 아이디 입니다')
-				$("#userIdExist").val('false')
-			 }
-	  } 
-	   })	
-}
-	
-	function resetUserIdExist() {
-	$("#userIdExist").val('false')
-}
+<script type="text/javascript">
+   function checkUserIdExist() { 
+      //변수선언 : 사용자가 입력한 아이디
+
+      var user_id=$("#user_id").val()
+      if(user_id.length==0) {
+         alert('아이디를 입력해주세요')
+         return 
+      }
+   $.ajax({
+      url:'${root}user/checkUserIdExist/' + user_id,
+      type: 'get',
+      dataType:'text', 
+     
+      
+      success: function (result) {
+         if(result.trim()=='true') {
+            alert('사용가능한 아이디입니다')
+            $("#userIdExist").val('true')
+         }else {alert('이미 사용중인 아이디입니다')
+            $("#userIdExist").val('false')
+         }
+      }
+   })
+   }
+   
+   function resetUserIdExist() {
+      $("#userIdExist").val('false')
+   }
 </script>
+
 <body>
    <c:import url="/WEB-INF/views/include/top_menu.jsp" />
   <div class="wrap wd668">
@@ -67,7 +69,7 @@ function checkUserIdExist() {
                 <tr>
                   <th><span><form:label path="user_id">아이디</form:label></span></th>
                   <td><form:input path="user_id" onkeypress="resetUserIdExist()"/>
-                    <a href="#"  class="btn_confirm" onclick="checkUserIdExist()">중복확인</a>  
+                    <a href="javascript:void(0)"  class="btn_confirm" onclick="checkUserIdExist(); return false;">중복확인</a>  
                     <form:errors path="user_id" style='color:red'/>                      
                   </td>
                 </tr>
@@ -144,7 +146,14 @@ function checkUserIdExist() {
     </div> <!-- container E -->
        
 
+
+
+ <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </body>
-    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+   <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 
 </html>

@@ -8,6 +8,7 @@
   
   <link rel="stylesheet" href="../assets/css/main.css" />
 
+<<<<<<< HEAD
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
  
 </head>
@@ -66,3 +67,18 @@
 			</c:choose>
 		</ul></nav>
 		</header>
+=======
+<!-- Header -->
+
+			<header id="header">
+					<a href="${root}main"><h1>WINE EASY</h1></a>
+				<nav>
+					<ul>
+						<li><a href="${root}subscribe/subscribe">구독서비스</a></li>
+						<li><a href="${root}product/home">와인판매</a></li>
+						<li><a href="${root}notice/notice_board_read">공지사항</a></li>
+						<li><a href="${root}user/login">로그인/회원가입</a></li>
+					</ul>
+				</nav>
+			</header>
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git

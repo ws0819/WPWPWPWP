@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+<c:set var="root" value="${pageContext.request.contextPath }/"/>
+
 
 <!DOCTYPE HTML>
 <!--
@@ -71,7 +75,7 @@
 					정기적으로 집에 찾아오는 와인
 					당신도 모르는 당신의 취향을 찾아드립니다
 					</h3>
-					<a href="${root}subscribe/subscribe">구독서비스</a>
+					<%-- <a href="${root}subscribe/subscribe">구독서비스</a> --%>
 					<a href="${root}subscribe/subscribe_review">구독리뷰보기</a>
 <!-- 					<p>초급 월 2회 99,000원</p><br />
 					<p>중급 월 2회 + 와인시음회 199,000원</p><br />
@@ -122,22 +126,47 @@
 					<header>
 						<h2>무엇이든물어보세요</h2>
 						<!-- 관리자한테 질문 관리자는 관리자페이지에서 그거에 대한 답변 주기 -->
+<<<<<<< HEAD
+					</header>	
+					<div class="box">			
+ 		<form:form action="${root }faq/faq_write_pro" modelAttribute="faqContentBean" method="post" >
+ 		<form:hidden path="faq_number"/>
+=======
 					</header>
-					<div class="box">
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-							</div>
-							<ul class="actions special">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</form>
-					</div>
-				</div>
-			</section>
+					<div class="box">				
+			 		<form:form action="${root }faq/faq_write_pro" modelAttribute="faqContentBean" method="post" >
+			 		<form:hidden path="faq_number"/>
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
+                     <div class="fields">
+                        <div class="field half">
+                           <form:input path="faq_username" placeholder="Name" />
+                        </div>
+                        <div class="field half">
+                           <form:input path="faq_email" placeholder="Email" />
+                        </div>
+                        <div class="field">
+                           <form:textarea path="faq_message" placeholder="Message" rows="6"></form:textarea>
+                        </div>
+                     </div>
+                     <ul class="actions special">
+                        <li><form:button>send</form:button></li>
+                     </ul>
+<<<<<<< HEAD
+                  </form:form>  
+                  </div>
+                  
+          
+=======
+                  </form:form>   
+                  </div>        
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
+            </div>
+         </section>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
 		<!-- Footer -->
 		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
 

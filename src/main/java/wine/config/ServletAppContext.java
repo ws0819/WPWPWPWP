@@ -25,8 +25,11 @@ import wine.beans.UserBean;
 import wine.interceptor.CheckAdminLoginIntercepter;
 import wine.interceptor.CheckLoginInterceptor;
 import wine.interceptor.TopMenuInterceptor;
+//github.com/ws0819/WPWPWPWP.git
 import wine.mapper.AdminMapper;
+import wine.mapper.FaqMapper;
 import wine.mapper.NoticeMapper;
+import wine.mapper.ProductMapper;
 import wine.mapper.UserMapper;
 
 
@@ -109,6 +112,22 @@ public class ServletAppContext implements WebMvcConfigurer{
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}
+	
+	@Bean
+	public MapperFactoryBean<ProductMapper> getProductMapper(SqlSessionFactory factory){
+		MapperFactoryBean<ProductMapper> factoryBean = new MapperFactoryBean<ProductMapper>(ProductMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}
+	
+	@Bean
+	public MapperFactoryBean<FaqMapper> getFaqMapper(SqlSessionFactory factory){
+		MapperFactoryBean<FaqMapper> factoryBean = new MapperFactoryBean<FaqMapper>(FaqMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}	
+	
+
 	//메세지(error_message) 선언과 충돌되므로 별도로 관리
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
@@ -131,16 +150,15 @@ public class ServletAppContext implements WebMvcConfigurer{
 		InterceptorRegistration reg1= registry.addInterceptor(topmenu);
 		reg1.addPathPatterns("/**");
 		
-		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);	
-		InterceptorRegistration reg2 = registry.addInterceptor(checkAdminLoginIntercepter);
-		reg2.addPathPatterns("/admin/admin_main", "/notice/notice_write");
-		
         CheckLoginInterceptor checkLoginInterceptor = new CheckLoginInterceptor(loginUser);
-        InterceptorRegistration reg3 = registry.addInterceptor(checkLoginInterceptor);
-		reg3.addPathPatterns("/user/modify", "/user/logout", "user/mypage","/subscribe/subscribe_product");
+        InterceptorRegistration reg2 = registry.addInterceptor(checkLoginInterceptor);
+		reg2.addPathPatterns("/user/modify", "/user/logout", "user/mypage","/subscribe/subscribe_product");
 		//로그인 안해도 쓸수 있는 곳 => excludepathpettern
 
-		
+
+		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);
+		InterceptorRegistration reg3 = registry.addInterceptor(checkAdminLoginIntercepter);
+		reg3.addPathPatterns("/admin/admin_main", "/notice/notice_write","faq/faq_board");	
 	}
 }
 

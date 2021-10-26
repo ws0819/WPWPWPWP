@@ -2,6 +2,7 @@ package wine.DAO;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -17,13 +18,19 @@ public class NoticeDAO {
 	public void addNoticeInfo(NoticeBean writeNoticeBean) {
 		noticeMapper.addNoticeInfo(writeNoticeBean);
 	}
-	public List<NoticeBean> getNoticeList(){
-		return noticeMapper.getNoticeList();
+	public List<NoticeBean> getNoticeList(RowBounds rowbounds){
+		return noticeMapper.getNoticeList(rowbounds);
 	}
 	public NoticeBean getNoticeInfo(String notice_title){
 		return noticeMapper.getNoticeInfo(notice_title);
 	}
-	public void modifyContentInfo(NoticeBean writeNoticeBean) {
-		noticeMapper.modifyContentInfo(writeNoticeBean);
+	public void modifyNoticeInfo(NoticeBean modifyNoticeBean) {
+		noticeMapper.modifyNoticeInfo(modifyNoticeBean);
+	}
+	public void deleteContentInfo(String notice_title) {
+		noticeMapper.deleteContentInfo(notice_title);
+	}
+	public int getNoticeCnt() {
+		return noticeMapper.getNoticeCnt();
 	}
 }
