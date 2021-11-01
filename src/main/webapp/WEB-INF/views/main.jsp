@@ -130,10 +130,13 @@
 					</header>	
 					<div class="box">			
 
+<<<<<<< HEAD
  					
 					
 					
 
+=======
+>>>>>>> refs/remotes/origin/develop
  		<form:form action="${root }faq/faq_write_pro" modelAttribute="faqContentBean" method="post" >
  		<form:hidden path="faq_number"/>
 
@@ -155,9 +158,21 @@
 
                   </form:form>  
                   </div>
+<<<<<<< HEAD
                   
+=======
+       
+>>>>>>> refs/remotes/origin/develop
 
+<<<<<<< HEAD
+=======
+                </div>        
+>>>>>>> refs/remotes/origin/develop
 
+<<<<<<< HEAD
+=======
+         </section>
+>>>>>>> refs/remotes/origin/develop
 		<!-- Footer -->
 		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var='root' value="${pageContext.request.contextPath }/" />
 <!doctype html>
 <html lang="en">
 <head>
@@ -132,7 +133,7 @@ function change () {
 </div> -->
 </body>
 
-                     <button type="button" class="btn btn-outline-success mb-2">구매하기</button>
+                     <button type="button" class="btn btn-outline-success mb-2" onclick="location.href='${root}product/cart_pro_2?wine_idx=20005'">구매하기</button>
                   </div>
                </div>
             </div>
@@ -155,7 +156,7 @@ function change () {
                         <p>
 
                            <button type="button"
-                              class="w-100 btn btn-lg btn-outline-warning">Get
+                              class="w-100 btn btn-lg btn-outline-warning" onclick="location.href='${root}product/cart_pro_2?wine_idx=20001'">Get
                               started</button>
                         <h1 class="card-title pricing-card-title">
                            ￦ 89,000원<small class="text-muted fw-light"></small>
@@ -164,7 +165,7 @@ function change () {
 
                      </ul>
                      <button type="button"
-                        class="w-100 btn btn-lg btn-outline-warning">Get
+                        class="w-100 btn btn-lg btn-outline-warning" onclick="location.href='${root}product/cart_pro_2?wine_idx=20002'">Get
                         started</button>
                   </div>
                </div>
@@ -183,7 +184,7 @@ function change () {
                         <li>와인 1병+소믈리에 레슨</li>
 
                      </ul>
-                     <button type="button" class="w-100 btn btn-lg btn-outline-purple">Get
+                     <button type="button" class="w-100 btn btn-lg btn-outline-purple" onclick="location.href='${root}product/cart_pro_2?wine_idx=20003'">Get
                         started</button>
                   </div>
                </div>
@@ -202,7 +203,7 @@ function change () {
                         <li>소믈리에 상담후 개수 결정</li>
 
                      </ul>
-                     <button type="button" class="w-100 btn btn-lg btn-outline-dark">Get
+                     <button type="button" class="w-100 btn btn-lg btn-outline-dark" onclick="location.href='${root}product/cart_pro_2?wine_idx=20004'">Get
                         started</button>
                   </div>
                </div>
