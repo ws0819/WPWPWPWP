@@ -148,9 +148,11 @@ public class ServletAppContext implements WebMvcConfigurer{
 		InterceptorRegistration reg1= registry.addInterceptor(topmenu);
 		reg1.addPathPatterns("/**");
 		
+		
         CheckLoginInterceptor checkLoginInterceptor = new CheckLoginInterceptor(loginUser);
         InterceptorRegistration reg2 = registry.addInterceptor(checkLoginInterceptor);
-		reg2.addPathPatterns("/user/modify", "/user/logout", "/user/mypage","/subscribe/subscribe_product");
+		reg2.addPathPatterns("/user/modify", "/user/logout", "/user/mypage","/subscribe/subscribe_product","/product/*");
+		reg2.excludePathPatterns("/product/home");
 		//로그인 안해도 쓸수 있는 곳 => excludepathpettern
 
 		CheckAdminLoginIntercepter checkAdminLoginIntercepter = new CheckAdminLoginIntercepter(loginAdminBean);

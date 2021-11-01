@@ -279,7 +279,7 @@
                      <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/${obj.wine_img});">
                         <div class="desc">
                            <p class="meta-prod d-flex">
-                             <a href="${root }product/cart_pro?wine_number=${obj.wine_number}" class="d-flex align-items-center justify-content-center">
+                             <a href="${root }product/cart_pro?wine_idx=${obj.wine_idx}" class="d-flex align-items-center justify-content-center">
 											<span class="flaticon-shopping-bag"></span></a> 
 											<a href="${root }product/cart" class="d-flex align-items-center justify-content-center">
 											<span class="flaticon-shopping-bag"></span></a> 
@@ -312,8 +312,7 @@
   
 
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
+  
 
   <script src="../liquorstore_master/js/jquery.min.js"></script>
   <script src="../liquorstore_master/js/jquery-migrate-3.0.1.min.js"></script>

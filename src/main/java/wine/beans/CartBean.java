@@ -1,5 +1,7 @@
 package wine.beans;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,9 +32,7 @@ public class CartBean {
 	private int cart_amount;
 	
 	public CartBean() {
-		wine_img="dddd.jpg";
 		cart_amount=1;
 	}
-	
 	
 }

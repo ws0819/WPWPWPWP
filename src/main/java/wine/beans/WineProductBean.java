@@ -24,11 +24,11 @@ public class WineProductBean {
 	private String wine_body;
 	private String wine_tannin;
 	private int wine_idx;
-	
+	private String user_id;
+
 	public WineProductBean() {
-		wine_img="dddd.jpg";
+		if(wine_img==null) {
+			wine_img="red022.jpg";
+		}
 	}
-	
-	
-	
 }
