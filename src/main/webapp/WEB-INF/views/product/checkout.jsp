@@ -153,6 +153,7 @@
                            </div>
                 </div>
                </div>
+               <form:button onclick = "location.href='${root }product/checkout_pro'">asdasd</form:button>
              </form:form><!-- END -->
 
 
@@ -213,7 +214,7 @@
                            </div>
                            <p><a href="javascript:void(0)" class="btn btn-primary py-3 px-4"  onclick="apibtn();">결제하기</a></p>
                         </div>
-                        <button></button>
+                        
                 </div>
              </div>
           </div> 

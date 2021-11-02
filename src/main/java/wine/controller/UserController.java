@@ -53,6 +53,7 @@ public class UserController {
 		userService.getLoginUserInfo(tempLoginUserBean);
 
 		if (loginUser.isUserLogin() == true) {
+			loginUser.setUser_id(tempLoginUserBean.getUser_id());
 			return "user/login_suc";
 		} else {
 			return "user/login_fail";
