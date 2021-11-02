@@ -5,61 +5,71 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>My Page</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<!-- MATERIAL DESIGN ICONIC FONT -->
-		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+   <head>
+      <meta charset="utf-8">
+      <title>My Page</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <!-- MATERIAL DESIGN ICONIC FONT -->
+      <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 
-		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="../user_mypage/css/style.css">
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		
-	</head>
+      <!-- STYLE CSS -->
+      <link rel="stylesheet" href="../user_mypage/css/style.css">
+      <link rel="stylesheet" href="../assets/css/main.css" />
+      
+   </head>
 
-	<body>
+   <body>
 <c:import url="/WEB-INF/views/include/top_menu.jsp" />
-		<div class="wrapper" style="background-image: url('../user_mypage/images/bg-registration-form-1.jpg');">
-			<div class="inner">
-				<div class="image-holder">
-					<img src="../user_mypage/images/registration-form-1.jpg" alt="">
-				</div>
-				<form:form action="${root }user/modify" method="get" modelAttribute="userMyPage">
-					<form:hidden path="user_number"/>
-					<h3>My Info</h3>
-					<div class="form-group">
-					<h6>ID</h6><br />
-					<form:input path="user_id" readonly="true" class="form-control"/>
-						
-					</div>
-					<div class="form-wrapper">
-						<h6>Name</h6>
-					<form:input path="user_name" readonly="true" class="form-control"/>
-					</div>
-					<div class="form-wrapper">
-						<h6>Tel</h6>
-					<form:input path="user_tel" readonly="true" class="form-control"/>
-					</div>
-					<div class="form-wrapper">
-						<h6>Address</h6>
-					<form:input path="user_address" readonly="true" class="form-control"/>
-					</div>
-					<div class="form-wrapper">
-						<h6>email</h6>
-					<form:input path="user_email" readonly="true" class="form-control"/>
-					</div>
-					<div class="form-wrapper">
-						<h6>Grade</h6>
-					<form:input path="user_id" readonly="true" class="form-control"/>
-					</div>
-					<form:button>정보수정
-						<i class="zmdi zmdi-arrow-right"></i>
-					</form:button>
-				</form:form>
-			</div>
-		</div>
-		 <c:import url="/WEB-INF/views/include/bottom_info.jsp" />
-	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+      <div class="wrapper" style="background-image: url('../user_mypage/images/bg-registration-form-1.jpg');">
+         <div class="inner">
+            <div class="image-holder">
+               <img src="../user_mypage/images/registration-form-1.jpg" alt="">
+            </div>
+            <form:form action="${root }user/modify" method="get" modelAttribute="userMyPage">
+               <form:hidden path="user_number"/>
+               <h3>My Info</h3>
+               <div class="form-group">
+               <h6>ID</h6><br />
+               <form:input path="user_id" readonly="true" class="form-control"/>
+                  
+               </div>
+               <div class="form-wrapper">
+                  <h6>Name</h6>
+               <form:input path="user_name" readonly="true" class="form-control"/>
+               </div>
+               <div class="form-wrapper">
+                  <h6>Tel</h6>
+               <form:input path="user_tel" readonly="true" class="form-control"/>
+               </div>
+            <div class="form-wrapper">
+                  <h6>Address</h6>   
+               <%-- <form:input path="user_address" readonly="true" class="form-control " style="width:550px"/><br/> --%>
+               
+               <form:input path="user_address" id="sample6_postcode" readonly="true" class="form-control" style="width:300px"/><br/>
+             
+               <form:input path="user_address2" id="sample6_address" readonly="true" class="form-control" style="width:300px"/><br/>
+             
+               <form:input path="user_address3" id="sample6_detailAddress" readonly="true" class="form-control" style="width:300px"/><br/>
+            
+               <form:input path="user_address4" id="sample6_extraAddress" readonly="true" class="form-control" style="width:300px"/><br/>
+            
+               </div>
+               <div class="form-wrapper">
+                  <h6>email</h6>
+               <form:input path="user_email" readonly="true" class="form-control"/>
+               </div>
+               <div class="form-wrapper">
+                  <h6>Grade</h6>
+               <form:input path="user_id" readonly="true" class="form-control"/>
+               </div>
+               <form:button>정보수정
+                  <i class="zmdi zmdi-arrow-right"></i>
+               </form:button>
+               <button type="button" onclick="location.href='${root}user/delete?user_number=${userMypage.user_number }'">회원탈퇴</button>
+            </form:form>
+         </div>
+      </div>
+       <c:import url="/WEB-INF/views/include/bottom_info.jsp" />
+   </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

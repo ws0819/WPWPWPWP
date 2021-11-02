@@ -25,6 +25,9 @@ public class UserBean {
 	
 	private String user_tel;
 	private String user_address;
+	private String user_address2;
+	private String user_address3;
+	private String user_address4;
 	private String user_email;
 	private String user_gender;
 	private String user_logindate;
@@ -36,6 +39,30 @@ public class UserBean {
 	public UserBean() {
 		this.userIdExist=false;
 		this.userLogin=false;
+	}
+
+	public String getUser_address2() {
+		return user_address2;
+	}
+
+	public void setUser_address2(String user_address2) {
+		this.user_address2 = user_address2;
+	}
+
+	public String getUser_address3() {
+		return user_address3;
+	}
+
+	public void setUser_address3(String user_address3) {
+		this.user_address3 = user_address3;
+	}
+
+	public String getUser_address4() {
+		return user_address4;
+	}
+
+	public void setUser_address4(String user_address4) {
+		this.user_address4 = user_address4;
 	}
 
 	public int getUser_number() {
