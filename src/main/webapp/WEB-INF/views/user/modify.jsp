@@ -21,6 +21,7 @@
 
 	<body>
 <c:import url="/WEB-INF/views/include/top_menu.jsp" />
+<div class="bback">
 		<div class="wrapper" style="background-image: url('../user_mypage/images/bg-registration-form-1.jpg');">
 			<div class="inner">
 				<div class="image-holder">
@@ -29,7 +30,7 @@
 				<form:form action="${root }user/modify_pro" method="post" modelAttribute="userModify">
 					<form:hidden path="user_number"/>
 					<h3>MODIFY</h3>
-					<div class="form-group">
+					<div class="form-wrapper">
 					<h6>ID</h6><br />
 					<form:input path="user_id" readonly="true" class="form-control"/>	
 					</div>
@@ -53,9 +54,18 @@
 						<form:label path="user_tel">Tel</form:label>
 					<form:input path="user_tel"  class="form-control"/>
 					</div>
-					<div class="form-wrapper">
-						<form:label path="user_address">Address</form:label>
-					<form:input path="user_address"  class="form-control"/>
+					<div>
+					<form:label path="user_address">Address</form:label>
+					<form:input path="user_address"  id="sample6_postcode" class="form-control"/>
+					<form:label path="user_address2"/>
+					<form:input path="user_address2"  id="sample6_address" class="form-control"/>
+					<form:label path="user_address3"/>
+					<form:input path="user_address3"  id="sample6_detailAddress" class="form-control"/>
+					<form:label path="user_address4"/>
+					<form:input path="user_address4"  id="sample6_extraAddress" class="form-control"/>
+			
+				
+				
 					</div>
 					<div class="form-wrapper">
 						<form:label path="user_email">Email</form:label>

@@ -1,10 +1,5 @@
 package wine.beans;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 public class CartBean {
 
 	private int wine_number;
