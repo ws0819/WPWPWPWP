@@ -27,8 +27,51 @@ import wine.validator.UserValidator;
 @RequestMapping("/user")
 public class UserController {
 
+<<<<<<< HEAD
    @Autowired
    private UserService userService;
+=======
+	@Autowired
+	private UserService userService;
+	
+	
+	@Resource(name="loginUser")
+	private UserBean loginUser;
+	
+	
+	@GetMapping("/login")
+	public String login(@ModelAttribute("tempLoginUserBean") UserBean tempLoginUserBean,
+			@RequestParam(value = "fail", defaultValue = "false") boolean fail,
+			Model model) {
+		model.addAttribute("fail",fail);
+		return "user/login";
+	}
+	
+	@PostMapping("/login_pro")
+	public String login_pro(@Valid @ModelAttribute("tempLoginUserBean") UserBean tempLoginUserBean, BindingResult result) {
+	
+		if(result.hasErrors()) {
+		return "user/login";
+		}
+		userService.getLoginUserInfo(tempLoginUserBean);
+		
+		if(loginUser.isUserLogin()==true) {
+			loginUser.setUser_id(tempLoginUserBean.getUser_id());
+			return "user/login_suc";
+		}
+		else {
+			return "user/login_fail";
+		}
+	}
+	
+	@GetMapping("/not_login")
+	public String not_login() {
+		return "user/not_login";
+	}
+	
+	@GetMapping("/join")
+	public String join(@ModelAttribute("joinUserBean") UserBean joinUserBean) {
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
 
    @Autowired
    coolSMS coolSms;

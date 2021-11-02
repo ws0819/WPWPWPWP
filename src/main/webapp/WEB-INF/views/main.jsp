@@ -127,12 +127,20 @@
 						<h2>무엇이든물어보세요</h2>
 						<!-- 관리자한테 질문 관리자는 관리자페이지에서 그거에 대한 답변 주기 -->
 
+<<<<<<< HEAD
+=======
+					</header>	
+					<div class="box">			
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
 
+<<<<<<< HEAD
 					</header>
 					<div class="box">				
 			 		<form:form action="${root }faq/faq_write_pro" modelAttribute="faqContentBean" method="post" >
 			 		<form:hidden path="faq_number"/>
 
+=======
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
  		<form:form action="${root }faq/faq_write_pro" modelAttribute="faqContentBean" method="post" >
  		<form:hidden path="faq_number"/>
 
@@ -154,9 +162,13 @@
 
                   </form:form>  
                   </div>
+<<<<<<< HEAD
                   
 
+=======
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
 
+<<<<<<< HEAD
                   </form:form>   
 
           
@@ -167,11 +179,16 @@
 
             </div>
 
+=======
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
          </section>
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> branch 'develop' of https://github.com/ws0819/WPWPWPWP.git
 		<!-- Footer -->
 		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
 

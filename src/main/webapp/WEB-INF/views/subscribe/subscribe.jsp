@@ -31,14 +31,14 @@
 		<!-- Intro -->
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content">
-					<header>
+					
 <!-- 						<h2>Subscribe</h2>
 					</header>
 					<h4>구독서비스</h4><br />
 					<h5>구독</h5> -->
-					<footer>
+					
 						<a href="#one" class="button style2 down">More</a>
-					</footer>
+					
 				</div>
 			</section>
 
