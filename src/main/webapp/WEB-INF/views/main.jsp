@@ -151,11 +151,9 @@
 
                   </form:form>  
                   </div>
-       
-
-                </div>        
 
          </section>
+
 		<!-- Footer -->
 		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
 

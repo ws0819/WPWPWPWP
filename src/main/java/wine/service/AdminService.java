@@ -35,4 +35,7 @@ public class AdminService {
 	public List<SubscribeBean> getSubscribe(){
 		return adminDAO.getSubscirbe();
 	}
+	public void addSubscribe(String subscribe_grade, int subscribe_sommliernumber, String user_id, int user_number) {
+		adminDAO.addSubscribe(subscribe_grade, subscribe_sommliernumber, user_id, user_number);
+	}
 }

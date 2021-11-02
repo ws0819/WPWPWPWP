@@ -1,5 +1,10 @@
 package wine.beans;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class CartBean {
 
 	private int wine_number;
@@ -25,7 +30,6 @@ public class CartBean {
 	private int cart_amount;
 	
 	public CartBean() {
-		wine_img="dddd.jpg";
 		cart_amount=1;
 	}
 
@@ -196,6 +200,5 @@ public class CartBean {
 	public void setCart_amount(int cart_amount) {
 		this.cart_amount = cart_amount;
 	}
-	
 	
 }

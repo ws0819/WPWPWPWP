@@ -25,4 +25,7 @@ public class AdminDAO {
 	public List<SubscribeBean> getSubscirbe(){
 		return adminMapper.getSubscribe();
 	}
+	public void addSubscribe(String subscribe_grade, int subscribe_sommliernumber, String user_id, int user_number) {
+		adminMapper.addSubscribe(subscribe_grade, subscribe_sommliernumber, user_id, user_number);
+	}
 }

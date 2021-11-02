@@ -19,9 +19,20 @@ public class WineProductBean {
 	private String wine_body;
 	private String wine_tannin;
 	private int wine_idx;
-	
+	private String user_id;
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
 	public WineProductBean() {
-		wine_img="dddd.jpg";
+		if(wine_img==null) {
+			wine_img="red022.jpg";
+		}
 	}
 
 	public int getWine_number() {
@@ -159,6 +170,5 @@ public class WineProductBean {
 	public void setWine_idx(int wine_idx) {
 		this.wine_idx = wine_idx;
 	}
-	
-	
+
 }

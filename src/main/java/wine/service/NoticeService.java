@@ -49,7 +49,6 @@ public class NoticeService {
 		return pageBean;
 	}
 	public List<NoticeBean> getNoticeList(int a, int page) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

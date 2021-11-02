@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+.wineDetail .wineDb ul li span.dbt {
+   
+    font-size: 20px;
+   margin-left: -100px;
+ 
+    }
+    
+.wineDetail .wineDb ul li .dbDetail {
+    margin-left: 30px;
+    font-size: 20px;
+}
+

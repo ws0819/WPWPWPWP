@@ -54,9 +54,8 @@
 				class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate mb-5 text-center">
 					<p class="breadcrumbs mb-0">
-						<span class="mr-2"><a href="">Home <i
-								class="fa fa-chevron-right"></i></a></span> <span>Products <i
-							class="fa fa-chevron-right"></i></span>
+						<span class="mr-2"><a href="${root }product/home">Home <i class="fa fa-chevron-right"></i></a></span> 
+						<span>Products <i class="fa fa-chevron-right"></i></span>
 					</p>
 					<h2 class="mb-0 bread">Products</h2>
 				</div>
@@ -65,9 +64,9 @@
 	</section>
 
 	<p />
-
+	
 	<div class="search_form_wrap">
-		<form:form method="post" action="${root }product/product_search" class="sy_form" modelAttribute="SearchWienBean">
+		<form:form method="get" action="${root }product/product" class="sy_form" modelAttribute="SearchWienBean">
 			<div class="select_wrap">
 				<form:select id="sch" class="winery_select" path="wine_nation">
 					<option value="">국가</option>
@@ -134,7 +133,7 @@
 			</div>
 		</form:form>
 	</div>
-
+	
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row">
@@ -160,7 +159,7 @@
 											
 											<a href="${root }product/cart" class="d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/cart2.png);">
 											<span class="flaticon-shopping-bag"></span></a> 
-											<a href="${root }product/info" class="d-flex align-items-center justify-content-center">
+											<a href="${root }product/info?wine_idx=${obj.wine_idx}" class="d-flex align-items-center justify-content-center">
 											<span class="flaticon-visibility"></span></a>
 										</p>
 									</div>
@@ -178,22 +177,108 @@
 					</div>
 					<div class="row mt-5">
 						<!-- 페이징 처리해야할 부분 -->
+					
+					<c:choose>
+						<c:when test="${param.wine_nation eq null }">
 						<div class="col text-center">
 							<div class="block-27">
 								<ul>
-									<li><a href="#">&lt;</a></li>
-									<li class="active"><span>1</span></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">5</a></li>
-									<li><a href="#">&gt;</a></li>
+								<c:choose>
+									<c:when test="${pageBean.prevPage <= 0 }">
+									<li><a class="page-link" href="javascript:void(0)" style="color:gray;">&lt;</a></li>
+									</c:when>
+									
+									<c:otherwise>
+									<li>
+									<a href="${root }product/product?page=${pageBean.prevPage}">&lt;
+									</a>
+									</li>
+									</c:otherwise>
+								</c:choose>
+								<c:forEach var="idx" begin="${pageBean.min }" end="${pageBean.max }">
+									<c:choose>
+										<c:when test="${idx == pageBean.currentPage }">
+											<li >
+	    										<a class="page-link " 
+	    										href="${root }product/product?page=${idx}">
+	    										${idx }</a>
+	    									</li>
+										</c:when>
+									<c:otherwise>
+											<li >
+	    										<a class="page-link" 
+	    										href="${root }product/product?page=${idx}">${idx }</a>
+	    									</li>
+									</c:otherwise>
+									</c:choose>
+									</c:forEach>
+									<c:choose>
+									<c:when test="${pageBean.max >= pageBean.pageCnt }">
+										<li><a class="page-link" href="javascript:void(0)" style="color:gray;">&gt;</a></li>
+									</c:when>
+									<c:otherwise>
+										<li><a href="${root }product/product?page=${pageBean.nextPage}">&gt;</a></li>
+									</c:otherwise>
+								</c:choose>
 								</ul>
 							</div>
 						</div>
+						</c:when>
+						
+						
+						<c:otherwise>
+						<div class="col text-center">
+							<div class="block-27">
+								<ul>
+								<c:choose>
+									<c:when test="${pageBean.prevPage <= 0 }">
+									<li><a class="page-link" href="javascript:void(0)" style="color:gray;">&lt;</a></li>
+									</c:when>
+									
+									<c:otherwise>
+									<li>
+									<a href="${root }product/product?page=${pageBean.prevPage}&wine_nation=${SearchWienBean.wine_nation}&wine_type=${SearchWienBean.wine_type}&wine_sweet=${SearchWienBean.wine_sweet}&
+									wine_acidity=${SearchWienBean.wine_acidity}&wine_body=${SearchWienBean.wine_body}&wine_tannin=${SearchWienBean.wine_tannin}&wine_name=">&lt;
+									</a>
+									</li>
+									</c:otherwise>
+								</c:choose>
+								<c:forEach var="idx" begin="${pageBean.min }" end="${pageBean.max }">
+									<c:choose>
+										<c:when test="${idx == pageBean.currentPage }">
+											<li >
+	    										<a class="page-link " 
+	    										href="${root }product/product?page=${idx}&wine_nation=${SearchWienBean.wine_nation}&wine_type=${SearchWienBean.wine_type}&wine_sweet=${SearchWienBean.wine_sweet}&
+									wine_acidity=${SearchWienBean.wine_acidity}&wine_body=${SearchWienBean.wine_body}&wine_tannin=${SearchWienBean.wine_tannin}&wine_name=">
+	    										${idx }</a>
+	    									</li>
+										</c:when>
+									<c:otherwise>
+											<li >
+	    										<a class="page-link" 
+	    										href="${root }product/product?page=${idx}&wine_nation=${SearchWienBean.wine_nation}&wine_type=${SearchWienBean.wine_type}&wine_sweet=${SearchWienBean.wine_sweet}&
+									wine_acidity=${SearchWienBean.wine_acidity}&wine_body=${SearchWienBean.wine_body}&wine_tannin=${SearchWienBean.wine_tannin}&wine_name=">${idx }</a>
+	    									</li>
+									</c:otherwise>
+									</c:choose>
+									</c:forEach>
+									<c:choose>
+									<c:when test="${pageBean.max >= pageBean.pageCnt }">
+										<li><a class="page-link" href="javascript:void(0)" style="color:gray;">&gt;</a></li>
+									</c:when>
+									<c:otherwise>
+										<li><a href="${root }product/product?page=${pageBean.nextPage}&wine_nation=${SearchWienBean.wine_nation}&wine_type=${SearchWienBean.wine_type}&wine_sweet=${SearchWienBean.wine_sweet}&
+									wine_acidity=${SearchWienBean.wine_acidity}&wine_body=${SearchWienBean.wine_body}&wine_tannin=${SearchWienBean.wine_tannin}&wine_name=">&gt;</a></li>
+									</c:otherwise>
+								</c:choose>
+								</ul>
+							</div>
+						</div>
+						</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
-
+				
 				<div class="col-md-3">
 					<div class="sidebar-box ftco-animate"></div>
 

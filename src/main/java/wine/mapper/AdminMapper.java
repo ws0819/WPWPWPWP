@@ -21,6 +21,6 @@ public interface AdminMapper {
 	List<SubscribeBean> getSubscribe();
 	
 	//저거 블랙이랑 3 변경
-	@Insert("insert into subscribe values(subscribe_seq.nextval, 'BLACK', 3, (to_char(sysdate, 'yyyy-mm-dd')), (to_char(sysdate + 30, 'yyyy-mm-dd')), #{user_id}, #{user_number})")
-	void addSubscribe(SubscribeBean subscribeBean);
+	@Insert("insert into subscribe values(subscribe_seq.nextval, #{subscribe_grade}, #{subscribe_sommliernumber}, (to_char(sysdate, 'yyyy-mm-dd')), (to_char(sysdate + 30, 'yyyy-mm-dd')), #{user_id}, #{user_number})")
+	void addSubscribe(String subscribe_grade, int subscribe_sommliernumber, String user_id, int user_number);
 }
