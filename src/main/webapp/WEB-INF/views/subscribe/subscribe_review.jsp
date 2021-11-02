@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<c:set var='root' value="${pageContext.request.contextPath }/" />
 <!doctype html>
 <html lang="en">
 <head>
@@ -41,10 +43,10 @@ h4 {
    integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
    crossorigin="anonymous">
    
-	<!-- Bootstrap CSS -->
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+   <!-- Bootstrap CSS -->
+   <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <!-- 탑메뉴 -->
 <link rel="stylesheet" href="../assets/css/main.css" />
@@ -78,39 +80,39 @@ h4 {
 <!-- 카드 -->
 
 <div class="container mx-auto">
-	<div class="row">
-		<div class="col-md-6 cal-sm-6">
-			<div class="card" >
-				<img src="../subscribe_product_bot/images/fulls/review1.jpg" class="card-img-top" >
-				<div class="">
-					<h5 class="card-title text-center">EASY BOX</h5>
-<!--  					<p class="card-text text-center">Some quick example text to build on the
-						card title and make up the bulk of the card's content.</p> -->
-				</div>
-			</div>
-		</div>
+   <div class="row">
+      <div class="col-md-6 cal-sm-6">
+         <div class="card" >
+            <img src="../subscribe_product_bot/images/fulls/review1.jpg" class="card-img-top" >
+            <div class="">
+               <h5 class="card-title text-center">EASY BOX</h5>
+<!--                 <p class="card-text text-center">Some quick example text to build on the
+                  card title and make up the bulk of the card's content.</p> -->
+            </div>
+         </div>
+      </div>
 
-		<div class="col-md-6 cal-sm-6 ">
-			<div class="card" >
-				<img src="../subscribe_product_bot/images/fulls/review2.jpg" class="card-img-top" >
-				<div class="">
-					<h5 class="card-title text-center">정기구독서비스</h5>
-<!-- 					<p class="card-text text-center">Some quick example text to build on the
-						card title and make up the bulk of the card's content.</p> -->
-				</div>
-			</div>
-		</div>
-	</div>
+      <div class="col-md-6 cal-sm-6 ">
+         <div class="card" >
+            <img src="../subscribe_product_bot/images/fulls/review2.jpg" class="card-img-top" >
+            <div class="">
+               <h5 class="card-title text-center">정기구독서비스</h5>
+<!--                <p class="card-text text-center">Some quick example text to build on the
+                  card title and make up the bulk of the card's content.</p> -->
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 <P/>
-	<!-- 코맨트	 -->
+   <!-- 코맨트    -->
 <!------ Include the above in your HEAD tag ---------->
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
 
 
-		<div class="row">
-    	<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+      <div class="row">
+       <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
   <script>
           tinymce.init({
               selector: "textarea",
@@ -123,41 +125,49 @@ h4 {
           });
   </script>
   
-  
-  
-  
-  <hr>
-
-                <!-- the comment box -->
+  	<!-- user정보안에서 구독 or 이지박스 하나라도 구매한사람만 보이게 -->
+  	<c:if test="${loginUserBean==true }">
+  		<hr />
+  			<!-- the comment box -->
+        	<form:form action="${root }subscribe/subscribe_review_pro" modelAttribute="reviewContentBean" method="post" >
                 <div class="well">
-                    <h4><i class="fa fa-paper-plane-o"></i> Comment:</h4>
-                    <form role="form">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" name="say" value="" class="btn btn-primary"><i class="fa fa-reply"></i> Submit</button>
-                    </form>
+                	<h4><i class="fa fa-paper-plane-o"></i> Comment:</h4>
+                	<%-- <form role="form">  --%>
+                	<div class="form-group">
+ 					<!-- if문 으로 구독이랑 이지박스 둘다 구매한 사람이면 select로 뜨게하고 아니면 for문으로 하나씩 -->
+	               		<form:select path="rating" class="form-select">
+	               			<form:option value="0">리뷰 작성할 상품을 선택하세요</form:option>
+	               			<form:option value="1" >이지박스EASY BOX</form:option>
+	               			<form:option value="2">정기구독서비스</form:option>
+	               		</form:select>
+	               		<form:textarea path="review_text" class="form-control" rows="3"/>
+                	</div>
+                	<form:button type="submit" name="say" value="" class="btn btn-primary"><i class="fa fa-reply"></i> Submit</form:button>
                 </div>
-
-                <hr>
-
+            </form:form>
+      	<hr /> 
+    </c:if>                
+<%-- 
                 <!-- the comments -->
-                <h3><i class="fa fa-comment"></i> User One says:
-                    <small> 9:41 PM on August 24, 2014</small>
+          <form:form action="${root }subscribe_review_pro" modelAttribute="reviewContentBean" method="post">
+                <h3><i class="fa fa-comment"></i>
+                 <c:forEach var="review" items="${ reviews }" varStatus="status">
+                  <!-- 평점 기준 별표시 출력 -->
+                   <c:forEach var="rating" items="${ ratingOptions }" varStatus="status" begin="1" end="${ review.rating }">★</c:forEach>
+                    select
+                    ${reviewInfo.review_id } :
+                    <form:small> ${reviewInfo.review_date }</form:small>
                 </h3>
-                <p>이지박스 샀는데 인생이,,써서,,술도 쓴거줬나요</p>
-
-                <h3><i class="fa fa-comment"></i> User Two says:
-                    <small> 9:47 PM on August 24, 2014</small>
-                </h3>
-                <p>소믈리에 스윗</p>
+                <p>${reviewInfo.review_text }</p>
+            </c:forEach>
 
             </div>
+            </form:form>
+ --%>
+   </div>
 
-	</div>
+   </div>
 
-	</div>
-</div>
 
 
     <!-- Footer -->

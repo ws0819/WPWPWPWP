@@ -66,7 +66,6 @@ public class UserController {
 	
 	@GetMapping("/join")
 	public String join(@ModelAttribute("joinUserBean") UserBean joinUserBean) {
-
 		return "user/join";
 	}
 	
@@ -125,6 +124,11 @@ public class UserController {
 			return "user/modify_suc";
 			
 		}
-
+	  @GetMapping("/user_iN")
+	  public String user_iN(@RequestParam("tel_iN") String tel_iN, Model model) {
+		  System.out.println(tel_iN);
+		  model.addAttribute("tel_iN", tel_iN);
+		  return "user/user_iN";
+	  }
 	}
 	

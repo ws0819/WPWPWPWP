@@ -17,18 +17,15 @@
 <script type="text/javascript">
    function checkUserIdExist() { 
       //변수선언 : 사용자가 입력한 아이디
-
       var user_id=$("#user_id").val()
       if(user_id.length==0) {
-         alert('아이디를 입력해주세요')
+         alert('아이디를 입력하세요')
          return 
       }
    $.ajax({
       url:'${root}user/checkUserIdExist/' + user_id,
       type: 'get',
       dataType:'text', 
-     
-      
       success: function (result) {
          if(result.trim()=='true') {
             alert('사용가능한 아이디입니다')
@@ -40,9 +37,39 @@
    })
    }
    
-   function resetUserIdExist() {
-      $("#userIdExist").val('false')
-   }
+   function sendSms(){
+	    var user_tel= $("#user_tel").val()
+	    if(user_tel.length==0){
+	  	  alert('전화번호를 입력하세요')
+	  	  return
+	    }
+	     $.ajax({
+	     url:'${root}user/bbbbb/'+ user_tel,
+	     type:'get',
+	     dataType:{'user_tel' : user_tel},
+		 success : function(result){
+			   $('#asdasd').click(function(){
+			   if($.trim(result) == $('#user_tel2').val()){
+				   Swal.fire('인증번호가 일치합니다')
+			   $.ajax({
+				   url : '${root}user/join'
+				   type : "GET"
+	                  data: {"user_tel" : $('#user_tel2').val()}
+			   })
+			   document.location.href="{root}main";
+			   }
+			   else{
+	                   Swal.fire({
+    	               icon: 'error',
+	                   title: '인증오류',
+	                   text: '인증번호가 올바르지 않습니다!',
+	                   footer: '<a href="/main">다음에 인증하기</a>'
+	                   }) 
+			   }
+		   })
+		  }
+    })
+ }
 </script>
 
 <body>
@@ -50,13 +77,13 @@
   <div class="wrap wd668">
       <div class="container">
         <form:form action="${root }user/join_pro" method="post" modelAttribute="joinUserBean">
-     	<form:hidden path="userIdExist"/>
+        <form:hidden path="userIdExist"/>
        <div class="form_txtInput">
       
 
        
           <h2 class="sub_tit_txt">WINE EASY 회원가입</h2>
-          <p class="exTxt">회원가입시 휴대폰 본인인증이 필요합니다</p>
+          <p class="exTxt" style="color:red">회원가입시 휴대폰 인증이 필요합니다</p>
           <div class="join_form">
             <table>
               <colgroup>
@@ -98,20 +125,30 @@
                     <form:input path="user_email" placeholder="이메일을 입력하세요."/>
                   </td>
                 </tr>
-             
-                <tr>
-                  <th><span><form:label path="user_tel">전화번호</form:label></span></th>
-                  <td><form:input path="user_tel" placeholder="전화번호를 입력하세요."/>
-                   <a href="javascript:;" class="btn_confirm">인증번호 발송</a></td>
-                </tr>
                 
-                <tr>
-                  <th><span>인증번호 확인</span></th>
-                  <td><input type="text" class="send_number" placeholder="10:00">
-                    <a href="javascript:;" class="btn_confirm">인증번호 확인</a>
+<%--                    <tr>
+                  <th><span><form:label path="user_tel">전화번호</form:label></span></th>
+                    <td><form:input path="user_tel"/>
+                  <div>
+                  	<a href="javascript:void(0)"  class="btn_confirm" onclick="sendSms(); return false;">가자</a>  
+                  </div>
+                  </td>
+                </tr> --%>
+                
+ 				 <tr>
+                  <th><span><form:label path="user_tel">전화번호</form:label></span></th>
+                  <td><form:input path="user_tel" onkeypress="resetUserIdExist()"/>
+                    <a href="#" class="btn_confirm" onclick="sendSms();">인증번호 발송</a>                   
                   </td>
                 </tr>
                 
+                 <tr>
+                  <th><span>인증번호 확인</span></th>
+                  <td><input type="text" class="send_number" name="user_tel2" id="user_tel2"/>
+                    <a href="#" class="btn_confirm" onclick="asdasd()">인증번호 확인</a>
+                  </td>
+                </tr>
+           
                 <tr>
                   <th><span><form:label path="user_address">주소</form:label></span></th>
                   <td><form:input path="user_address" placeholder="주소를 입력하세요."/>
@@ -127,7 +164,7 @@
               <input type="checkbox" id="marketing" name="marketing" class="agree_chk">
               <label for="marketing">[선택]마케팅 목적 개인정보 수집 및 이용에 대한 동의</label>
               <ul class="explan_txt">
-                <li><span class="red_txt">항목 : 성별, 생년월일</span></li>
+                <li><span class="red_txt">중요</span></li>
                 <li>고객님께서는 위의 개인정보 및 회원정보 수정 등을 통해 추가로 수집하는 개인정보에<br/>
                   대해 동의하지 않거나 개인정보를 기재하지 않음으로써 거부하실 수 있습니다.<br/>
                   다만 이때 회원 대상 서비스가 제한될 수 있습니다.
@@ -140,6 +177,8 @@
           
         </div> <!-- form_txtInput E -->
        </form:form>
+       
+       
       </div><!-- content E-->
     
    <c:import url="/WEB-INF/views/include/bottom_info.jsp" />

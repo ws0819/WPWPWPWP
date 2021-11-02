@@ -1,5 +1,7 @@
 package wine.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import wine.beans.AdminBean;
+import wine.beans.SubscribeBean;
+import wine.beans.UserLogBean;
 import wine.service.AdminService;
 
 @RequestMapping("/admin")
@@ -30,7 +34,6 @@ public class AdminController {
 		if(loginAdminBean.isAdminLogin()==true) {
 			return "admin/admin_main";
 		}
-		
 		model.addAttribute("fail", fail);
 		return "admin/admin_login";
 	}
@@ -56,5 +59,18 @@ public class AdminController {
 	public String admin_not() {
 		return "admin/admin_not";
 	}
- 
+	@GetMapping("/admin_userlog")
+	public String admin_userlog(Model model) {
+		List<UserLogBean> userLogBean = adminService.getUserLog();
+		model.addAttribute("userLogBean", userLogBean);
+		
+		return "admin/admin_userlog";
+	}
+	@GetMapping("admin_subscribe")
+	public String admin_subscribe(Model model) {
+		List<SubscribeBean> subscribeBean = adminService.getSubscribe();
+		model.addAttribute("subscribeBean", subscribeBean);
+		
+		return "admin/admin_subscribe";
+	}
 }

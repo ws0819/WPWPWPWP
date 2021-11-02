@@ -133,7 +133,7 @@ function change () {
 </div> -->
 </body>
 
-                     <button type="button" class="btn btn-outline-success mb-2" onclick="location.href='${root}product/cart_pro_2?wine_idx=20005'">구매하기</button>
+                     <button type="button" class="btn btn-outline-success mb-2" onclick="location.href='${root}product/cart_pro_3?wine_idx=20005'">구매하기</button>
                   </div>
                </div>
             </div>

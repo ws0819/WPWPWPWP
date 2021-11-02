@@ -19,7 +19,7 @@ public class HomeController {
 	
 	@RequestMapping(value= "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest request) {
-		System.out.println(request.getServletContext().getRealPath("/"));
+		//System.out.println(request.getServletContext().getRealPath("/"));
 		//System.out.println(loginUserBean);
 		return "redirect:main";
 	}

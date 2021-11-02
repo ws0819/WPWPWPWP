@@ -2,13 +2,12 @@ package wine.DAO;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import wine.beans.FaqBean;
-import wine.beans.NoticeBean;
 import wine.mapper.FaqMapper;
-import wine.mapper.NoticeMapper;
 
 @Repository
 public class FaqDAO {
@@ -20,8 +19,8 @@ public class FaqDAO {
 		//for(int i=0; i<400; i++)
 		faqMapper.addFaqInfo(writeFaqBean);
 	}
-	public List<FaqBean> getFaqList(){
-		return faqMapper.getFaqList();
+	public List<FaqBean> getFaqList(RowBounds rowbounds){
+		return faqMapper.getFaqList(rowbounds);
 	}
 	public FaqBean getFaqInfo(int faq_number){
 		return faqMapper.getFaqInfo(faq_number);

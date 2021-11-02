@@ -19,7 +19,7 @@
 			</div>
 			<div>
 				<form:label path="notice_content">내용</form:label>
-				<form:textarea path="notice_content" row="10" sytle="resize:none"/>
+				<form:textarea path="notice_content" row="50" sytle="resize:none"/>
 			</div>
 			<div>
 				<form:button>작성하기</form:button>

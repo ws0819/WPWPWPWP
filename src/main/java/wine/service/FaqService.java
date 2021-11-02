@@ -2,6 +2,7 @@ package wine.service;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -28,10 +29,11 @@ public class FaqService {
 		faqDAO.addFaqInfo(writeFaqBean);
 	}
 	
-	public List<FaqBean> getFaqList(){
-		return faqDAO.getFaqList();
+	public List<FaqBean> getFaqList(int page){
+		int start=(page-1)*page_listcnt;
+		RowBounds rowBounds = new RowBounds(start, page_listcnt);
+		return faqDAO.getFaqList(rowBounds);
 	}
-	
 	public FaqBean getFaqInfo(int faq_number) {
 		return faqDAO.getFaqInfo(faq_number);				
 	}

@@ -29,6 +29,7 @@ import wine.mapper.AdminMapper;
 import wine.mapper.FaqMapper;
 import wine.mapper.NoticeMapper;
 import wine.mapper.ProductMapper;
+import wine.mapper.ReviewMapper;
 import wine.mapper.UserMapper;
 
 
@@ -125,7 +126,12 @@ public class ServletAppContext implements WebMvcConfigurer{
 		factoryBean.setSqlSessionFactory(factory);
 		return factoryBean;
 	}	
-	
+	@Bean
+	public MapperFactoryBean<ReviewMapper> getReviewMapper(SqlSessionFactory factory) {
+		MapperFactoryBean<ReviewMapper> factoryBean = new MapperFactoryBean<ReviewMapper>(ReviewMapper.class);
+		factoryBean.setSqlSessionFactory(factory);
+		return factoryBean;
+	}
 
 	//메세지(error_message) 선언과 충돌되므로 별도로 관리
 	@Bean

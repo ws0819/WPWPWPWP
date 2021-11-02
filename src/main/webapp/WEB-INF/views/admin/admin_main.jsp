@@ -13,6 +13,9 @@
 <a href="${root }notice/notice_board_read">공지사항</a><br />
 <a href="${root }faq/faq_write">FAQ 글쓰기</a><br />
 <a href="${root }faq/faq_board">FAQ 글목록</a><br />
+<a href="${root }admin/admin_userlog">회원정보 관리</a><br />
+<a href="${root }admin/admin_subscribe">구독관리</a><br />
+<a href="#">주문관리</a><br />
 
 </body>
 </html>

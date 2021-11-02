@@ -151,7 +151,7 @@ h3 {
   		</c:when>
 		<c:otherwise>
 	  		<li class="page-item">
-		      <a class="page-link" href="${root }notice/notice_board_read?page=${pageBean.prevPage}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+		      <a class="page-link" href="${root }faq/faq_board?page=${pageBean.prevPage}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
 		    </li>
 		</c:otherwise>
     </c:choose>
@@ -159,12 +159,12 @@ h3 {
 	    <c:choose>
 	    	<c:when test="${idx == pageBean.currentPage }">
 	    		<li class="page-item">
-	    			<a class="page-link" href="${root }notice/notice_board_read?page=${idx}">${idx }</a>
+	    			<a class="page-link" href="${root }faq/faq_board?page=${idx}">${idx }</a>
 	    		</li>
 	    	</c:when>
 	    	<c:otherwise>
 	    		<li class="page-item">
-	    			<a href="${root }notice/notice_board_read?page=${idx}" class="page-link">${idx }</a>
+	    			<a href="${root }faq/faq_board?page=${idx}" class="page-link">${idx }</a>
 	    		</li>
 	    	</c:otherwise>
 	    </c:choose>
@@ -177,7 +177,7 @@ h3 {
 		</c:when>
 		<c:otherwise>	
 		    <li class="page-item">
-		      <a class="page-link" href="${root }notice/notice_board_read?page=${pageBean.nextPage}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+		      <a class="page-link" href="${root }faq/faq_board?page=${pageBean.nextPage}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
 		    </li>
 		</c:otherwise>
 	</c:choose>

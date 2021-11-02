@@ -76,7 +76,7 @@
 					당신도 모르는 당신의 취향을 찾아드립니다
 					</h3>
 					<%-- <a href="${root}subscribe/subscribe">구독서비스</a> --%>
-					<a href="${root}subscribe/subscribe_review">구독리뷰보기</a>
+					<strong><a href="${root}subscribe/subscribe_review">구독리뷰 & 이지박스 리뷰</a></strong>
 <!-- 					<p>초급 월 2회 99,000원</p><br />
 					<p>중급 월 2회 + 와인시음회 199,000원</p><br />
 					<p>고급 월 2회 + 와인시음회 499,000원</p><br />

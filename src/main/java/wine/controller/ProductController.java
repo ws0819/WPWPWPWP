@@ -77,6 +77,20 @@ public class ProductController {
 	}
 	@GetMapping("/cart_pro_2")
 	public String cart_pro_2(@RequestParam("wine_idx") int wine_idx , Model model) {
+		List<CartBean> cartBean2=productService.getCartList();
+		if(cartBean2.isEmpty()==false) {
+			for(int i=0; i<cartBean2.size(); i++) {
+				if(cartBean2.get(i).getWine_number()==20001 || cartBean2.get(i).getWine_number()==20002 || cartBean2.get(i).getWine_number()==20003 || cartBean2.get(i).getWine_number()==20004) {
+					return "product/cart_pro_4";
+				}
+			}
+		}
+		WineProductBean wineProductBean=productService.getOneWineInfo(wine_idx);
+		productService.addCartWine(wineProductBean);
+		return "product/cart_pro_2";
+	}
+	@GetMapping("/cart_pro_3")
+	public String cart_pro_3(@RequestParam("wine_idx") int wine_idx, Model model) {
 		WineProductBean wineProductBean=productService.getOneWineInfo(wine_idx);
 		productService.addCartWine(wineProductBean);
 		return "product/cart_pro_2";

@@ -28,7 +28,7 @@ public class FaqController {
 	
 	@GetMapping("/faq_board")
 	public String faq_board(@RequestParam(value="page", defaultValue = "1") int page , Model model) {
-		List<FaqBean> faqList = faqService.getFaqList();
+		List<FaqBean> faqList = faqService.getFaqList(page);
 		model.addAttribute("faqList",faqList);
 		PageBean pageBean = faqService.getFaqCnt(page);
 		model.addAttribute("pageBean", pageBean);
