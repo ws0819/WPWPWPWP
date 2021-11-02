@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ApiDAO {
 
-	@RequestMapping("/product/kakaopay")
+	@RequestMapping("/product/kakaopay/")
 	@ResponseBody
 	public String kakaopay() {
 		try {
@@ -49,7 +49,7 @@ public class ApiDAO {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return "";
+		return "product/checkout_pro";
 	}
 	
 }

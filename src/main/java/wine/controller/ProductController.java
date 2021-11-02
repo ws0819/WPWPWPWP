@@ -45,14 +45,24 @@ public class ProductController {
 	public String product(@ModelAttribute("SearchWienBean") WineProductBean SearchWienBean , Model model
 						,@RequestParam(value="page", defaultValue = "1") int page,
 						 @RequestParam(value="wine_type", defaultValue = "Red") String wine_type) {
-		if(SearchWienBean.getWine_nation()==null) { 
+		
+		if(SearchWienBean.getWine_name()==null) {
+			if(SearchWienBean.getWine_nation()==null) { 
 		List<WineProductBean> wineProductBean=productService.getAllWineInfo(page, wine_type);
 		model.addAttribute("wineProductBean",wineProductBean);
 		PageBean pageBean = productService.getWineCount(page, wine_type);
 		model.addAttribute("pageBean",pageBean);
 		model.addAttribute("page", page);
-		}else {
+			}else {
 			List<WineProductBean> wineProductBean=productService.getSelectWine(SearchWienBean, page);
+			model.addAttribute("wineProductBean",wineProductBean);
+			PageBean pageBean = productService.getSearchWineCount(page,SearchWienBean);
+			model.addAttribute("pageBean",pageBean);
+			model.addAttribute("page", page);
+		}
+		}
+		else if(SearchWienBean.getWine_name()!=null) {
+			List<WineProductBean> wineProductBean=productService.getSelectWine_name(SearchWienBean, page);
 			model.addAttribute("wineProductBean",wineProductBean);
 			PageBean pageBean = productService.getSearchWineCount(page,SearchWienBean);
 			model.addAttribute("pageBean",pageBean);
@@ -115,7 +125,7 @@ public class ProductController {
 			}
 			
 		}
-		//장바구니에 같은게 있다면 fail 긔
+		//장바구니에 같은게 있다면 fail
 		if(already == true) {
 			return "product/cart_fail";
 		}
@@ -139,7 +149,11 @@ public class ProductController {
 	}
 	
 	@GetMapping("/info")
-	public String info() {
+	public String info(@RequestParam("wine_idx") int wine_idx, Model model) {
+		WineProductBean wineProductBean=productService.getOneWineInfo(wine_idx);
+		model.addAttribute("wineProductBean",wineProductBean);
+		System.out.println(wineProductBean.getWine_sweet());
+		
 		return "product/info";
 	}
 	

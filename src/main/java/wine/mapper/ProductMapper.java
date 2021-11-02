@@ -24,8 +24,11 @@ public interface ProductMapper {
 	List<WineProductBean> getAllWineInfo(RowBounds rowbounds, String wine_type);
 	
 	@Select("select distinct wine_idx, wine_number, wine_type, wine_price, wine_name, wine_img from wine_product where wine_nation = #{wine_nation} and wine_type = #{wine_type} "
-			+ "and wine_sweet = #{wine_sweet} and wine_acidity = #{wine_acidity} and wine_body = #{wine_body} and wine_tannin = #{wine_tannin} or wine_name like '%'||#{wine_name}||'%'")
+			+ "and wine_sweet = #{wine_sweet} and wine_acidity = #{wine_acidity} and wine_body = #{wine_body} and wine_tannin = #{wine_tannin}")
 	List<WineProductBean> getSelectWine(WineProductBean SearchWienBean, RowBounds rowbounds);
+	
+	@Select("select distinct wine_idx, wine_number, wine_type, wine_price, wine_name, wine_img from wine_product where wine_name like '%'||#{wine_name}||'%'")
+	List<WineProductBean> getSelectWine_name(WineProductBean SearchWienBean, RowBounds rowbounds);
 	
 	@Select("select * from wine_product where wine_name=%#{wine_name}%")
 	List<WineProductBean> getSelectWineName(WineProductBean SearchWienBean);

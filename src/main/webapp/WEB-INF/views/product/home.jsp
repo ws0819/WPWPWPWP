@@ -279,11 +279,13 @@
                      <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/${obj.wine_img});">
                         <div class="desc">
                            <p class="meta-prod d-flex">
-                             <a href="${root }product/cart_pro?wine_idx=${obj.wine_idx}" class="d-flex align-items-center justify-content-center">
+                             <a href="${root }product/cart_pro?wine_idx=${obj.wine_idx}" class="d-flex align-items-center justify-content-center" 
+                             															 style="background-image: url(../liquorstore_master/images/cart1.png);">
 											<span class="flaticon-shopping-bag"></span></a> 
-											<a href="${root }product/cart" class="d-flex align-items-center justify-content-center">
+											<a href="${root }product/cart" class="d-flex align-items-center justify-content-center"
+																		   style="background-image: url(../liquorstore_master/images/cart2.png);">
 											<span class="flaticon-shopping-bag"></span></a> 
-											<a href="${root }product/info" class="d-flex align-items-center justify-content-center">
+											<a href="${root }product/info?wine_idx=${obj.wine_idx}" class="d-flex align-items-center justify-content-center">
 											<span class="flaticon-visibility"></span></a>
                            </p>
                         </div>

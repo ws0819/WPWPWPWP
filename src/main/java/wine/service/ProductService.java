@@ -51,6 +51,13 @@ public class ProductService {
 		return productDAO.getSelectWine(SearchWienBean, rowBounds);
 	}
 	
+	public List<WineProductBean> getSelectWine_name(WineProductBean SearchWienBean, int page) {
+		int start=(page-1)*page_listcnt;
+		RowBounds rowBounds = new RowBounds(start, page_listcnt);
+		return productDAO.getSelectWine_name(SearchWienBean, rowBounds);
+	}
+	
+	
 	public List<WineProductBean> getAllWineInfo(int page,String wine_type) {
 		int start=(page-1)*page_listcnt;
 		RowBounds rowBounds = new RowBounds(start, page_listcnt);

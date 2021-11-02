@@ -51,7 +51,7 @@
 	<!-- END nav -->
 
 	<section class="hero-wrap hero-wrap-2"
-		style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+		style="background-image: url('../liquorstore_master/images/top_bg.jpg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div
@@ -211,8 +211,9 @@
                                  </div>
                               </div>
                            </div>
-                           <p><a href="#"class="btn btn-primary py-3 px-4">Place an order</a></p>
+                           <p><a href="javascript:void(0)" class="btn btn-primary py-3 px-4"  onclick="apibtn();">결제하기</a></p>
                         </div>
+                        <button></button>
                 </div>
              </div>
           </div> 

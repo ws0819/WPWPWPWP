@@ -159,7 +159,7 @@
 											
 											<a href="${root }product/cart" class="d-flex align-items-center justify-content-center" style="background-image: url(../liquorstore_master/images/cart2.png);">
 											<span class="flaticon-shopping-bag"></span></a> 
-											<a href="${root }product/info" class="d-flex align-items-center justify-content-center">
+											<a href="${root }product/info?wine_idx=${obj.wine_idx}" class="d-flex align-items-center justify-content-center">
 											<span class="flaticon-visibility"></span></a>
 										</p>
 									</div>

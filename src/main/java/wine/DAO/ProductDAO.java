@@ -30,6 +30,10 @@ public class ProductDAO {
 		return productMapper.getSelectWine(SearchWienBean,rowbounds);
 	}
 	
+	public List<WineProductBean> getSelectWine_name(WineProductBean SearchWienBean, RowBounds rowbounds) {
+		return productMapper.getSelectWine_name(SearchWienBean,rowbounds);
+	}
+	
 	public List<WineProductBean> getAllWineInfo(RowBounds rowbounds, String wine_type) {
 		return productMapper.getAllWineInfo(rowbounds,wine_type);
 	}
