@@ -54,6 +54,7 @@ public class ProductController {
 	                  ,@RequestParam(value="page", defaultValue = "1") int page,
 	                   @RequestParam(value="wine_type", defaultValue = "Red") String wine_type) {
 	      String searchon= "";
+	      model.addAttribute("wine_type", wine_type);
 	      model.addAttribute("searchon", searchon);
 	      List<WineProductBean> wineProductBean=productService.getAllWineInfo(page, wine_type);
 	      model.addAttribute("wineProductBean",wineProductBean);
@@ -93,12 +94,12 @@ public class ProductController {
 	@GetMapping("/cart")
 	public String cart(@ModelAttribute("updateCartBean") CartBean updateCartBean, Model model) {
 		List<CartBean> cartBean=productService.getCartList(loginUser.getUser_id());
-		//장바구니가 비어있다면 토탈가격 구하는 mapper가 오류나므로 막아줘야합니다
+		//�옣諛붽뎄�땲媛� 鍮꾩뼱�엳�떎硫� �넗�깉媛�寃� 援ы븯�뒗 mapper媛� �삤瑜섎굹誘�濡� 留됱븘以섏빞�빀�땲�떎
 		if(!cartBean.isEmpty()) { 
 		int total_price=productService.getCartTotalPrice(loginUser.getUser_id());
 		model.addAttribute("total_price",total_price);
 		}
-		//장바구니가 비어있으면 토탈가격은 무조건 0으로 설정
+		//�옣諛붽뎄�땲媛� 鍮꾩뼱�엳�쑝硫� �넗�깉媛�寃⑹� 臾댁“嫄� 0�쑝濡� �꽕�젙
 		else {
 		int	total_price=0;
 		model.addAttribute("total_price",total_price);
@@ -129,7 +130,7 @@ public class ProductController {
 		int i = 0;
 		boolean already = false;
 		
-		//장바구니에 같은 와인이 들어있는지 체크합니다
+		//�옣諛붽뎄�땲�뿉 媛숈� ���씤�씠 �뱾�뼱�엳�뒗吏� 泥댄겕�빀�땲�떎
 		if(!cartBean.isEmpty()) {
 			for(i=0;i<cartBean.size();i++) {
 				if(cartBean.get(i).getWine_idx()==wine_idx) {
@@ -142,11 +143,11 @@ public class ProductController {
 			}
 			
 		}
-		//장바구니에 같은게 있다면 fail
+		//�옣諛붽뎄�땲�뿉 媛숈�寃� �엳�떎硫� fail
 		if(already == true) {
 			return "product/cart_fail";
 		}
-		//없다면 장바구니에 담습니다
+		//�뾾�떎硫� �옣諛붽뎄�땲�뿉 �떞�뒿�땲�떎
 		else {		
 			wineProductBean.setUser_id(loginUser.getUser_id());
 			productService.addCartWine(wineProductBean);
@@ -175,7 +176,7 @@ public class ProductController {
 		int i = 0;
 		boolean already = false;
 		
-		//장바구니에 같은 와인이 들어있는지 체크합니다
+		//�옣諛붽뎄�땲�뿉 媛숈� ���씤�씠 �뱾�뼱�엳�뒗吏� 泥댄겕�빀�땲�떎
 		if(!cartBean.isEmpty()) {
 			for(i=0;i<cartBean.size();i++) {
 				if(cartBean.get(i).getWine_idx()==wine_idx) {
@@ -188,11 +189,11 @@ public class ProductController {
 			}
 			
 		}
-		//장바구니에 같은게 있다면 fail
+		//�옣諛붽뎄�땲�뿉 媛숈�寃� �엳�떎硫� fail
 		if(already == true) {
 			return "product/cart_fail";
 		}
-		//없다면 장바구니에 담습니다
+		//�뾾�떎硫� �옣諛붽뎄�땲�뿉 �떞�뒿�땲�떎
 		else {
 		wineProductBean.setUser_id(loginUser.getUser_id());
 		productService.addCartWine(wineProductBean);
@@ -226,7 +227,7 @@ public class ProductController {
 	      return "product/checkout";
 	      }
 	      else {
-	         //결제 후 여기로 이동합니다
+	         //寃곗젣 �썑 �뿬湲곕줈 �씠�룞�빀�땲�떎
 	         model.addAttribute("OrderBean",OrderBean);
 	         
      	     List<CartBean> cartBean2=productService.getCartList(loginUser.getUser_id());

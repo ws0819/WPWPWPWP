@@ -184,14 +184,14 @@
                               <c:when test="${idx == pageBean.currentPage }">
                                  <li >
                                      <a class="page-link " 
-                                     href="${root }product/product?page=${idx}">
+                                     href="${root }product/product?page=${idx}&wine_type=${wine_type}">
                                      ${idx }</a>
                                   </li>
                               </c:when>
                            <c:otherwise>
                                  <li >
                                      <a class="page-link" 
-                                     href="${root }product/product?page=${idx}">${idx }</a>
+                                     href="${root }product/product?page=${idx}&wine_type=${wine_type}">${idx }</a>
                                   </li>
                            </c:otherwise>
                            </c:choose>
@@ -201,7 +201,7 @@
                               <li><a class="page-link" href="javascript:void(0)" style="color:gray;">&gt;</a></li>
                            </c:when>
                            <c:otherwise>
-                              <li><a href="${root }product/product?page=${pageBean.nextPage}">&gt;</a></li>
+                              <li><a href="${root }product/product?page=${pageBean.nextPage}&wine_type=${wine_type}">&gt;</a></li>
                            </c:otherwise>
                         </c:choose>
                         </ul>

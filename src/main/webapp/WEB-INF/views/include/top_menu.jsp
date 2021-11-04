@@ -36,7 +36,7 @@
                   <a href="${root}subscribe/subscribe" class="nav-link">구독서비스</a>
                </li>
                <li class="nav-item">
-                  <a href="${root}product/home" class="nav-link">와인판매</a>
+                  <a href="${root}product/home" class="nav-link">와인구매</a>
                </li>
                   <li class="nav-item">
                   <a href="${root}notice/notice_board_read" class="nav-link">공지사항</a>
@@ -55,7 +55,7 @@
                   <a href="${root}subscribe/subscribe" class="nav-link">구독서비스</a>
                </li>
                <li class="nav-item">
-                  <a href="${root}product/home" class="nav-link">와인판매</a>
+                  <a href="${root}product/home" class="nav-link">와인구매</a>
                </li>
                   <li class="nav-item">
                   <a href="${root}notice/notice_board_read" class="nav-link">공지사항</a>

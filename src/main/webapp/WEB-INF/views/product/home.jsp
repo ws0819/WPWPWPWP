@@ -42,7 +42,7 @@
   </head>
   <body>
  
-  <c:import url="/WEB-INF/views/product/top_menu.jsp" />
+  <c:import url="/WEB-INF/views/include/top_menu.jsp" />
     
     
     <div class="hero-section">
