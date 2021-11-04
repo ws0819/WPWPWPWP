@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import wine.beans.AdminBean;
+import wine.beans.ProductOrderBean;
 import wine.beans.SubscribeBean;
 import wine.beans.UserLogBean;
 import wine.service.AdminService;
@@ -72,5 +73,11 @@ public class AdminController {
 		model.addAttribute("subscribeBean", subscribeBean);
 		
 		return "admin/admin_subscribe";
+	}
+	@GetMapping("admin_order")
+	public String admin_order(Model model) {
+		List<ProductOrderBean> productOrderBean = adminService.getOrder();
+		model.addAttribute("productOrderBean", productOrderBean);
+		return "admin/admin_order";
 	}
 }

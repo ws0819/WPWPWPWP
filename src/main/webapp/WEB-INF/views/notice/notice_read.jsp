@@ -31,33 +31,60 @@
     resize: none;
   }
  
+ .form-control:disabled, .form-control[readonly] {
+    background-color: #e9ecef1a;
+    opacity: 1;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0.375
+rem
+ 0.75
+rem
+;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #98c5935e;
+    border: 1
+px
+ solid #ced4da;
+    border-radius: 0.25
+rem
+;
+}
  </style>  
    
 </head>
 <body>
  <!-- 내용 -->
-	         <div class="container" >
-				<div class="input-group mb-3" style="margin-top:100px;">
-				  <form:hidden path="notice_number"/>
-				  <span class="input-group-text">제목</span>
-				  <input type="text" class="form-control" placeholder="${noticeInfo.notice_title }" readonly="readonly" aria-label="Username">
-				  <span class="input-group-text">시간</span>
-				  <input type="text" class="form-control" placeholder="${noticeInfo.notice_date }" readonly="readonly" aria-label="Time">
-				</div>
-				 
-			       <div class="input-group">
-			 	
-		 	 <textarea class="form-control text-center" aria-label="With textarea" readonly="readonly" placeholder="${noticeInfo.notice_content }"></textarea>
-				</div>
-					 
-			 <c:if test="${adminLogin==true }">
-		        <div style="text-align:right; margin-top:30px" >
+            <div class="container" >
+            <div class="input-group mb-3" style="margin-top:100px;">
+              <form:hidden path="notice_number"/>
+              <span class="input-group-text">제목</span>
+              <input type="text" class="form-control" placeholder="${noticeInfo.notice_title }" readonly="readonly" aria-label="Username">
+              <span class="input-group-text">시간</span>
+              <input type="text" class="form-control" placeholder="${noticeInfo.notice_date }" readonly="readonly" aria-label="Time">
+            </div>
+             
+                <div class="input-group">
+             
+           <textarea class="form-control text-center" aria-label="With textarea" readonly="readonly" placeholder="${noticeInfo.notice_content }"></textarea>
+            </div>
+                
+          <c:if test="${adminLogin==true }">
+              <div style="text-align:right; margin-top:30px" >
 
-		        <a href="${root}notice/notice_delete?noticeDelete_title=${noticeInfo.notice_title}">삭제</a>
-		        <a href="${root}notice/notice_modify?noticeModify_title=${noticeInfo.notice_title}&notice_number=${notice_number}">수정</a>
-		        </div>
-			</c:if>
-		
+              <a href="${root}notice/notice_delete?noticeDelete_title=${noticeInfo.notice_title}">삭제</a>
+              <a href="${root}notice/notice_modify?noticeModify_title=${noticeInfo.notice_title}&notice_number=${notice_number}">수정</a>
+              </div>
+         </c:if>
+      
 
 
    <!-- 내꺼 부트스트랩 js -->

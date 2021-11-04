@@ -14,10 +14,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import wine.beans.CartBean;
 import wine.beans.PageBean;
 import wine.beans.ProductOrderBean;
+import wine.beans.SommelierBean;
+import wine.beans.SubscribeBean;
 import wine.beans.UserBean;
+import wine.beans.UserInfoBean;
 import wine.beans.WineProductBean;
 import wine.service.AdminService;
 import wine.service.ProductService;
+import wine.service.UserService;
 
 @Controller
 @RequestMapping("/product")
@@ -28,6 +32,9 @@ public class ProductController {
 	
 	@Autowired
 	private AdminService adminService;
+	
+	@Autowired
+	private UserService userService;
 	
 	@Resource(name="loginUser")
 	private UserBean loginUser;
@@ -43,36 +50,45 @@ public class ProductController {
 	}
 	
 	@GetMapping("/product")
-	public String product(@ModelAttribute("SearchWienBean") WineProductBean SearchWienBean , Model model
-						,@RequestParam(value="page", defaultValue = "1") int page,
-						 @RequestParam(value="wine_type", defaultValue = "Red") String wine_type) {
-		
-		if(SearchWienBean.getWine_name()==null) {
-			if(SearchWienBean.getWine_nation()==null) { 
-		List<WineProductBean> wineProductBean=productService.getAllWineInfo(page, wine_type);
-		model.addAttribute("wineProductBean",wineProductBean);
-		PageBean pageBean = productService.getWineCount(page, wine_type);
-		model.addAttribute("pageBean",pageBean);
-		model.addAttribute("page", page);
-			}else {
-			List<WineProductBean> wineProductBean=productService.getSelectWine(SearchWienBean, page);
-			model.addAttribute("wineProductBean",wineProductBean);
-			PageBean pageBean = productService.getSearchWineCount(page,SearchWienBean);
-			model.addAttribute("pageBean",pageBean);
-			model.addAttribute("page", page);
-		}
-		}
-		else if(SearchWienBean.getWine_name()!=null) {
-			List<WineProductBean> wineProductBean=productService.getSelectWine_name(SearchWienBean, page);
-			model.addAttribute("wineProductBean",wineProductBean);
-			PageBean pageBean = productService.getSearchWineCount(page,SearchWienBean);
-			model.addAttribute("pageBean",pageBean);
-			model.addAttribute("page", page);
-		}
-		
-		
-		return "product/product";
-	}
+	   public String product(@ModelAttribute("SearchWienBean") WineProductBean SearchWienBean , Model model
+	                  ,@RequestParam(value="page", defaultValue = "1") int page,
+	                   @RequestParam(value="wine_type", defaultValue = "Red") String wine_type) {
+	      String searchon= "";
+	      model.addAttribute("searchon", searchon);
+	      List<WineProductBean> wineProductBean=productService.getAllWineInfo(page, wine_type);
+	      model.addAttribute("wineProductBean",wineProductBean);
+	      PageBean pageBean = productService.getWineCount(page, wine_type);
+	      model.addAttribute("pageBean",pageBean);
+	      model.addAttribute("page", page);
+	      return "product/product";
+	   }
+	   
+	   @GetMapping("/product_pro")
+	   public String product_pro(@ModelAttribute("SearchWienBean") WineProductBean SearchWienBean , Model model
+	                  ,@RequestParam(value="page", defaultValue = "1") int page
+	                  ,@RequestParam("wine_name") String wine_name) {
+	      List<WineProductBean> wineProductBean=productService.getSelectWine(SearchWienBean, page);
+	      List<WineProductBean> wineProductBean2=productService.getSelectWine_name(SearchWienBean, page);
+	      String searchon= "searchon";
+	      
+	      
+	      if(wine_name=="" && page >=0) {
+	         model.addAttribute("wineProductBean",wineProductBean);
+	         PageBean pageBean = productService.getSearchWineCount(page,SearchWienBean);
+	         model.addAttribute("pageBean",pageBean);
+	         model.addAttribute("page", page);
+	         model.addAttribute("searchon", searchon);
+	      }else {
+	         model.addAttribute("wineProductBean",wineProductBean2);
+	         PageBean pageBean = productService.getSearchWineCount(page,SearchWienBean);
+	         model.addAttribute("pageBean",pageBean);
+	         model.addAttribute("page", page);
+	         model.addAttribute("searchon", searchon);
+	      }
+	      
+	   
+	      return "product/product";
+	   }
 	
 	@GetMapping("/cart")
 	public String cart(@ModelAttribute("updateCartBean") CartBean updateCartBean, Model model) {
@@ -200,36 +216,105 @@ public class ProductController {
 	
 	@GetMapping("/checkout")
 	   public String checkout(@ModelAttribute("OrderBean") ProductOrderBean OrderBean, Model model,
-	                     @RequestParam(value="pg_token", defaultValue = "") String pg_token) {
+	                     @RequestParam(value="pg_token", defaultValue = "") String pg_token,
+	                     @RequestParam(value="write", defaultValue = "off") String write ) {
+	      int total_price=productService.getCartTotalPrice(loginUser.getUser_id());
+	      model.addAttribute("total_price",total_price);
+	      model.addAttribute("write",write);
 	      if(pg_token.length() <= 0) {
 	      model.addAttribute("OrderBean",OrderBean);
 	      return "product/checkout";
 	      }
 	      else {
-	         //결제되면 여기가서 작업할수있어욧 
-	    	  model.addAttribute("OrderBean",OrderBean);
-	         return "product/checkout_pro";
+	         //결제 후 여기로 이동합니다
+	         model.addAttribute("OrderBean",OrderBean);
+	         
+     	     List<CartBean> cartBean2=productService.getCartList(loginUser.getUser_id());
+     	     List<SommelierBean> sommelier = adminService.getSommelier();
+		     if(cartBean2.isEmpty()==false) {
+				for(int i=0; i<cartBean2.size(); i++) {
+					String user_id = loginUser.getUser_id();
+					int user_number = loginUser.getUser_number();
+					SubscribeBean subscribeBean = new SubscribeBean();
+			        if(cartBean2.get(i).getWine_number()==20001) {
+			        	String subscribe_grade = cartBean2.get(i).getWine_name();
+			        	int subscribe_sommliernumber = sommelier.get(0).getSommelier_number();
+			        	subscribeBean.setSubscribe_grade(subscribe_grade);
+			        	subscribeBean.setSubscribe_sommliernumber(subscribe_sommliernumber);
+			        	subscribeBean.setUser_id(user_id);
+			        	subscribeBean.setUser_number(user_number);
+			            adminService.addSubscribe(subscribeBean);
+			        }
+			        if(cartBean2.get(i).getWine_number()==20002) {
+			        	String subscribe_grade = cartBean2.get(i).getWine_name();
+			        	int subscribe_sommliernumber = sommelier.get(0).getSommelier_number();
+			        	subscribeBean.setSubscribe_grade(subscribe_grade);
+			        	subscribeBean.setSubscribe_sommliernumber(subscribe_sommliernumber);
+			        	subscribeBean.setUser_id(user_id);
+			        	subscribeBean.setUser_number(user_number);
+			            adminService.addSubscribe(subscribeBean);
+			        }
+			        if(cartBean2.get(i).getWine_number()==20003) {
+			        	String subscribe_grade = cartBean2.get(i).getWine_name();
+			        	int subscribe_sommliernumber = sommelier.get(1).getSommelier_number();
+			        	subscribeBean.setSubscribe_grade(subscribe_grade);
+			        	subscribeBean.setSubscribe_sommliernumber(subscribe_sommliernumber);
+			        	subscribeBean.setUser_id(user_id);
+			        	subscribeBean.setUser_number(user_number);
+			            adminService.addSubscribe(subscribeBean);
+			        }
+			        if(cartBean2.get(i).getWine_number()==20004) {
+			        	String subscribe_grade = cartBean2.get(i).getWine_name();
+			        	int subscribe_sommliernumber = sommelier.get(2).getSommelier_number();
+			        	subscribeBean.setSubscribe_grade(subscribe_grade);
+			        	subscribeBean.setSubscribe_sommliernumber(subscribe_sommliernumber);
+			        	subscribeBean.setUser_id(user_id);
+			        	subscribeBean.setUser_number(user_number);
+			            adminService.addSubscribe(subscribeBean);
+			        }
+				}
+			}
+		     int total = productService.getCartTotalPrice(loginUser.getUser_id());
+		     double point = total * 0.05;
+		     
+		     String subcribe = "";
+		     for(int i=0; i<cartBean2.size(); i++) {
+		    	 if(cartBean2.get(i).getWine_number()==20001 || cartBean2.get(i).getWine_number()==20002 || cartBean2.get(i).getWine_number()==20003 || cartBean2.get(i).getWine_number()==20004 || cartBean2.get(i).getWine_number()==20005) {
+		    		 if(cartBean2.get(i).getWine_number()==20001) {
+		    			 subcribe += "ORANGE_SINGLE/";
+		    		 }
+		    		 else if(cartBean2.get(i).getWine_number()==20002) {
+		    			 subcribe += "ORANGE_DOUBLE/";
+		    		 }
+		    		 else if(cartBean2.get(i).getWine_number()==20003) {
+		    			 subcribe += "VIOLET/";
+		    		 }
+		    		 else if(cartBean2.get(i).getWine_number()==20004) {
+		    			 subcribe += "BLACK/";
+		    		 }
+		    		 else if(cartBean2.get(i).getWine_number()==20005) {
+		    			 subcribe += "EASY_BOX/";
+		    		 }
+		    	 }
+		     }
+		     UserInfoBean userInfo = new UserInfoBean();
+		     userInfo.setUser_id(loginUser.getUser_id());
+		     userInfo.setUser_number(loginUser.getUser_number());
+		     userInfo.setUser_point(point);
+		     userInfo.setUser_subscribe(subcribe);
+		     userService.addUseruser(userInfo);
+		     
+	         productService.deleteAllCart(loginUser.getUser_id());
+	         return "product/payment";
 	      }
 	   }
 	
 	@GetMapping("/checkout_pro")
-	public String checkout_pro(@ModelAttribute("OrderBean") ProductOrderBean OrderBean, Model model) {
-		OrderBean.setOrder_id(loginUser.getUser_id());
-		productService.insertOrder(OrderBean);
-		if(OrderBean.getProduct_number() == 20001) {
-			adminService.addSubscribe("ORANGE_SINGLE", 1, loginUser.getUser_id(), loginUser.getUser_number());
-		}
-		if(OrderBean.getProduct_number() == 20002) {
-			adminService.addSubscribe("ORANGE_DOUBLE", 1, loginUser.getUser_id(), loginUser.getUser_number());
-		}
-		if(OrderBean.getProduct_number() == 20003) {
-			adminService.addSubscribe("VIOLET", 2, loginUser.getUser_id(), loginUser.getUser_number());
-		}
-		if(OrderBean.getProduct_number() == 20004) {
-			adminService.addSubscribe("BLACK", 3, loginUser.getUser_id(), loginUser.getUser_number());
-		}
-		
-		return "product/checkout_pro";
-	}
+	   public String checkout_pro(@ModelAttribute("OrderBean") ProductOrderBean OrderBean, Model model) {
+	      OrderBean.setOrder_id(loginUser.getUser_id());
+	      productService.insertOrder(OrderBean);
+	      model.addAttribute("OrderBean",OrderBean);
+	      return "product/checkout_pro";
+	   }
 	
 }

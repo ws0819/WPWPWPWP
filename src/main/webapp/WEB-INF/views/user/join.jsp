@@ -9,10 +9,32 @@
 <link rel="shortcut icon" href="#">
   <meta charset="UTF-8">
   
-  <link rel="stylesheet" href="../assets/css/main.css" />
+  <!-- <link rel="stylesheet" href="../assets/css/main.css" /> -->
   <link rel="stylesheet" href="../user_boot/css/join.css" />
   <title>회원가입</title>
+  
+  
+ <style type="text/css">
+ 
+ 
+ 
+}
+ </style>
 </head>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1&family=Gowun+Batang&family=Gowun+Dodum&display=swap" rel="stylesheet">
+   <style>
+   *{
+   font-family: 'Black Han Sans', sans-serif;
+font-family: 'Gothic A1', sans-serif;
+font-family: 'Gowun Batang', serif;
+font-family: 'Gowun Dodum', sans-serif;}
+   label{
+      font-size: 22px;
+   }
+   </style>
+
 
 <script type="text/javascript">
    function checkUserIdExist() { 
@@ -40,6 +62,8 @@
    }
  </script>
 
+
+
 <body>
    <c:import url="/WEB-INF/views/include/top_menu.jsp" />
   <div class="wrap wd668">
@@ -62,35 +86,35 @@
               
               <tbody>
                 <tr>
-                  <th><span><form:label path="user_id">아이디</form:label></span></th>
-                  <td><form:input path="user_id" onkeypress="resetUserIdExist()"/>
+                  <th><span><form:label path="user_id" style="font-size:17px;">아이디</form:label></span></th>
+                  <td><form:input path="user_id" onkeypress="resetUserIdExist()" style="color:white;" placeholder="사용할 아이디를 입력하세요."/>
                     <a href="javascript:void(0)"  class="btn_confirm" onclick="checkUserIdExist(); return false;">중복확인</a>  
                     <form:errors path="user_id" style='color:red'/>                      
                   </td>
                 </tr>
                 
                 <tr>
-                  <th><span><form:label path="user_name">이름</form:label></span></th>
-                  <td><form:input path="user_name" placeholder="이름을 입력하세요."/>
+                  <th><span><form:label path="user_name" style="font-size:17px;">이름</form:label></span></th>
+                  <td><form:input path="user_name" placeholder="이름을 입력하세요." style="color:white;"/>
                         <form:errors path="user_name" style='color:red'/></td>
                 </tr>
               
                 <tr>
-                  <th><span><form:label path="user_pw">비밀번호</form:label></span></th>
-                  <td><form:password path="user_pw" placeholder="비밀번호를 입력하세요."/>
+                  <th><span><form:label path="user_pw" style="font-size:17px;">비밀번호</form:label></span></th>
+                  <td><form:password path="user_pw" placeholder="비밀번호를 입력하세요." style="color:white;"/>
                         <form:errors path="user_pw" style='color:red'/></td>
                 </tr>
               
                 <tr>
-                  <th><span><form:label path="user_pw2">비밀번호 확인</form:label></span></th>
-                  <td><form:password path="user_pw2" placeholder="비밀번호를 입력하세요."/>
+                  <th><span><form:label path="user_pw2" style="font-size:17px;">비밀번호 확인</form:label></span></th>
+                  <td><form:password path="user_pw2" placeholder="비밀번호를 입력하세요." style="color:white;"/>
                         <form:errors path="user_pw2" style='color:red'/></td>
                 </tr>
               
                 <tr class="email">
-                  <th><span><form:label path="user_email">이메일</form:label></span></th>
+                  <th><span><form:label path="user_email" style="font-size:17px;">이메일</form:label></span></th>
                   <td>
-                    <form:input path="user_email" placeholder="이메일을 입력하세요."/>
+                    <form:input path="user_email" placeholder="이메일을 입력하세요." style="color:white;"/>
                   </td>
                 </tr>
                 
@@ -104,32 +128,32 @@
                 </tr> --%>
                 
               <tr>
-                  <th><span><form:label path="user_tel">전화번호</form:label></span></th>
-                  <td><form:input path="user_tel" id="inputPhoneNumber" name="inputPhoneNumber"/>
-                     <input type="button" id="sendPhoneNumber" value="인증번호 전송"/><br />
-                    <!--  <a href="javascript:void(0)" class="btn_confirm" onclick="plz(); return false;">인증번호 전송</a>      -->            
+                  <th><span><form:label path="user_tel" style="font-size:17px;">전화번호</form:label></span></th>
+                  <td><form:input path="user_tel" id="inputPhoneNumber" name="inputPhoneNumber" style="color:white;" placeholder="핸드폰번호를 입력하세요."/>
+                     
+                 <a href="javascript:void(0)" id="sendPhoneNumber"class="btn_confirm">인증</a>               
                   </td>
                 </tr>
                 
                  <tr>
-                  <th><span>인증번호 확인</span></th>
-                  <td><input type="text" id="inputCertifiedNumber" placeholder="인증번호를 입력하세요">
-                      <input type="button" id="checkBtn" value="인증번호확인">
-                      <!-- <a href="javascript:void(0)" class="btn_confirm" onclick="plz2(); return false;">인증번호 확인</a> -->
+                  <th></th>
+                  <td><input type="text" id="inputCertifiedNumber" placeholder="인증번호를 입력하세요" style="color:white;">
+                      
+                      <a href="javascript:void(0)" id="checkBtn" class="btn_confirm">확인</a> 
                      
                   </td>
                 </tr>
             <input type="hidden" name="text" id="text"/>
                 
                 <tr>
-                  <th><span><form:label path="user_address">주소</form:label></span></th>
-                  <td><form:input path="user_address" id="sample6_postcode" placeholder="우편번호"/>
+                  <th><span><form:label path="user_address" style="font-size:17px;">주소</form:label></span></th>
+                  <td><form:input path="user_address" id="sample6_postcode" placeholder="우편번호" style="color:white;"/>
                   <form:label path="user_address2"/>
-             <form:input path="user_address2" id="sample6_address" style="top: 5px;" placeholder="도로명 주소" readonly="readonly" />   
+             <form:input path="user_address2" id="sample6_address"  placeholder="도로명 주소" readonly="readonly" style="color:white;"/>   
              <form:label path="user_address3"/>
-             <form:input path="user_address3" id="sample6_extraAddress" placeholder="주소"  />
+             
              <form:label path="user_address4"/>
-             <form:input path="user_address4" id="sample6_detailAddress" placeholder="상세주소"  />
+             <form:input path="user_address4" id="sample6_detailAddress" placeholder="상세주소"  style="color:white;"/>
 
 
 <!-- <input type="text" id="sample6_address" placeholder="주소1"><br>
@@ -137,7 +161,7 @@
 <input type="text" id="sample6_extraAddress" placeholder="참고항목1">
       -->               
 
-                  <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                  <input type="button" onclick="sample6_execDaumPostcode()" style="background-color:transparent; font-color:white;"" value="우편번호 찾기"><br>
               
                   </td>
                 </tr>
@@ -159,7 +183,7 @@
               </ul>
             </div>
           </div>
-        <form:button class="btn_register" >회원가입</form:button> 
+        <form:button class="btn_register" style="background-color:#871b01; front-color:white;">회원가입</form:button> 
          
           
         </div> <!-- form_txtInput E -->
@@ -181,8 +205,12 @@
  <script>
  $('#sendPhoneNumber').click(function(){
        var phoneNumber = $('#inputPhoneNumber').val();
+       if(phoneNumber.length==0){
+          alert('휴대폰 번호를 입력하세요')
+       }
+       else{
        alert('인증번호 발송 완료!')
-
+       }
 
        $.ajax({
            /* type: "GET", */

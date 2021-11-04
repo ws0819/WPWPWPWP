@@ -1,14 +1,14 @@
 package wine.mapper;
 
-import java.util.Map;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.springframework.web.bind.annotation.DeleteMapping;
 
 import wine.beans.UserBean;
+import wine.beans.UserInfoBean;
 
 public interface UserMapper {
 
@@ -22,7 +22,7 @@ public interface UserMapper {
    @Select("select * from wine_user where user_number=#{user_number}")
    UserBean userMyPage(int user_number);
    
-   @Select("select user_number,user_name from wine_user where user_id=#{user_id} and user_pw=#{user_pw}")
+   @Select("select * from wine_user where user_id=#{user_id} and user_pw=#{user_pw}")
    UserBean getLoginUserInfo(UserBean tempLoginUserBean);
    
    @Select("select user_id, user_name from wine_user where user_number=#{user_number}")
@@ -36,4 +36,13 @@ public interface UserMapper {
    
    @Delete("delete from wine_user where user_number=#{user_number}")
    void deleteUser(int user_number);
+   
+   @Insert("insert into user_info values(#{user_number}, #{user_id}, #{user_subscribe}, #{user_point})")
+   void addUseruser(UserInfoBean userInfo);
+   
+   @Select("select * from user_info")
+   List<UserInfoBean> getUseruser();
+   
+   @Select("select * from user_info where user_id = #{user_id}")
+   List<UserInfoBean> getUseruser2(String user_id);
 }

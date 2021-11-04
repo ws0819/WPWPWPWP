@@ -3,6 +3,6 @@
 <c:set var='root' value="${pageContext.request.contextPath }/" />
 
 <script>
-	alert('결제 페이지로 넘어갑니다')
-	location.href="${root}product/home"
+   alert('배송정보가 입력됐습니다')
+   location.href="${root}product/checkout?write=on"
 </script>

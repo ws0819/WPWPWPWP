@@ -3,6 +3,7 @@ package wine.controller;
 import java.util.Random;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import wine.beans.UserBean;
-import wine.service.coolSMS;
 import wine.service.UserService;
+import wine.service.coolSMS;
 import wine.validator.UserValidator;
 
 @Controller
@@ -92,7 +93,8 @@ public class UserController {
 	}
 
 	@GetMapping("/logout")
-	public String logout() {
+	public String logout(HttpSession session) {
+		session.invalidate();
 		loginUser.setUserLogin(false);
 		return "user/logout";
 	}
@@ -108,7 +110,6 @@ public class UserController {
 	public String modify(@ModelAttribute("userModify") UserBean userModify) {
 
 		userService.userModify(userModify);
-		System.out.println(userModify.getUser_number());
 		return "user/modify";
 	}
 

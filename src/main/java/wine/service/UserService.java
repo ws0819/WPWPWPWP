@@ -1,5 +1,7 @@
 package wine.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import wine.DAO.UserDAO;
 import wine.beans.UserBean;
+import wine.beans.UserInfoBean;
 import wine.mapper.UserMapper;
 
 @Service
@@ -47,6 +50,7 @@ public class UserService {
       if(tempLoginUserBean2!=null) {
          loginUser.setUser_number(tempLoginUserBean2.getUser_number());
          loginUser.setUser_name(tempLoginUserBean2.getUser_name());
+         loginUser.setUser_id(tempLoginUserBean2.getUser_id());
          loginUser.setUserLogin(true);
       }
    }
@@ -99,6 +103,14 @@ public void userModify(UserBean userMyPage) {
       userDao.modifyUserInfo(userMyPage);
    }
    
+   public void addUseruser(UserInfoBean userInfo) {
+	   userDao.addUseruser(userInfo);
+   }
    
-
+   public List<UserInfoBean> getUseruser(){
+	   return userDao.getUseruser();
+   }
+   public List<UserInfoBean> getUseruser2(String user_id){
+	   return userDao.getUseruser2(user_id);
+   }
 }

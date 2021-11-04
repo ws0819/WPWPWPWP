@@ -11,20 +11,24 @@ import wine.mapper.ReviewMapper;
 @Repository
 public class ReviewDAO {
 
-   
-   @Autowired
-   private ReviewMapper reviewMapper;
-   
-   public void addReviewInfo(ReviewBean writeReviewBean) {
-      reviewMapper.addReviewInfo(writeReviewBean);
-   }
-   public List<ReviewBean> getReviewList(){
-      return reviewMapper.getReviewList();
-   }
-   public ReviewBean getReviewInfo(String review_id){
-      return reviewMapper.getReviewInfo(review_id);
-   }
+	@Autowired
+	private ReviewMapper reviewMapper;
 
-   
-   
+	public void addReviewInfo(ReviewBean writeReviewBean) {
+		// for(int i=0; i<400; i++)
+		reviewMapper.addReviewInfo(writeReviewBean);
+	}
+
+	public List<ReviewBean> getReviewList() {
+		return reviewMapper.getReviewList();
+	}
+
+	public ReviewBean getReviewInfo(String review_id) {
+		return reviewMapper.getReviewInfo(review_id);
+	}
+
+	public void deleteReview(int review_number) {
+		reviewMapper.deleteReview(review_number);
+	}
+
 }

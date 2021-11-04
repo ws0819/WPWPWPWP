@@ -125,45 +125,69 @@ h4 {
           });
   </script>
   
-  	<!-- user정보안에서 구독 or 이지박스 하나라도 구매한사람만 보이게 -->
-  	<c:if test="${loginUserBean==true }">
-  		<hr />
-  			<!-- the comment box -->
-        	<form:form action="${root }subscribe/subscribe_review_pro" modelAttribute="reviewContentBean" method="post" >
+     <!-- user정보안에서 구독 or 이지박스 하나라도 구매한사람만 보이게 -->
+     <c:if test="${loginUsersubscirbe==true }">
+        <hr />
+           <!-- the comment box -->
+           <form:form action="${root }subscribe/subscribe_review_pro" modelAttribute="reviewContentBean" method="post" >
                 <div class="well">
-                	<h4><i class="fa fa-paper-plane-o"></i> Comment:</h4>
-                	<%-- <form role="form">  --%>
-                	<div class="form-group">
- 					<!-- if문 으로 구독이랑 이지박스 둘다 구매한 사람이면 select로 뜨게하고 아니면 for문으로 하나씩 -->
-	               		<form:select path="rating" class="form-select">
-	               			<form:option value="0">리뷰 작성할 상품을 선택하세요</form:option>
-	               			<form:option value="1" >이지박스EASY BOX</form:option>
-	               			<form:option value="2">정기구독서비스</form:option>
-	               		</form:select>
-	               		<form:textarea path="review_text" class="form-control" rows="3"/>
-                	</div>
-                	<form:button type="submit" name="say" value="" class="btn btn-primary"><i class="fa fa-reply"></i> Submit</form:button>
-                </div>
+                   <h4><i class="fa fa-paper-plane-o"></i> Comment:</h4>
+                   <%-- <form role="form">  --%>
+                   <div class="form-group">
+                <!-- if문 으로 구독이랑 이지박스 둘다 구매한 사람이면 select로 뜨게하고 아니면 for문으로 하나씩 -->
+ 						<%-- <c:forEach var="" items="${userInfo2} "></c:forEach> --%>
+                        <form:select path="rating" class="form-select">
+                           <form:option value="0">리뷰 작성할 상품을 선택하세요</form:option>
+                           <form:option value="1" >이지박스EASY BOX</form:option>
+                           <form:option value="2">정기구독서비스</form:option>
+                        </form:select>
+                        
+                        <form:textarea path="review_text" class="form-control" rows="3"/>
+                   </div>
+                   <form:button type="submit" name="say" value="" class="btn btn-primary"><i class="fa fa-reply"></i> Submit</form:button>
+                </div>    
             </form:form>
-      	<hr /> 
-    </c:if>                
-<%-- 
-                <!-- the comments -->
-          <form:form action="${root }subscribe_review_pro" modelAttribute="reviewContentBean" method="post">
-                <h3><i class="fa fa-comment"></i>
-                 <c:forEach var="review" items="${ reviews }" varStatus="status">
-                  <!-- 평점 기준 별표시 출력 -->
-                   <c:forEach var="rating" items="${ ratingOptions }" varStatus="status" begin="1" end="${ review.rating }">★</c:forEach>
-                    select
-                    ${reviewInfo.review_id } :
-                    <form:small> ${reviewInfo.review_date }</form:small>
-                </h3>
-                <p>${reviewInfo.review_text }</p>
-            </c:forEach>
+         <hr /> 
+    </c:if>          
+               
 
-            </div>
-            </form:form>
- --%>
+                <!-- the comments -->
+   
+<%--            <c:forEach var="obj" items="${reviewList }">
+              <tbody>
+                <tr>
+                  <td>${obj.rating }</td>
+                  <td>${obj.review_id }</td>
+                  <td>${obj.review_date }</td>
+                  <td>${obj.review_text }</td>
+                <tr/>  
+              </tbody><p/>
+           </c:forEach>
+           
+            --%>
+                        
+                 <c:forEach var="obj" items="${reviewList }">
+                 <c:set var="username" value="${loginUserName}"/>
+                <h3><i class="fa fa-comment"></i>
+              <%--   <c:forEach var="review" items="${ reviews }" varStatus="status"> 
+                  <!-- 평점 기준 별표시 출력 -->
+                    <c:forEach var="rating" items="${ ratingOptions }" varStatus="status" begin="1" end="${ review.rating }">★</c:forEach>--%>
+                    [${obj.rating }]
+                    ${obj.review_id }
+                    <c:set var="objname" value="${obj.review_id }"/>
+
+                    <small> ${obj.review_date }</small>
+                    <c:if test="${username == objname }">
+                       <a href="${root }subscribe/subscribe_delete?objNumber=${obj.review_number}">x</a>
+                    </c:if>
+                </h3>
+                <p>${obj.review_text }</p> 
+             </c:forEach>
+
+
+     </div>
+           
+
    </div>
 
    </div>

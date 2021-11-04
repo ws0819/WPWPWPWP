@@ -13,13 +13,14 @@
 	</head>
 	<body class="is-preload">
 
-	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
+	<c:import url="/WEB-INF/views/include/top_menu2.jsp" />
+	
 			
 			<div class="wrap">
         <div id="subNav">
             <ul>
-                <li><a href="#intro">일단사진</a></li>
-                <li><a href="#one">와인정기구독서비스</a></li>
+                <li><a href="#intro">메인</a></li>
+                <li><a href="#one">와인정기구독</a></li>
                 <li><a href="#two">이지박스</a></li>
                 <li><a href="#work">이지박스 사진</a></li>
                 <li><a href="#contact">구독</a></li>
@@ -112,7 +113,8 @@
 			<%-- <a href="${root}subscribe_product">구독</a --%>
 
 		<!-- Footer -->
-		<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
+		<c:import url="/WEB-INF/views/include/bottom_info2.jsp" />
+
 
 		<!-- Scripts -->
 			<script src="../subscribe_bot/js/jquery.min.js"></script>

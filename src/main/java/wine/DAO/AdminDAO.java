@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import wine.beans.AdminBean;
+import wine.beans.ProductOrderBean;
+import wine.beans.SommelierBean;
 import wine.beans.SubscribeBean;
 import wine.beans.UserLogBean;
 import wine.mapper.AdminMapper;
@@ -25,7 +27,13 @@ public class AdminDAO {
 	public List<SubscribeBean> getSubscirbe(){
 		return adminMapper.getSubscribe();
 	}
-	public void addSubscribe(String subscribe_grade, int subscribe_sommliernumber, String user_id, int user_number) {
-		adminMapper.addSubscribe(subscribe_grade, subscribe_sommliernumber, user_id, user_number);
+	public void addSubscribe(SubscribeBean subscribeBean) {
+		adminMapper.addSubscribe(subscribeBean);
+	}
+	public List<ProductOrderBean> getOrder(){
+		return adminMapper.getOrder();
+	}
+	public List<SommelierBean> getsommelier(){
+		return adminMapper.getSommelier();
 	}
 }

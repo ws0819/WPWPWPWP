@@ -4,6 +4,13 @@
 
 <c:set var="root" value="${pageContext.request.contextPath }/"/>
 
+<Style>
+
+.img{
+    width=450px: ;
+    heiht=350px: ;
+}
+</Style>
 
 <!DOCTYPE HTML>
 <!--
@@ -58,7 +65,7 @@
 						<h2>소개</h2>
 					</header>
 					<h3>구독을 하시면 실력있는 소물리에가 당신의<br />
-					 와인을 감별해드립니다 해주세요.</h3>
+					 와인을 감별해드립니다.</h3>
 				</div>
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
@@ -90,33 +97,26 @@
 			<section id="work" class="main style3 primary">
 				<div class="content">
 					<header>
-						<h2>와인판매</h2>
+						<h2>와인 구매</h2>
 						<h3>마음에 드는 와인을 최고의 가격에 가져가세요</h3>
 					</header>
 
 					<!-- Gallery  -->
 						<!-- 이달의 와인 -->
 						<div class="gallery">
-							<article class="from-left">
-								<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
+							<article class="from-left" >
+							<img src="assets/css/images/wine1.jpg" class="image fit"/></a>
 							</article>
 							<article class="from-right">
-								<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
+							<img src="assets/css/images/wine2.jpg" class="image fit" /></a>
 							</article>
-							<article class="from-left">
-								<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
-							</article>
-							<article class="from-left">
-								<a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
+							<article class="from-left" >
+							<img src="assets/css/images/wine3.jpg" class="image fit" /></a>
 							</article>
 							<article class="from-right">
-								<a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
+							<img src="assets/css/images/wine4.jpg" class="image fit"/></a>
 							</article>
 						</div>
-
 				</div>
 			</section>
 
@@ -125,6 +125,7 @@
 				<div class="content">
 					<header>
 						<h2>무엇이든물어보세요</h2>
+						<p/>
 						<!-- 관리자한테 질문 관리자는 관리자페이지에서 그거에 대한 답변 주기 -->
 
 

@@ -48,7 +48,7 @@ a:hover {
 .inner {
    padding: 20px;
    background: #fff;
-   max-width: 850px;
+   max-width: 1000px;
    margin: auto;
    display: flex;
    .image-holder {
@@ -58,7 +58,7 @@ a:hover {
       width: 50%;
       padding-top: 36px;
       padding-left: 45px;
-      padding-right: 45px;
+     /* padding-right: 45px;*/
    }
    h3 {
       text-transform: uppercase;

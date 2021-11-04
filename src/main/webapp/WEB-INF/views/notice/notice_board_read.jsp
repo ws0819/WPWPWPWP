@@ -103,27 +103,64 @@ h3 {
 </div>
 <p/>
 
+
+
 <!-- 테이블 -->
-<div class="container">
-<table class="table table-hover">
+<div class="container ">
+
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        구독 신청 과정과 구독 상품별 차이를 알고싶어요
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <small style="font-size:80%;">*홈페이지 상단메뉴 내 [구독서비스]-> 구독-> 이지박스 / ORANGE SINGLE/ ORANGE DOUBLE/ VLOLET / BLACK 선택 -> 장바구니 -> 결제*<P/>
+      이지박스는 이달의 와인 종류 6가지 중 1가지를 랜덤으로 발송해드리며, 구독서비스는 결제 후 소믈리에 상담을 통하여 고객님 취향에 맞는 와인을 구독서비스 가격대로 선정하여 보내드립니다.<P/>
+      ORANGE SINGLE: 49000원 소물리에 상담+와인1병<P/> ORANGE DOUBLE: 89000원 소믈리에 상담+와인2병<P/> VLOLET: 98000원 소물리에 상담+와인1병<P/> BLACK: 800000원 소물리에 상담 후 개수 결정
+     </small>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        이지박스에서 받을수 있는 와인과 가격대가 궁금해요
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <small style="font-size:80%;">[이지박스]는 RED, WHITE, SPARKLING, ROSE, DESERT 종류의 다양한 가격대의 와인 1병을 50000원에 랜덤으로 보내드리는 구성품입니다.
+        랜덤으로 보내드리는 종류는 매달 1일마다 변경되며, 홈페이지 상단메뉴 내 [구독서비스]-> 이지박스사진에서 이달의 와인을 미리 만나보실 수 있습니다.
+        </small>
+        
+      </div>
+    </div>
+  </div>
+ <P>
+
+
+<table class="table table-hover ">
   <thead>
-    <tr>
-      <th scope="col">#</th>
+    <tr">
+      <th scope="row">#</th>
       <!-- <th scope="col">작성자</th> -->
-      <th scope="col">작성자</th>
-      <th scope="col">공지사항 제목</th>
-      <th scope="col">시간</th>
+      <th scope="row">작성자</th>
+      <th scope="row">공지사항 제목</th>
+      <th scope="row">시간</th>
     </tr>
   </thead>
   <c:forEach var="obj" items="${noticeList }">
   <tbody>
     <tr>
       <th scope="row">${obj.notice_number }</th>
- 	  <td>관리자</td>
+      <td>와인이지</td>
       <td>
-		<a href='${root}notice/notice_read?notice_title=${obj.notice_title }&notice_number=${obj.notice_number}'>${obj.notice_title }</a>
-	 </td>
-	
+      <a href='${root}notice/notice_read?notice_title=${obj.notice_title }&notice_number=${obj.notice_number}' style="text-decoration:none; color: #39454b; font-weight: bold">${obj.notice_title }</a>
+    </td>
+   
       <td>${obj.notice_date }</td>
     </tr>
 
@@ -131,50 +168,50 @@ h3 {
   </c:forEach>
 </table>
 </div>
-    
+</div>   
 
 
 <!-- 페이지 -->
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
-  	<c:choose>
-  		<c:when test="${pageBean.prevPage <= 0 }">
-	  		<li class="page-item disabled">
-		      <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-		    </li>
-  		</c:when>
-		<c:otherwise>
-	  		<li class="page-item">
-		      <a class="page-link" href="${root }notice/notice_board_read?page=${pageBean.prevPage}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-		    </li>
-		</c:otherwise>
+     <c:choose>
+        <c:when test="${pageBean.prevPage <= 0 }">
+           <li class="page-item disabled">
+            <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+          </li>
+        </c:when>
+      <c:otherwise>
+           <li class="page-item">
+            <a class="page-link" href="${root }notice/notice_board_read?page=${pageBean.prevPage}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+          </li>
+      </c:otherwise>
     </c:choose>
     <c:forEach var="idx" begin="${pageBean.min}" end="${pageBean.max }">
-	    <c:choose>
-	    	<c:when test="${idx == pageBean.currentPage }">
-	    		<li class="page-item">
-	    			<a class="page-link" href="${root }notice/notice_board_read?page=${idx}">${idx }</a>
-	    		</li>
-	    	</c:when>
-	    	<c:otherwise>
-	    		<li class="page-item">
-	    			<a href="${root }notice/notice_board_read?page=${idx}" class="page-link">${idx }</a>
-	    		</li>
-	    	</c:otherwise>
-	    </c:choose>
-	</c:forEach>
-	<c:choose>
-		<c:when test="${pageBean.max >= pageBean.pageCnt }">	
-		    <li class="page-item disabled">
-		      <a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-		    </li>
-		</c:when>
-		<c:otherwise>	
-		    <li class="page-item">
-		      <a class="page-link" href="${root }notice/notice_board_read?page=${pageBean.nextPage}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-		    </li>
-		</c:otherwise>
-	</c:choose>
+       <c:choose>
+          <c:when test="${idx == pageBean.currentPage }">
+             <li class="page-item">
+                <a class="page-link" href="${root }notice/notice_board_read?page=${idx}">${idx }</a>
+             </li>
+          </c:when>
+          <c:otherwise>
+             <li class="page-item">
+                <a href="${root }notice/notice_board_read?page=${idx}" class="page-link">${idx }</a>
+             </li>
+          </c:otherwise>
+       </c:choose>
+   </c:forEach>
+   <c:choose>
+      <c:when test="${pageBean.max >= pageBean.pageCnt }">   
+          <li class="page-item disabled">
+            <a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+          </li>
+      </c:when>
+      <c:otherwise>   
+          <li class="page-item">
+            <a class="page-link" href="${root }notice/notice_board_read?page=${pageBean.nextPage}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+          </li>
+      </c:otherwise>
+   </c:choose>
   </ul>
 </nav>
 

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import wine.DAO.AdminDAO;
 import wine.beans.AdminBean;
+import wine.beans.ProductOrderBean;
+import wine.beans.SommelierBean;
 import wine.beans.SubscribeBean;
 import wine.beans.UserLogBean;
 
@@ -35,7 +37,13 @@ public class AdminService {
 	public List<SubscribeBean> getSubscribe(){
 		return adminDAO.getSubscirbe();
 	}
-	public void addSubscribe(String subscribe_grade, int subscribe_sommliernumber, String user_id, int user_number) {
-		adminDAO.addSubscribe(subscribe_grade, subscribe_sommliernumber, user_id, user_number);
+	public void addSubscribe(SubscribeBean subscribeBean) {
+		adminDAO.addSubscribe(subscribeBean);
+	}
+	public List<ProductOrderBean> getOrder(){
+		return adminDAO.getOrder();
+	}
+	public List<SommelierBean> getSommelier(){
+		return adminDAO.getsommelier();
 	}
 }

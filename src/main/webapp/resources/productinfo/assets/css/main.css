@@ -2648,13 +2648,13 @@ input, select, textarea {
 				border-radius: 2px;
 			}
 			header.major h3:after {
-				display: block;
-				content: '';
-				
-				height: 200px;
-				margin: 2em 0 1em 0;
-				border-radius: 2px;
-			}
+            display: block;
+            content: '';
+            
+            border-bottom: 75px solid;
+            margin: 2em 0 1em 0;
+            border-radius: 2px;
+         }
 
 				section.special header.major h2:after, article.special header.major h2:after {
 					margin-left: auto;

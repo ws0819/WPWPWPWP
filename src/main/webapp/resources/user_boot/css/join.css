@@ -3,7 +3,7 @@
    margin:0;padding:0;
    } 
    .wrap {
-    background-image: url(image/w2.jpeg);
+    background-image: url(image/w17.jpg);
     background-position: center;
     background-size: cover;
    /* position: absolute; */
@@ -18,7 +18,7 @@ right: 0;
 top: 0;
 }
 .container {
- background-color: rgba( 0, 0, 0, 0.5 ); /* 네모창 투명도 */
+ background-color: rgba( 0, 0, 0, 0.2 ); /* 네모창 투명도 */
    position: relative;
    margin: 50px auto;
    width: 600px;
@@ -38,7 +38,7 @@ top: 0;
    color: white;
    text-align: center;
    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-   background: #FFC94B; 
+   background: #FFFFFF; 
    border: 0;
    margin: 3px;
    /* border-radius: 5px; */
@@ -121,13 +121,17 @@ ul{
 .join_form table {
    border-spacing: 0;margin:0;padding:0; border:0;width:100%;}
 .join_form table input{ /* //입력칸 */
-   border:1px solid #ececec;
-   font-size:14px;
-   color:white; 
-   height:35px; 
-   padding:10px; 
-   width:100%; 
-   float:left;}
+    width: 100%;
+    position: relative;
+    height: 50px;
+    line-height: 49px;
+    padding: 0 20px;
+    border: 1px solid #fff;
+    
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 17px;
+    margin: 10px 0;}
 .join_form table input.email{
    width:162px; display: inline-block;}
 .join_form table input.email2{
@@ -152,7 +156,9 @@ ul{
    padding:0 10px 0 0; 
    text-indent:20px;}
 .join_form table th{
-   text-align:left;}
+   text-align: left;
+    vertical-align: top;
+    padding-top: 20px;}
 .join_form table td{
    padding:6px 0;position: relative;}
 .join_form table th span:after{
@@ -160,20 +166,20 @@ ul{
 .join_form.idpwFind table th span:after{
    content:none;}
 .join_form table td a.btn_confirm{
-   display: inline-block; 
-   /* float:left; */
-   width:115px; 
-   height:48px;
-   margin:5px 0 0 0px;
-   /* border:1px solid #cfcfcf; */
-   /* background:#dedede; */
-   /* color:#626262; */
-   background: #FFC94B; 
-   border-radius: 3.5em;
-   text-align:center; 
-   vertical-align: top;
-   line-height: 50px;
-   position: relative;
+  display: block;
+    position: absolute;
+    top: 21px;
+    right: 8px;
+    width: 83px;
+    height: 34px;
+    line-height: 36px;
+    font-size: 14px;
+   background-color:transparent;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    font-family: 'Lato','Roboto', 'Nanum Square', 'Nanum Gothic', Arial;
    }
    .btn_register{
    position: absolute ;
